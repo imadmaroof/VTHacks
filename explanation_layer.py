@@ -187,7 +187,7 @@ def _gemini_explanation(risk_score, category, primary_factor):
 
         client = genai.Client(api_key=api_key)
         response = client.models.generate_content(
-            model="gemini-2.0-flash", contents=prompt
+            model="gemini-3.6-flash", contents=prompt
         )
         text = (response.text or "").strip()
         return text or None
