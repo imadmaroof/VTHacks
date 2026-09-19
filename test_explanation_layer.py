@@ -83,7 +83,7 @@ def test_unknown_factor_falls_back_without_crashing():
 
 def test_output_shape():
     result = generate_explanation(**COST_EXAMPLE)
-    assert set(result.keys()) == {"risk_score", "category", "explanation", "suggestion"}
+    assert set(result.keys()) == {"risk_score", "category", "explanation", "suggestion", "talking_points"}
     assert result["risk_score"] == 78
     assert result["category"] == "cost"
 

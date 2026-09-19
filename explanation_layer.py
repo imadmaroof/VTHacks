@@ -97,17 +97,34 @@ def dominant_category(top_factors):
     if not top_factors:
         return "general"
 
-    scores = {}
     for factor in top_factors:
         if factor["factor"] not in FACTOR_CATEGORY_MAP:
             print(f"[explanation_layer] unmapped factor name: '{factor['factor']}' -> defaulting to 'general'")
+
+    # The single strongest factor decides the category. top_factors arrives
+    # sorted by true SHAP magnitude, so summing weights per category would let
+    # two medium factors outvote one dominant driver -- e.g. a $300 copay losing
+    # to "prior auth required" plus "distance". Rank by the strongest factor
+    # instead, and only sum to break ties between equally-weighted leaders.
+    best_weight = max(
+        IMPACT_WEIGHTS.get(f.get("impact"), 1) for f in top_factors
+    )
+    leaders = [
+        f for f in top_factors
+        if IMPACT_WEIGHTS.get(f.get("impact"), 1) == best_weight
+    ]
+    if len(leaders) == 1:
+        return FACTOR_CATEGORY_MAP.get(leaders[0]["factor"], "general")
+
+    # Several factors tie at the top weight: sum within those leaders only,
+    # and fall back to the first-listed (highest SHAP) on a further tie.
+    scores = {}
+    for factor in leaders:
         category = FACTOR_CATEGORY_MAP.get(factor["factor"], "general")
-        weight = IMPACT_WEIGHTS.get(factor.get("impact"), 1)
-        scores[category] = scores.get(category, 0) + weight
+        scores[category] = scores.get(category, 0) + 1
 
     best_score = max(scores.values())
-    # first-listed factor's category wins ties
-    for factor in top_factors:
+    for factor in leaders:
         category = FACTOR_CATEGORY_MAP.get(factor["factor"], "general")
         if scores[category] == best_score:
             return category
@@ -135,6 +152,7 @@ def explain_scored_record(record, use_llm=False):
             "category": "insufficient_data",
             "explanation": "This patient cannot be scored yet. " + adapted["reason"],
             "suggestion": "Complete the missing field(s) before relying on a risk score.",
+            "talking_points": [],
         }
 
     # Only high/medium-risk patients need an intervention. Low-risk patients
@@ -147,39 +165,47 @@ def explain_scored_record(record, use_llm=False):
             "category": "low_risk",
             "explanation": f"This patient has a low {adapted['risk_score']}% risk of not filling this prescription.",
             "suggestion": "No action needed.",
+            "talking_points": [],
         }
 
     return generate_explanation(adapted["risk_score"], adapted["top_factors"], use_llm=use_llm)
 
 
-def _gemini_explanation(risk_score, category, primary_factor):
-    """Optional: rewrite the explanation sentence with Gemini.
+def _gemini_output(risk_score, category, drivers):
+    """Optional: ask Gemini for a synthesized explanation + conversation points.
 
-    Returns a string on success, or None on any failure (missing key, network
-    error, bad response) so the caller falls back to the template. Gemini only
-    rewrites the explanation prose -- it never picks the category or the
-    suggestion, and the prompt forbids inventing reasons not in the input.
+    Returns {"explanation": str, "talking_points": [str]} on success, or None on
+    any failure so the caller falls back to the template. Gemini sees ONLY the
+    real drivers from the model and is constrained to conversation framing --
+    it never picks the intervention and never gives clinical advice.
     """
+    import json
     import os
 
     api_key = os.environ.get("GEMINI_API_KEY")
-    if not api_key:
+    if not api_key or not drivers:
         return None
 
-    if primary_factor is None:
-        factor_desc = "no single dominant factor"
-    else:
-        factor_desc = f"{_label_for(primary_factor['factor'])} = {primary_factor['value']}"
+    factor_lines = "\n".join(
+        f"- {_label_for(d['factor'])}: {d['value']} (impact: {d['impact']})"
+        for d in drivers
+    )
 
     prompt = (
-        "You are a clinical decision-support assistant. Write ONE short, plain "
-        "sentence for a doctor explaining why a patient is at risk of not filling "
-        "their prescription. "
-        f"Risk score: {risk_score}%. Dominant barrier type: {category}. "
-        f"Top contributing factor: {factor_desc}. "
-        "Rules: use ONLY the factor provided, do NOT invent any other reason, "
-        "do NOT give medical advice, do NOT suggest an action. "
-        "Just state the risk and the single reason. Under 30 words."
+        "You support doctors at the point of prescribing. A model has flagged a "
+        "patient as likely to abandon their prescription.\n\n"
+        f"Risk score: {risk_score}%\n"
+        f"Dominant barrier type: {category}\n"
+        f"Contributing factors:\n{factor_lines}\n\n"
+        "Return ONLY valid JSON, no markdown fences, with exactly these keys:\n"
+        '  "explanation": one sentence (under 35 words) synthesizing the factors '
+        "above into why this patient is at risk. Mention the specific values.\n"
+        '  "talking_points": an array of 2-3 very short prompts for the doctor\'s '
+        "brief conversation with the patient about this barrier.\n\n"
+        "HARD RULES: Use ONLY the factors listed above. Do NOT invent any other "
+        "reason. Do NOT give medical or clinical advice. Do NOT recommend dose "
+        "changes, alternative drugs, or treatments. Talking points are conversation "
+        "framing only (what to acknowledge or ask), never instructions for care."
     )
 
     try:
@@ -189,8 +215,25 @@ def _gemini_explanation(risk_score, category, primary_factor):
         response = client.models.generate_content(
             model="gemini-3.6-flash", contents=prompt
         )
-        text = (response.text or "").strip()
-        return text or None
+        raw = (response.text or "").strip()
+        # Models sometimes wrap JSON in fences despite instructions.
+        if raw.startswith("```"):
+            raw = raw.split("```")[1]
+            if raw.startswith("json"):
+                raw = raw[4:]
+            raw = raw.strip()
+
+        parsed = json.loads(raw)
+        explanation = parsed.get("explanation")
+        points = parsed.get("talking_points") or []
+        if not explanation:
+            return None
+        if not isinstance(points, list):
+            points = []
+        return {
+            "explanation": str(explanation),
+            "talking_points": [str(p) for p in points][:3],
+        }
     except Exception:
         # Any failure at all -> fall back silently to the template.
         return None
@@ -201,8 +244,12 @@ def generate_explanation(risk_score, top_factors, use_llm=False):
     primary = _top_factor_in_category(top_factors, category)
 
     explanation = None
+    talking_points = []
     if use_llm:
-        explanation = _gemini_explanation(risk_score, category, primary)
+        llm = _gemini_output(risk_score, category, top_factors)
+        if llm:
+            explanation = llm.get("explanation")
+            talking_points = llm.get("talking_points") or []
 
     if explanation is None:
         if primary is None:
@@ -220,4 +267,5 @@ def generate_explanation(risk_score, top_factors, use_llm=False):
         "category": category,
         "explanation": explanation,
         "suggestion": SUGGESTIONS[category],
+        "talking_points": talking_points,
     }

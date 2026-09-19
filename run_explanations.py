@@ -19,4 +19,6 @@ for p in patients[:10]:
     result = explain_scored_record(p, use_llm=True)
     print(p["patient_id"], "->", result["explanation"])
     print("   suggestion:", result["suggestion"])
+    for point in result["talking_points"]:
+        print("   -", point)
     print()
