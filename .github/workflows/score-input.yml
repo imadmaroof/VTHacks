@@ -1,0 +1,45 @@
+name: Score uploaded CSV
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'input/**'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: score-input-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run model on the CSV in input/
+        run: python predict.py
+
+      - name: Commit and push the result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/result.csv
+          if git diff --cached --quiet; then
+            echo "No change in output; skipping commit."
+          else
+            git commit -m "Auto-score input CSV [skip ci]"
+            git push
+          fi
