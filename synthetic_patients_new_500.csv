@@ -1,0 +1,501 @@
+patient_id,age,age_bracket,condition,drug_class,medication_name,new_rx_or_refill,insurance_type,monthly_copay,deductible_met,copay_assistance_available,copay_assistance_enrolled,prior_auth_required,pa_turnaround_days,days_supply,distance_to_pharmacy_miles,delivery_option_available,concurrent_medication_count,appointment_length_minutes,day_of_week_prescribed,prior_abandoned_rx_count,scheduled_visits_count,missed_visits_count,discontinued,primary_discontinue_reason,abandoned,copay_bucket,prior_abandoned_bucket
+SYN-NEW-00001,86,75+,Hypertension,chronic,Presolol,Refill,Medicare,51.34,False,False,False,True,3,90,5.3,False,2,30,Fri,0,2,0,False,none,False,$50-100,0
+SYN-NEW-00002,54,45-59,Asthma,chronic,Airoflex,Refill,Uninsured,176.82,False,False,False,False,0,90,6.4,False,1,20,Fri,1,3,0,False,none,False,$100-200,1
+SYN-NEW-00003,72,60-74,Type 2 Diabetes,chronic,Metforal,Refill,Medicare,53.54,False,False,False,False,0,90,2.6,False,1,15,Tue,1,1,0,False,none,False,$50-100,1
+SYN-NEW-00004,58,45-59,Major Depressive Disorder,chronic,Moodrex,Refill,Medicare,42.61,True,True,True,True,1,30,5.5,False,3,45,Thu,1,1,0,False,none,False,$25-50,1
+SYN-NEW-00005,30,30-44,Asthma,chronic,Bronchara,Refill,Commercial,54.58,True,False,False,True,3,30,11.0,False,1,20,Mon,1,3,0,False,none,False,$50-100,1
+SYN-NEW-00006,54,45-59,Post-Surgical Pain,acute,Analgex,New,Commercial,6.01,False,False,False,False,0,30,4.8,True,1,15,Thu,0,5,1,True,perceived_ineffective,True,<$25,0
+SYN-NEW-00007,85,75+,Hyperlipidemia,chronic,Cholestara,New,Medicare,48.74,False,False,False,False,0,60,3.8,True,2,45,Mon,0,1,0,False,none,False,$25-50,0
+SYN-NEW-00008,87,75+,Post-Surgical Pain,acute,Analgex,Refill,Uninsured,36.85,True,False,False,True,2,30,2.0,True,1,10,Mon,0,3,0,False,none,False,$25-50,0
+SYN-NEW-00009,87,75+,Acute Bacterial Infection,acute,Amoxinol,New,Medicare,18.94,False,False,False,False,0,30,6.9,True,2,15,Tue,0,4,0,False,none,False,<$25,0
+SYN-NEW-00010,62,60-74,Post-Surgical Pain,acute,Analgex,New,Commercial,28.65,True,True,True,False,0,60,18.9,False,3,45,Mon,1,2,0,False,none,False,$25-50,1
+SYN-NEW-00011,40,30-44,Psoriasis,specialty,Cutinex,New,Commercial,88.01,True,True,True,False,0,60,6.7,True,1,20,Mon,0,4,0,False,none,False,$50-100,0
+SYN-NEW-00012,58,45-59,Rheumatoid Arthritis,specialty,Rheumatex,New,Commercial,135.36,False,True,False,True,6,30,9.2,False,4,20,Thu,0,5,0,True,cost,True,$100-200,0
+SYN-NEW-00013,64,60-74,Asthma,chronic,Bronchara,Refill,Medicare,39.22,True,False,False,False,0,30,17.8,True,1,10,Mon,0,1,0,False,none,False,$25-50,0
+SYN-NEW-00014,38,30-44,Multiple Sclerosis,specialty,Neurovex,Refill,Commercial,212.6,False,False,False,False,0,30,6.6,True,1,10,Thu,1,1,0,True,cost,True,$200+,1
+SYN-NEW-00015,87,75+,Rheumatoid Arthritis,specialty,Immunara,Refill,Medicare,116.42,True,False,False,True,4,30,4.8,False,1,20,Mon,1,2,1,False,none,False,$100-200,1
+SYN-NEW-00016,57,45-59,Hypertension,chronic,Vaslorin,Refill,Commercial,22.15,True,False,False,False,0,30,11.7,True,3,20,Mon,0,1,0,False,none,False,<$25,0
+SYN-NEW-00017,43,30-44,Acute Bacterial Infection,acute,Cephadex,Refill,Commercial,11.46,False,False,False,False,0,60,4.5,False,1,10,Thu,0,4,0,False,none,False,<$25,0
+SYN-NEW-00018,51,45-59,Hypertension,chronic,Cardiozem,Refill,Medicaid,15.35,True,False,False,False,0,60,11.1,True,4,15,Mon,0,2,0,False,none,False,<$25,0
+SYN-NEW-00019,25,18-29,Multiple Sclerosis,specialty,Myelara,Refill,Commercial,218.44,True,True,True,True,8,30,9.6,True,2,45,Tue,0,4,0,False,none,False,$200+,0
+SYN-NEW-00020,61,60-74,Multiple Sclerosis,specialty,Neurovex,Refill,Medicare,67.84,False,True,False,True,10,30,5.4,False,2,10,Tue,2,2,0,False,none,False,$50-100,2
+SYN-NEW-00021,42,30-44,Asthma,chronic,Bronchara,Refill,Commercial,46.93,True,False,False,False,0,90,7.8,True,1,15,Fri,0,2,0,False,none,False,$25-50,0
+SYN-NEW-00022,84,75+,Major Depressive Disorder,chronic,Moodrex,New,Commercial,64.37,False,True,True,False,0,30,2.8,True,1,15,Thu,1,3,0,False,none,False,$50-100,1
+SYN-NEW-00023,39,30-44,Rheumatoid Arthritis,specialty,Rheumatex,New,Uninsured,812.56,False,False,False,True,18,90,2.7,True,4,20,Fri,1,5,1,True,cost,True,$200+,1
+SYN-NEW-00024,35,30-44,Psoriasis,specialty,Cutinex,New,Commercial,146.41,False,True,False,True,9,30,4.1,True,0,15,Tue,0,4,1,True,cost,True,$100-200,0
+SYN-NEW-00025,61,60-74,Asthma,chronic,Bronchara,New,Medicare,44.7,True,False,False,False,0,90,3.8,False,2,10,Wed,0,4,0,False,none,False,$25-50,0
+SYN-NEW-00026,40,30-44,Major Depressive Disorder,chronic,Serenol,Refill,Commercial,28.95,False,True,False,False,0,30,3.1,False,4,20,Fri,0,2,0,False,none,False,$25-50,0
+SYN-NEW-00027,42,30-44,Hypertension,chronic,Vaslorin,Refill,Commercial,52.22,False,False,False,False,0,60,1.8,False,2,10,Fri,0,4,0,False,none,False,$50-100,0
+SYN-NEW-00028,46,45-59,Post-Surgical Pain,acute,Analgex,Refill,Commercial,47.06,True,False,False,False,0,30,2.5,True,1,20,Wed,1,4,1,False,none,False,$25-50,1
+SYN-NEW-00029,67,60-74,Post-Surgical Pain,acute,Recuparin,Refill,Commercial,5.35,True,False,False,False,0,30,6.2,False,0,20,Tue,1,3,1,False,none,False,<$25,1
+SYN-NEW-00030,37,30-44,Asthma,chronic,Bronchara,New,Medicare,56.09,False,False,False,True,2,30,1.6,True,2,30,Wed,2,3,0,False,none,False,$50-100,2
+SYN-NEW-00031,83,75+,Major Depressive Disorder,chronic,Moodrex,Refill,Medicare,35.43,False,False,False,False,0,30,3.9,False,1,20,Mon,1,5,0,False,none,False,$25-50,1
+SYN-NEW-00032,43,30-44,Asthma,chronic,Airoflex,Refill,Commercial,76.79,False,False,False,False,0,30,6.2,True,1,15,Tue,1,2,0,True,side_effects,True,$50-100,1
+SYN-NEW-00033,73,60-74,Asthma,chronic,Bronchara,Refill,Commercial,54.13,False,False,False,False,0,60,1.2,True,2,15,Wed,0,2,0,False,none,False,$50-100,0
+SYN-NEW-00034,85,75+,Hypertension,chronic,Cardiozem,Refill,Medicare,43.08,True,False,False,False,0,30,12.3,True,0,10,Thu,0,3,1,False,none,False,$25-50,0
+SYN-NEW-00035,67,60-74,Asthma,chronic,Airoflex,Refill,Medicaid,20.21,False,False,False,False,0,90,9.8,True,2,15,Tue,0,5,0,False,none,False,<$25,0
+SYN-NEW-00036,45,45-59,Type 2 Diabetes,chronic,Glucotrol-X,Refill,Commercial,40.06,True,True,True,False,0,30,0.7,True,3,10,Fri,1,2,0,False,none,False,$25-50,1
+SYN-NEW-00037,66,60-74,Acute Bacterial Infection,acute,Cephadex,New,Commercial,1.74,True,False,False,False,0,30,2.1,False,0,20,Tue,0,4,0,False,none,False,<$25,0
+SYN-NEW-00038,73,60-74,Major Depressive Disorder,chronic,Moodrex,Refill,Medicare,63.66,True,False,False,False,0,90,1.0,True,1,20,Wed,0,3,1,True,side_effects,False,$50-100,0
+SYN-NEW-00039,72,60-74,Psoriasis,specialty,Cutinex,Refill,Medicare,55.93,True,True,False,True,14,90,6.2,True,3,20,Fri,0,2,0,False,none,False,$50-100,0
+SYN-NEW-00040,20,18-29,Major Depressive Disorder,chronic,Moodrex,New,Commercial,11.27,False,False,False,False,0,60,4.7,True,3,15,Wed,0,5,2,False,none,False,<$25,0
+SYN-NEW-00041,24,18-29,Acute Bacterial Infection,acute,Cephadex,Refill,Medicare,11.82,True,True,True,False,0,30,2.8,True,5,45,Wed,0,4,0,False,none,False,<$25,0
+SYN-NEW-00042,39,30-44,Acute Bacterial Infection,acute,Amoxinol,Refill,Medicaid,4.84,False,False,False,False,0,30,3.9,False,3,20,Wed,0,1,0,False,none,False,<$25,0
+SYN-NEW-00043,43,30-44,Multiple Sclerosis,specialty,Myelara,Refill,Uninsured,180.13,True,True,True,True,14,60,1.8,True,1,20,Thu,0,1,0,False,none,False,$100-200,0
+SYN-NEW-00044,68,60-74,Hypertension,chronic,Vaslorin,New,Medicare,28.02,True,True,True,True,5,60,4.7,True,2,10,Mon,0,2,1,False,none,False,$25-50,0
+SYN-NEW-00045,24,18-29,Asthma,chronic,Airoflex,Refill,Medicaid,10.73,False,False,False,True,4,30,4.9,False,2,10,Thu,0,4,0,False,none,False,<$25,0
+SYN-NEW-00046,50,45-59,Acute Bacterial Infection,acute,Cephadex,Refill,Commercial,3.57,False,False,False,False,0,30,0.9,True,2,45,Mon,0,3,1,False,none,False,<$25,0
+SYN-NEW-00047,75,75+,Major Depressive Disorder,chronic,Moodrex,New,Commercial,27.33,True,False,False,False,0,60,2.4,True,1,10,Fri,0,3,0,False,none,False,$25-50,0
+SYN-NEW-00048,82,75+,Rheumatoid Arthritis,specialty,Rheumatex,New,Medicare,126.94,False,True,True,True,15,30,5.8,True,1,15,Tue,0,3,1,True,cost,True,$100-200,0
+SYN-NEW-00049,22,18-29,Hypertension,chronic,Presolol,Refill,Commercial,23.27,True,True,True,False,0,30,10.9,True,2,30,Fri,0,2,1,False,none,False,<$25,0
+SYN-NEW-00050,49,45-59,Acute Bacterial Infection,acute,Amoxinol,Refill,Medicare,12.23,True,False,False,False,0,30,3.8,False,3,30,Wed,0,2,0,False,none,False,<$25,0
+SYN-NEW-00051,39,30-44,Hyperlipidemia,chronic,Cholestara,Refill,Medicare,40.42,False,False,False,False,0,30,3.8,False,1,30,Mon,0,3,1,True,side_effects,True,$25-50,0
+SYN-NEW-00052,62,60-74,Post-Surgical Pain,acute,Recuparin,New,Commercial,11.03,True,False,False,False,0,60,2.9,False,4,15,Tue,0,3,2,False,none,False,<$25,0
+SYN-NEW-00053,77,75+,Acute Bacterial Infection,acute,Cephadex,Refill,Commercial,17.91,False,False,False,False,0,30,5.2,True,1,10,Mon,0,2,0,False,none,False,<$25,0
+SYN-NEW-00054,60,60-74,Asthma,chronic,Bronchara,New,Commercial,49.78,True,True,True,False,0,30,7.2,False,3,45,Thu,0,4,0,False,none,False,$25-50,0
+SYN-NEW-00055,60,60-74,Major Depressive Disorder,chronic,Serenol,Refill,Commercial,37.57,True,False,False,False,0,30,12.9,False,3,15,Thu,0,5,2,False,none,False,$25-50,0
+SYN-NEW-00056,61,60-74,Rheumatoid Arthritis,specialty,Immunara,New,Medicare,52.11,False,True,True,True,15,60,10.3,True,3,10,Tue,1,1,1,False,none,False,$50-100,1
+SYN-NEW-00057,39,30-44,Hyperlipidemia,chronic,Lipatrex,Refill,Commercial,48.41,True,False,False,True,2,30,5.6,False,3,15,Tue,0,3,2,True,cost,True,$25-50,0
+SYN-NEW-00058,65,60-74,Type 2 Diabetes,chronic,Insunova,New,Medicaid,24.36,False,False,False,True,5,30,4.5,True,3,10,Mon,1,1,0,True,side_effects,True,<$25,1
+SYN-NEW-00059,30,30-44,Multiple Sclerosis,specialty,Neurovex,Refill,Medicare,155.98,False,False,False,True,15,90,4.4,True,3,45,Fri,0,4,1,True,cost,True,$100-200,0
+SYN-NEW-00060,54,45-59,Type 2 Diabetes,chronic,Metforal,Refill,Commercial,83.29,False,False,False,False,0,60,7.2,False,2,10,Thu,1,5,0,False,none,False,$50-100,1
+SYN-NEW-00061,83,75+,Psoriasis,specialty,Dermalis,Refill,Uninsured,952.75,True,False,False,False,0,30,2.9,True,1,10,Wed,1,5,0,True,cost,True,$200+,1
+SYN-NEW-00062,31,30-44,Rheumatoid Arthritis,specialty,Rheumatex,Refill,Medicare,167.61,True,True,True,True,6,90,13.7,False,2,20,Tue,0,5,2,True,side_effects,True,$100-200,0
+SYN-NEW-00063,24,18-29,Rheumatoid Arthritis,specialty,Rheumatex,New,Commercial,122.4,True,True,True,True,15,30,4.6,True,7,10,Mon,1,4,0,False,none,False,$100-200,1
+SYN-NEW-00064,22,18-29,Major Depressive Disorder,chronic,Moodrex,Refill,Commercial,43.33,False,False,False,False,0,30,1.2,True,3,10,Tue,0,4,0,False,none,False,$25-50,0
+SYN-NEW-00065,20,18-29,Post-Surgical Pain,acute,Recuparin,Refill,Medicare,44.7,False,False,False,False,0,60,7.5,True,0,20,Thu,1,3,0,False,none,False,$25-50,1
+SYN-NEW-00066,36,30-44,Acute Bacterial Infection,acute,Cephadex,Refill,Medicare,27.57,True,False,False,False,0,30,3.3,True,2,10,Thu,1,3,0,False,none,False,$25-50,1
+SYN-NEW-00067,38,30-44,Psoriasis,specialty,Cutinex,Refill,Commercial,306.01,False,False,False,True,12,30,17.3,True,3,15,Tue,1,1,0,True,cost,True,$200+,1
+SYN-NEW-00068,24,18-29,Multiple Sclerosis,specialty,Neurovex,New,Medicare,98.35,True,True,True,True,10,30,11.6,True,2,15,Tue,0,5,1,False,none,False,$50-100,0
+SYN-NEW-00069,78,75+,Acute Bacterial Infection,acute,Amoxinol,New,Commercial,10.74,True,False,False,False,0,30,5.8,False,2,20,Mon,1,4,1,False,none,False,<$25,1
+SYN-NEW-00070,26,18-29,Rheumatoid Arthritis,specialty,Rheumatex,Refill,Medicare,241.28,True,True,False,True,8,30,1.2,False,5,10,Tue,0,4,0,True,cost,True,$200+,0
+SYN-NEW-00071,38,30-44,Major Depressive Disorder,chronic,Serenol,New,Commercial,24.46,False,True,True,False,0,60,6.7,False,1,10,Tue,1,2,1,False,none,False,<$25,1
+SYN-NEW-00072,38,30-44,Hypertension,chronic,Presolol,New,Medicare,43.18,False,True,False,False,0,60,3.8,False,3,15,Fri,0,4,2,False,none,False,$25-50,0
+SYN-NEW-00073,58,45-59,Hypertension,chronic,Cardiozem,New,Medicaid,21.77,False,False,False,False,0,30,8.3,False,1,30,Thu,0,3,0,False,none,False,<$25,0
+SYN-NEW-00074,60,60-74,Type 2 Diabetes,chronic,Glucotrol-X,Refill,Commercial,28.55,False,False,False,False,0,30,6.1,True,2,15,Thu,2,4,2,False,none,False,$25-50,2
+SYN-NEW-00075,49,45-59,Asthma,chronic,Bronchara,New,Commercial,36.32,False,True,False,False,0,30,6.4,False,0,15,Mon,0,4,0,False,none,False,$25-50,0
+SYN-NEW-00076,42,30-44,Hyperlipidemia,chronic,Cholestara,New,Commercial,30.17,True,False,False,False,0,30,10.0,False,2,45,Fri,0,3,1,False,none,False,$25-50,0
+SYN-NEW-00077,65,60-74,Type 2 Diabetes,chronic,Glucotrol-X,New,Commercial,6.05,False,True,True,False,0,60,5.8,False,3,10,Mon,1,5,0,False,none,False,<$25,1
+SYN-NEW-00078,74,60-74,Acute Bacterial Infection,acute,Cephadex,New,Commercial,7.45,False,False,False,False,0,60,6.5,False,1,15,Wed,1,3,1,False,none,False,<$25,1
+SYN-NEW-00079,51,45-59,Acute Bacterial Infection,acute,Cephadex,Refill,Medicaid,3.76,True,False,False,True,6,60,8.2,True,1,20,Fri,0,5,2,False,none,False,<$25,0
+SYN-NEW-00080,87,75+,Hyperlipidemia,chronic,Lipatrex,Refill,Commercial,21.86,True,False,False,False,0,30,5.3,True,2,20,Fri,0,1,0,False,none,False,<$25,0
+SYN-NEW-00081,73,60-74,Asthma,chronic,Airoflex,Refill,Commercial,37.02,False,False,False,True,1,30,25.2,True,3,20,Tue,0,1,1,False,none,False,$25-50,0
+SYN-NEW-00082,41,30-44,Hyperlipidemia,chronic,Lipatrex,Refill,Medicare,8.58,True,False,False,False,0,90,2.7,False,2,15,Wed,1,3,0,False,none,False,<$25,1
+SYN-NEW-00083,87,75+,Psoriasis,specialty,Cutinex,Refill,Uninsured,1013.98,True,True,True,True,17,30,14.6,True,3,10,Tue,0,2,1,True,cost,True,$200+,0
+SYN-NEW-00084,35,30-44,Multiple Sclerosis,specialty,Myelara,New,Commercial,81.26,True,True,True,True,20,60,0.9,True,1,30,Tue,0,1,0,False,none,False,$50-100,0
+SYN-NEW-00085,67,60-74,Acute Bacterial Infection,acute,Amoxinol,New,Commercial,8.77,True,True,True,False,0,30,8.0,True,2,30,Fri,0,3,0,False,none,False,<$25,0
+SYN-NEW-00086,67,60-74,Psoriasis,specialty,Dermalis,Refill,Commercial,156.35,False,True,True,True,13,30,1.3,True,1,20,Thu,1,2,1,False,none,False,$100-200,1
+SYN-NEW-00087,40,30-44,Hypertension,chronic,Cardiozem,New,Medicare,49.68,False,True,True,True,3,90,4.7,False,3,45,Fri,1,4,1,False,none,False,$25-50,1
+SYN-NEW-00088,59,45-59,Psoriasis,specialty,Cutinex,New,Medicaid,74.27,True,False,False,True,3,90,1.8,True,4,30,Tue,2,1,1,False,none,False,$50-100,2
+SYN-NEW-00089,42,30-44,Psoriasis,specialty,Dermalis,Refill,Commercial,334.78,True,True,False,True,11,90,5.9,False,2,15,Tue,1,1,0,True,cost,True,$200+,1
+SYN-NEW-00090,73,60-74,Acute Bacterial Infection,acute,Amoxinol,Refill,Medicare,14.44,True,False,False,False,0,30,3.4,False,2,15,Mon,0,1,0,False,none,False,<$25,0
+SYN-NEW-00091,39,30-44,Asthma,chronic,Airoflex,Refill,Medicare,83.0,True,False,False,True,5,90,12.5,True,1,15,Wed,0,4,0,False,none,False,$50-100,0
+SYN-NEW-00092,62,60-74,Asthma,chronic,Bronchara,Refill,Uninsured,155.34,True,False,False,True,2,30,6.5,True,1,20,Thu,1,5,1,True,cost,True,$100-200,1
+SYN-NEW-00093,54,45-59,Asthma,chronic,Bronchara,Refill,Commercial,49.15,True,True,True,False,0,60,7.5,False,2,10,Tue,1,2,0,False,none,False,$25-50,1
+SYN-NEW-00094,38,30-44,Psoriasis,specialty,Cutinex,Refill,Medicare,263.83,False,True,True,True,6,30,6.0,True,1,10,Thu,0,2,1,True,cost,True,$200+,0
+SYN-NEW-00095,82,75+,Hyperlipidemia,chronic,Lipatrex,Refill,Medicare,22.25,True,False,False,False,0,60,0.4,False,3,30,Thu,1,3,0,False,none,False,<$25,1
+SYN-NEW-00096,83,75+,Multiple Sclerosis,specialty,Myelara,Refill,Commercial,131.33,True,True,True,True,19,30,6.5,False,2,15,Fri,1,4,1,False,none,False,$100-200,1
+SYN-NEW-00097,54,45-59,Rheumatoid Arthritis,specialty,Immunara,Refill,Medicaid,41.41,False,False,False,True,16,60,18.2,True,1,30,Fri,0,4,1,False,none,False,$25-50,0
+SYN-NEW-00098,59,45-59,Psoriasis,specialty,Cutinex,New,Commercial,140.89,False,False,False,False,0,30,0.0,True,4,10,Fri,1,5,2,True,cost,True,$100-200,1
+SYN-NEW-00099,37,30-44,Multiple Sclerosis,specialty,Myelara,Refill,Medicare,127.21,True,True,True,False,0,60,10.3,True,3,15,Thu,0,3,0,False,none,False,$100-200,0
+SYN-NEW-00100,69,60-74,Post-Surgical Pain,acute,Analgex,New,Commercial,24.51,True,False,False,False,0,60,13.3,False,1,30,Tue,1,3,0,False,none,False,<$25,1
+SYN-NEW-00101,78,75+,Multiple Sclerosis,specialty,Neurovex,New,Commercial,125.26,True,False,False,True,15,90,3.1,False,1,15,Thu,0,1,0,True,side_effects,False,$100-200,0
+SYN-NEW-00102,66,60-74,Rheumatoid Arthritis,specialty,Immunara,Refill,Commercial,217.68,True,True,True,True,9,30,4.1,False,1,15,Thu,0,5,1,False,none,False,$200+,0
+SYN-NEW-00103,49,45-59,Asthma,chronic,Airoflex,New,Medicare,114.42,True,False,False,True,5,60,6.0,True,4,20,Thu,0,3,2,True,cost,True,$100-200,0
+SYN-NEW-00104,73,60-74,Rheumatoid Arthritis,specialty,Immunara,Refill,Commercial,279.14,True,True,False,True,16,90,5.0,True,2,10,Mon,0,1,1,True,cost,True,$200+,0
+SYN-NEW-00105,42,30-44,Asthma,chronic,Airoflex,Refill,Medicaid,6.72,True,True,True,True,2,30,3.1,False,4,10,Wed,0,5,1,False,none,False,<$25,0
+SYN-NEW-00106,72,60-74,Hyperlipidemia,chronic,Lipatrex,New,Commercial,15.41,False,True,True,False,0,30,27.1,False,1,10,Fri,0,4,1,False,none,False,<$25,0
+SYN-NEW-00107,30,30-44,Hyperlipidemia,chronic,Cholestara,Refill,Medicare,79.7,False,False,False,False,0,30,16.6,False,1,15,Thu,0,2,0,False,none,False,$50-100,0
+SYN-NEW-00108,47,45-59,Major Depressive Disorder,chronic,Moodrex,Refill,Medicaid,8.97,True,True,True,True,3,30,3.1,False,4,10,Mon,1,1,0,False,none,False,<$25,1
+SYN-NEW-00109,63,60-74,Rheumatoid Arthritis,specialty,Rheumatex,Refill,Uninsured,461.63,True,True,True,True,4,30,1.4,False,4,10,Fri,1,3,0,True,cost,True,$200+,1
+SYN-NEW-00110,20,18-29,Type 2 Diabetes,chronic,Glucotrol-X,New,Medicaid,3.62,False,False,False,False,0,30,5.6,True,2,10,Mon,0,5,0,False,none,False,<$25,0
+SYN-NEW-00111,71,60-74,Rheumatoid Arthritis,specialty,Immunara,Refill,Commercial,198.59,False,False,False,False,0,30,9.2,False,3,20,Mon,1,1,0,False,none,False,$100-200,1
+SYN-NEW-00112,52,45-59,Asthma,chronic,Bronchara,Refill,Uninsured,56.26,True,False,False,False,0,60,10.6,True,3,45,Wed,1,5,2,False,none,False,$50-100,1
+SYN-NEW-00113,54,45-59,Type 2 Diabetes,chronic,Metforal,Refill,Commercial,51.49,True,True,True,False,0,30,5.4,True,3,15,Wed,1,2,0,False,none,False,$50-100,1
+SYN-NEW-00114,82,75+,Rheumatoid Arthritis,specialty,Immunara,Refill,Medicare,187.2,False,True,True,True,4,30,2.8,False,3,30,Thu,0,1,0,False,none,False,$100-200,0
+SYN-NEW-00115,40,30-44,Multiple Sclerosis,specialty,Neurovex,New,Commercial,242.38,True,True,False,True,9,30,7.2,True,0,10,Mon,0,3,0,True,cost,True,$200+,0
+SYN-NEW-00116,28,18-29,Acute Bacterial Infection,acute,Amoxinol,Refill,Commercial,18.54,True,False,False,False,0,90,4.6,True,1,15,Thu,1,2,0,False,none,False,<$25,1
+SYN-NEW-00117,27,18-29,Hyperlipidemia,chronic,Lipatrex,Refill,Commercial,5.16,False,False,False,True,2,30,4.4,False,2,15,Tue,1,4,1,False,none,False,<$25,1
+SYN-NEW-00118,74,60-74,Post-Surgical Pain,acute,Analgex,New,Commercial,9.3,True,False,False,False,0,30,3.7,False,0,10,Wed,1,3,1,False,none,False,<$25,1
+SYN-NEW-00119,44,30-44,Acute Bacterial Infection,acute,Cephadex,New,Medicaid,7.09,True,True,False,False,0,30,4.5,True,3,20,Tue,0,3,1,False,none,False,<$25,0
+SYN-NEW-00120,65,60-74,Asthma,chronic,Airoflex,Refill,Medicare,67.83,False,False,False,False,0,30,17.0,True,0,10,Fri,0,4,1,True,cost,False,$50-100,0
+SYN-NEW-00121,22,18-29,Asthma,chronic,Bronchara,New,Medicaid,10.21,True,True,True,False,0,60,1.5,False,4,10,Thu,0,3,0,False,none,False,<$25,0
+SYN-NEW-00122,68,60-74,Psoriasis,specialty,Dermalis,Refill,Medicaid,23.45,False,False,False,True,6,90,10.0,True,3,15,Fri,0,4,1,False,none,False,<$25,0
+SYN-NEW-00123,80,75+,Hypertension,chronic,Cardiozem,Refill,Medicaid,5.81,False,False,False,True,7,90,2.9,True,1,20,Fri,0,5,0,False,none,False,<$25,0
+SYN-NEW-00124,33,30-44,Hypertension,chronic,Vaslorin,Refill,Medicare,18.9,True,False,False,True,1,60,11.6,False,1,10,Mon,0,5,1,False,none,False,<$25,0
+SYN-NEW-00125,82,75+,Post-Surgical Pain,acute,Recuparin,Refill,Commercial,33.22,False,False,False,False,0,30,5.0,False,2,30,Thu,0,2,0,False,none,False,$25-50,0
+SYN-NEW-00126,23,18-29,Psoriasis,specialty,Cutinex,Refill,Commercial,131.24,False,True,False,False,0,30,9.0,True,3,15,Wed,1,4,0,False,none,False,$100-200,1
+SYN-NEW-00127,43,30-44,Multiple Sclerosis,specialty,Neurovex,New,Commercial,294.34,True,False,False,False,0,30,2.4,True,2,30,Thu,0,3,0,False,none,False,$200+,0
+SYN-NEW-00128,37,30-44,Asthma,chronic,Airoflex,New,Medicare,40.43,True,False,False,False,0,30,9.1,True,2,10,Tue,0,1,0,False,none,False,$25-50,0
+SYN-NEW-00129,38,30-44,Post-Surgical Pain,acute,Recuparin,New,Commercial,5.46,True,False,False,False,0,90,23.0,False,2,30,Fri,1,5,0,False,none,False,<$25,1
+SYN-NEW-00130,62,60-74,Hyperlipidemia,chronic,Cholestara,Refill,Commercial,26.52,False,False,False,False,0,30,1.6,False,1,45,Fri,1,1,0,False,none,False,$25-50,1
+SYN-NEW-00131,72,60-74,Asthma,chronic,Bronchara,Refill,Medicare,34.93,False,True,True,False,0,90,4.5,False,3,10,Tue,1,5,0,False,none,False,$25-50,1
+SYN-NEW-00132,45,45-59,Rheumatoid Arthritis,specialty,Rheumatex,Refill,Commercial,283.05,True,False,False,True,4,60,14.7,True,3,20,Mon,0,4,3,True,cost,True,$200+,0
+SYN-NEW-00133,34,30-44,Post-Surgical Pain,acute,Analgex,Refill,Medicaid,1.05,False,False,False,False,0,90,10.9,True,3,10,Thu,0,2,0,False,none,False,<$25,0
+SYN-NEW-00134,36,30-44,Rheumatoid Arthritis,specialty,Immunara,Refill,Uninsured,540.54,True,True,False,True,3,90,12.5,True,2,20,Mon,0,5,1,True,cost,True,$200+,0
+SYN-NEW-00135,44,30-44,Post-Surgical Pain,acute,Analgex,Refill,Commercial,43.45,False,False,False,False,0,30,9.4,True,4,20,Tue,0,4,0,False,none,False,$25-50,0
+SYN-NEW-00136,46,45-59,Psoriasis,specialty,Cutinex,Refill,Medicare,104.85,False,True,False,False,0,90,8.5,True,5,10,Wed,0,1,0,False,none,False,$100-200,0
+SYN-NEW-00137,88,75+,Psoriasis,specialty,Dermalis,Refill,Medicare,264.1,False,True,False,True,18,60,24.1,False,2,20,Tue,1,1,0,True,cost,True,$200+,1
+SYN-NEW-00138,70,60-74,Rheumatoid Arthritis,specialty,Rheumatex,Refill,Medicare,84.32,False,False,False,True,4,30,8.7,False,2,15,Mon,1,4,1,True,cost,True,$50-100,1
+SYN-NEW-00139,49,45-59,Multiple Sclerosis,specialty,Neurovex,New,Commercial,132.18,True,True,True,True,16,30,3.7,True,3,30,Wed,0,1,0,False,none,False,$100-200,0
+SYN-NEW-00140,36,30-44,Asthma,chronic,Bronchara,Refill,Commercial,21.21,True,False,False,True,1,30,9.6,False,1,10,Wed,1,2,0,False,none,False,<$25,1
+SYN-NEW-00141,18,18-29,Hypertension,chronic,Vaslorin,Refill,Medicaid,6.15,False,False,False,False,0,30,7.5,True,5,10,Wed,1,3,0,False,none,False,<$25,1
+SYN-NEW-00142,57,45-59,Major Depressive Disorder,chronic,Serenol,Refill,Commercial,39.16,False,False,False,False,0,30,1.0,False,4,10,Tue,0,4,2,False,none,False,$25-50,0
+SYN-NEW-00143,19,18-29,Type 2 Diabetes,chronic,Metforal,Refill,Commercial,28.88,True,False,False,True,4,60,7.7,True,3,15,Thu,2,5,1,False,none,False,$25-50,2
+SYN-NEW-00144,47,45-59,Hypertension,chronic,Cardiozem,Refill,Medicaid,11.77,False,True,True,False,0,30,4.7,False,0,20,Fri,0,4,1,False,none,False,<$25,0
+SYN-NEW-00145,35,30-44,Major Depressive Disorder,chronic,Serenol,New,Medicare,13.46,True,False,False,False,0,30,5.4,True,5,15,Fri,0,5,0,False,none,False,<$25,0
+SYN-NEW-00146,89,75+,Asthma,chronic,Bronchara,Refill,Medicare,20.54,False,True,False,True,2,60,18.5,True,2,10,Tue,0,3,0,False,none,False,<$25,0
+SYN-NEW-00147,89,75+,Rheumatoid Arthritis,specialty,Rheumatex,Refill,Uninsured,787.06,False,True,True,True,12,60,1.7,False,1,45,Tue,0,3,0,True,cost,True,$200+,0
+SYN-NEW-00148,79,75+,Hyperlipidemia,chronic,Cholestara,New,Commercial,69.81,True,False,False,False,0,90,22.0,True,4,10,Mon,0,1,1,False,none,False,$50-100,0
+SYN-NEW-00149,54,45-59,Post-Surgical Pain,acute,Analgex,Refill,Medicare,21.54,True,False,False,False,0,90,10.3,False,0,20,Wed,0,2,0,False,none,False,<$25,0
+SYN-NEW-00150,70,60-74,Post-Surgical Pain,acute,Recuparin,Refill,Commercial,17.39,False,False,False,False,0,30,5.5,False,3,15,Thu,1,4,0,False,none,False,<$25,1
+SYN-NEW-00151,48,45-59,Hypertension,chronic,Cardiozem,New,Medicare,41.99,False,False,False,True,7,30,19.3,True,2,15,Mon,1,2,0,True,side_effects,True,$25-50,1
+SYN-NEW-00152,57,45-59,Multiple Sclerosis,specialty,Neurovex,Refill,Commercial,308.84,True,False,False,True,17,90,9.1,False,4,45,Mon,1,2,0,True,cost,True,$200+,1
+SYN-NEW-00153,25,18-29,Hypertension,chronic,Cardiozem,Refill,Commercial,27.55,False,True,True,False,0,90,4.5,True,1,15,Thu,2,1,0,False,none,False,$25-50,2
+SYN-NEW-00154,46,45-59,Multiple Sclerosis,specialty,Myelara,Refill,Commercial,106.7,False,True,True,True,13,90,5.2,False,3,15,Tue,1,3,0,False,none,False,$100-200,1
+SYN-NEW-00155,54,45-59,Post-Surgical Pain,acute,Recuparin,Refill,Commercial,8.89,False,False,False,False,0,60,9.8,False,2,20,Thu,0,5,1,False,none,False,<$25,0
+SYN-NEW-00156,66,60-74,Hyperlipidemia,chronic,Lipatrex,New,Medicaid,5.94,False,False,False,True,5,60,1.6,False,3,10,Mon,1,5,0,False,none,False,<$25,1
+SYN-NEW-00157,43,30-44,Major Depressive Disorder,chronic,Serenol,New,Medicaid,10.88,True,False,False,False,0,30,1.7,False,1,30,Tue,0,4,0,True,side_effects,True,<$25,0
+SYN-NEW-00158,78,75+,Hypertension,chronic,Presolol,Refill,Uninsured,83.51,True,True,False,False,0,30,3.3,True,1,20,Tue,0,3,0,False,none,False,$50-100,0
+SYN-NEW-00159,40,30-44,Hypertension,chronic,Cardiozem,Refill,Commercial,40.54,False,False,False,False,0,60,1.2,True,2,10,Tue,1,3,0,False,none,False,$25-50,1
+SYN-NEW-00160,28,18-29,Type 2 Diabetes,chronic,Metforal,Refill,Medicare,41.31,False,False,False,False,0,60,7.7,True,3,30,Fri,0,5,0,False,none,False,$25-50,0
+SYN-NEW-00161,80,75+,Asthma,chronic,Airoflex,Refill,Commercial,24.17,True,False,False,False,0,90,12.9,False,2,10,Fri,1,3,0,True,side_effects,True,<$25,1
+SYN-NEW-00162,20,18-29,Multiple Sclerosis,specialty,Neurovex,Refill,Commercial,330.07,True,False,False,True,17,30,8.0,True,2,15,Mon,0,1,0,True,cost,True,$200+,0
+SYN-NEW-00163,46,45-59,Major Depressive Disorder,chronic,Moodrex,New,Medicaid,6.35,True,False,False,False,0,30,28.2,True,2,15,Wed,0,3,0,False,none,False,<$25,0
+SYN-NEW-00164,51,45-59,Major Depressive Disorder,chronic,Moodrex,Refill,Commercial,28.78,True,False,False,False,0,30,3.5,False,3,15,Mon,0,2,0,False,none,False,$25-50,0
+SYN-NEW-00165,18,18-29,Acute Bacterial Infection,acute,Cephadex,Refill,Commercial,15.45,False,False,False,False,0,90,13.0,True,1,30,Wed,1,5,1,False,none,False,<$25,1
+SYN-NEW-00166,37,30-44,Major Depressive Disorder,chronic,Moodrex,Refill,Commercial,45.85,False,True,True,False,0,30,7.0,True,1,10,Tue,2,1,0,False,none,False,$25-50,2
+SYN-NEW-00167,77,75+,Rheumatoid Arthritis,specialty,Immunara,New,Commercial,216.33,True,False,False,True,20,60,10.5,True,3,20,Wed,0,5,2,True,cost,True,$200+,0
+SYN-NEW-00168,81,75+,Rheumatoid Arthritis,specialty,Immunara,New,Commercial,170.88,False,True,False,True,10,30,12.7,True,0,10,Wed,1,3,0,True,cost,False,$100-200,1
+SYN-NEW-00169,47,45-59,Post-Surgical Pain,acute,Recuparin,Refill,Commercial,6.68,False,False,False,False,0,30,4.8,True,5,30,Mon,1,2,1,False,none,False,<$25,1
+SYN-NEW-00170,36,30-44,Rheumatoid Arthritis,specialty,Rheumatex,New,Uninsured,549.09,True,True,True,False,0,30,9.0,True,0,30,Wed,0,1,0,True,cost,False,$200+,0
+SYN-NEW-00171,37,30-44,Hyperlipidemia,chronic,Cholestara,Refill,Commercial,36.84,False,False,False,False,0,90,18.4,True,2,20,Fri,0,5,1,False,none,False,$25-50,0
+SYN-NEW-00172,83,75+,Post-Surgical Pain,acute,Recuparin,Refill,Commercial,22.06,False,False,False,False,0,30,20.5,False,6,15,Mon,0,2,0,False,none,False,<$25,0
+SYN-NEW-00173,86,75+,Rheumatoid Arthritis,specialty,Immunara,Refill,Medicare,208.98,True,False,False,True,20,30,6.5,False,2,15,Fri,0,1,0,True,cost,True,$200+,0
+SYN-NEW-00174,54,45-59,Post-Surgical Pain,acute,Analgex,Refill,Commercial,47.84,True,False,False,False,0,60,4.7,True,3,20,Fri,0,5,0,False,none,False,$25-50,0
+SYN-NEW-00175,50,45-59,Asthma,chronic,Bronchara,Refill,Medicaid,9.72,False,False,False,False,0,30,7.1,True,0,15,Fri,1,3,0,False,none,False,<$25,1
+SYN-NEW-00176,78,75+,Hyperlipidemia,chronic,Lipatrex,Refill,Commercial,52.09,True,False,False,True,7,60,13.5,True,3,15,Wed,0,5,0,False,none,False,$50-100,0
+SYN-NEW-00177,38,30-44,Hyperlipidemia,chronic,Lipatrex,Refill,Medicaid,5.03,False,True,False,True,5,30,6.6,False,3,10,Mon,0,4,0,True,side_effects,True,<$25,0
+SYN-NEW-00178,50,45-59,Rheumatoid Arthritis,specialty,Rheumatex,New,Commercial,161.52,True,False,False,False,0,90,3.5,True,3,45,Thu,1,1,0,False,none,False,$100-200,1
+SYN-NEW-00179,50,45-59,Type 2 Diabetes,chronic,Insunova,Refill,Medicare,24.99,False,False,False,True,1,30,3.6,False,2,20,Mon,0,1,0,False,none,False,<$25,0
+SYN-NEW-00180,69,60-74,Hypertension,chronic,Vaslorin,Refill,Commercial,76.76,True,False,False,True,1,90,6.9,True,1,15,Tue,1,4,0,False,none,False,$50-100,1
+SYN-NEW-00181,21,18-29,Rheumatoid Arthritis,specialty,Immunara,Refill,Medicaid,81.46,True,False,False,True,18,60,1.1,True,2,20,Wed,0,4,1,True,cost,False,$50-100,0
+SYN-NEW-00182,88,75+,Acute Bacterial Infection,acute,Cephadex,Refill,Commercial,7.35,True,False,False,False,0,30,14.2,True,2,15,Tue,0,2,0,False,none,False,<$25,0
+SYN-NEW-00183,72,60-74,Post-Surgical Pain,acute,Analgex,Refill,Commercial,6.83,True,False,False,False,0,30,16.1,True,2,30,Tue,2,1,0,False,none,False,<$25,2
+SYN-NEW-00184,29,18-29,Acute Bacterial Infection,acute,Cephadex,New,Commercial,5.62,False,False,False,False,0,30,3.1,True,2,20,Thu,1,5,0,False,none,False,<$25,1
+SYN-NEW-00185,70,60-74,Acute Bacterial Infection,acute,Cephadex,Refill,Medicare,3.82,False,False,False,False,0,30,2.4,False,0,10,Tue,0,3,0,False,none,False,<$25,0
+SYN-NEW-00186,36,30-44,Post-Surgical Pain,acute,Recuparin,Refill,Medicare,3.82,True,False,False,False,0,30,6.3,False,4,15,Wed,0,2,0,False,none,False,<$25,0
+SYN-NEW-00187,47,45-59,Rheumatoid Arthritis,specialty,Rheumatex,New,Commercial,198.94,True,True,True,True,20,60,1.3,False,2,10,Fri,0,2,0,False,none,False,$100-200,0
+SYN-NEW-00188,55,45-59,Acute Bacterial Infection,acute,Amoxinol,Refill,Medicaid,3.97,False,False,False,False,0,60,2.1,True,3,20,Tue,0,5,0,False,none,False,<$25,0
+SYN-NEW-00189,67,60-74,Major Depressive Disorder,chronic,Serenol,Refill,Commercial,5.83,False,False,False,False,0,30,10.4,False,2,20,Tue,0,4,0,False,none,False,<$25,0
+SYN-NEW-00190,45,45-59,Hypertension,chronic,Presolol,New,Medicare,47.69,True,False,False,False,0,60,1.7,False,1,10,Wed,0,2,0,False,none,False,$25-50,0
+SYN-NEW-00191,33,30-44,Acute Bacterial Infection,acute,Amoxinol,New,Medicare,35.16,True,False,False,False,0,60,4.8,False,1,15,Wed,0,4,0,False,none,False,$25-50,0
+SYN-NEW-00192,75,75+,Psoriasis,specialty,Dermalis,Refill,Medicaid,97.5,True,False,False,True,10,30,3.1,True,2,30,Thu,0,2,0,False,none,False,$50-100,0
+SYN-NEW-00193,24,18-29,Psoriasis,specialty,Dermalis,Refill,Commercial,110.59,False,True,True,True,17,30,2.0,True,1,10,Wed,0,1,1,False,none,False,$100-200,0
+SYN-NEW-00194,84,75+,Psoriasis,specialty,Cutinex,Refill,Medicaid,62.45,False,True,True,True,14,30,10.3,True,3,10,Tue,0,3,0,False,none,False,$50-100,0
+SYN-NEW-00195,79,75+,Psoriasis,specialty,Cutinex,Refill,Medicare,282.35,True,True,True,True,20,60,3.3,True,2,20,Thu,2,2,0,True,cost,False,$200+,2
+SYN-NEW-00196,59,45-59,Post-Surgical Pain,acute,Analgex,Refill,Medicare,18.81,True,False,False,False,0,60,1.8,False,3,20,Wed,0,1,0,False,none,False,<$25,0
+SYN-NEW-00197,49,45-59,Rheumatoid Arthritis,specialty,Immunara,New,Commercial,63.43,True,False,False,True,8,60,13.1,False,1,15,Mon,1,1,0,False,none,False,$50-100,1
+SYN-NEW-00198,27,18-29,Hyperlipidemia,chronic,Cholestara,New,Commercial,60.77,True,True,True,False,0,90,3.5,True,0,15,Tue,1,1,0,False,none,False,$50-100,1
+SYN-NEW-00199,76,75+,Multiple Sclerosis,specialty,Neurovex,Refill,Commercial,224.16,True,True,True,True,7,30,5.5,True,2,15,Mon,0,3,0,True,cost,True,$200+,0
+SYN-NEW-00200,45,45-59,Post-Surgical Pain,acute,Analgex,New,Commercial,13.57,False,False,False,False,0,60,4.6,False,2,45,Mon,1,5,2,True,perceived_ineffective,True,<$25,1
+SYN-NEW-00201,59,45-59,Major Depressive Disorder,chronic,Serenol,New,Commercial,34.26,False,False,False,False,0,90,11.6,False,0,20,Mon,0,4,0,False,none,False,$25-50,0
+SYN-NEW-00202,39,30-44,Hyperlipidemia,chronic,Lipatrex,Refill,Medicare,37.97,False,False,False,True,3,30,3.7,True,3,15,Tue,0,3,1,False,none,False,$25-50,0
+SYN-NEW-00203,63,60-74,Rheumatoid Arthritis,specialty,Rheumatex,New,Medicare,100.69,True,True,False,True,16,30,0.6,False,2,10,Mon,0,2,1,False,none,False,$100-200,0
+SYN-NEW-00204,64,60-74,Hyperlipidemia,chronic,Cholestara,Refill,Medicaid,7.33,True,True,False,False,0,60,15.3,True,1,20,Fri,1,2,0,False,none,False,<$25,1
+SYN-NEW-00205,19,18-29,Type 2 Diabetes,chronic,Glucotrol-X,Refill,Commercial,9.4,False,False,False,False,0,60,5.0,False,4,10,Mon,2,4,1,True,perceived_ineffective,True,<$25,2
+SYN-NEW-00206,36,30-44,Rheumatoid Arthritis,specialty,Immunara,Refill,Commercial,148.03,False,False,False,True,20,60,8.4,False,2,10,Tue,0,5,1,True,cost,True,$100-200,0
+SYN-NEW-00207,56,45-59,Hyperlipidemia,chronic,Cholestara,New,Medicare,46.82,False,False,False,False,0,30,1.2,False,3,15,Tue,1,4,0,True,perceived_ineffective,True,$25-50,1
+SYN-NEW-00208,24,18-29,Major Depressive Disorder,chronic,Moodrex,Refill,Medicare,39.24,True,False,False,True,2,60,11.6,False,2,45,Thu,1,5,0,True,side_effects,True,$25-50,1
+SYN-NEW-00209,29,18-29,Hyperlipidemia,chronic,Cholestara,Refill,Uninsured,61.25,True,False,False,False,0,60,4.4,True,0,30,Fri,0,4,1,False,none,False,$50-100,0
+SYN-NEW-00210,54,45-59,Asthma,chronic,Airoflex,Refill,Medicaid,23.9,True,False,False,False,0,90,8.2,True,2,10,Tue,2,4,0,False,none,False,<$25,2
+SYN-NEW-00211,44,30-44,Type 2 Diabetes,chronic,Insunova,Refill,Commercial,7.42,True,False,False,False,0,30,1.7,True,0,15,Mon,0,5,0,False,none,False,<$25,0
+SYN-NEW-00212,38,30-44,Type 2 Diabetes,chronic,Glucotrol-X,New,Commercial,28.78,True,False,False,False,0,30,13.1,False,4,15,Fri,0,2,0,False,none,False,$25-50,0
+SYN-NEW-00213,85,75+,Post-Surgical Pain,acute,Analgex,Refill,Commercial,19.57,False,False,False,False,0,90,2.8,True,4,10,Wed,0,1,0,True,side_effects,True,<$25,0
+SYN-NEW-00214,53,45-59,Hyperlipidemia,chronic,Cholestara,Refill,Medicaid,15.7,False,False,False,True,2,30,11.6,False,1,10,Tue,0,1,0,True,access_logistics,True,<$25,0
+SYN-NEW-00215,56,45-59,Hypertension,chronic,Cardiozem,New,Medicare,121.81,True,False,False,True,4,60,7.6,False,5,30,Tue,2,5,0,True,cost,True,$100-200,2
+SYN-NEW-00216,42,30-44,Asthma,chronic,Bronchara,Refill,Commercial,43.44,True,False,False,False,0,60,9.9,False,2,15,Tue,0,4,0,False,none,False,$25-50,0
+SYN-NEW-00217,42,30-44,Asthma,chronic,Bronchara,New,Commercial,24.16,True,False,False,False,0,90,7.2,True,1,15,Thu,1,2,0,False,none,False,<$25,1
+SYN-NEW-00218,73,60-74,Rheumatoid Arthritis,specialty,Immunara,New,Uninsured,588.34,False,False,False,True,5,30,9.0,True,2,20,Fri,0,5,0,True,cost,False,$200+,0
+SYN-NEW-00219,53,45-59,Psoriasis,specialty,Dermalis,Refill,Medicaid,89.39,True,True,True,True,4,30,1.1,True,3,20,Tue,1,2,1,False,none,False,$50-100,1
+SYN-NEW-00220,36,30-44,Hypertension,chronic,Cardiozem,Refill,Commercial,69.56,False,False,False,False,0,30,7.5,True,3,30,Thu,2,3,0,False,none,False,$50-100,2
+SYN-NEW-00221,18,18-29,Acute Bacterial Infection,acute,Amoxinol,New,Medicare,14.33,False,False,False,False,0,30,16.9,False,2,30,Thu,0,1,0,False,none,False,<$25,0
+SYN-NEW-00222,70,60-74,Asthma,chronic,Airoflex,Refill,Commercial,46.9,False,False,False,True,3,60,3.6,True,1,20,Mon,0,5,0,False,none,False,$25-50,0
+SYN-NEW-00223,55,45-59,Type 2 Diabetes,chronic,Metforal,New,Commercial,46.83,True,False,False,False,0,30,6.1,True,1,15,Wed,0,5,1,False,none,False,$25-50,0
+SYN-NEW-00224,26,18-29,Type 2 Diabetes,chronic,Insunova,Refill,Medicaid,16.41,True,True,False,False,0,90,1.1,True,2,15,Mon,0,3,0,False,none,False,<$25,0
+SYN-NEW-00225,67,60-74,Type 2 Diabetes,chronic,Insunova,New,Commercial,22.28,True,True,True,False,0,30,1.2,False,0,15,Thu,0,3,1,False,none,False,<$25,0
+SYN-NEW-00226,74,60-74,Acute Bacterial Infection,acute,Amoxinol,Refill,Commercial,7.19,False,False,False,False,0,30,1.1,False,1,10,Fri,0,1,0,False,none,False,<$25,0
+SYN-NEW-00227,66,60-74,Rheumatoid Arthritis,specialty,Rheumatex,New,Medicare,154.81,True,False,False,True,11,30,2.8,True,2,15,Wed,0,3,0,False,none,False,$100-200,0
+SYN-NEW-00228,89,75+,Asthma,chronic,Bronchara,Refill,Commercial,36.55,False,False,False,False,0,90,6.6,True,4,30,Thu,0,3,0,True,side_effects,True,$25-50,0
+SYN-NEW-00229,41,30-44,Asthma,chronic,Airoflex,New,Medicaid,7.13,True,False,False,False,0,30,2.3,False,0,10,Tue,0,1,0,False,none,False,<$25,0
+SYN-NEW-00230,38,30-44,Hypertension,chronic,Cardiozem,Refill,Medicaid,8.5,False,False,False,False,0,30,7.2,True,2,30,Mon,1,4,1,False,none,False,<$25,1
+SYN-NEW-00231,77,75+,Asthma,chronic,Airoflex,New,Medicare,29.17,True,False,False,False,0,30,5.7,False,3,15,Wed,0,2,1,False,none,False,$25-50,0
+SYN-NEW-00232,89,75+,Asthma,chronic,Bronchara,New,Medicare,26.8,True,True,True,False,0,30,7.3,False,4,30,Wed,0,5,1,False,none,False,$25-50,0
+SYN-NEW-00233,71,60-74,Psoriasis,specialty,Cutinex,Refill,Medicare,121.64,False,True,True,True,4,90,7.2,True,2,15,Wed,2,2,1,False,none,False,$100-200,2
+SYN-NEW-00234,62,60-74,Acute Bacterial Infection,acute,Cephadex,Refill,Medicare,18.42,False,False,False,False,0,60,6.9,True,4,20,Thu,0,5,0,False,none,False,<$25,0
+SYN-NEW-00235,36,30-44,Multiple Sclerosis,specialty,Myelara,New,Medicaid,41.17,False,False,False,False,0,90,7.2,True,1,15,Wed,0,5,0,False,none,False,$25-50,0
+SYN-NEW-00236,59,45-59,Multiple Sclerosis,specialty,Myelara,Refill,Medicare,71.38,True,True,True,True,7,90,9.3,True,3,45,Wed,1,1,0,False,none,False,$50-100,1
+SYN-NEW-00237,44,30-44,Hypertension,chronic,Vaslorin,Refill,Commercial,40.47,False,True,False,False,0,30,7.9,True,1,15,Mon,0,4,0,True,perceived_ineffective,True,$25-50,0
+SYN-NEW-00238,36,30-44,Major Depressive Disorder,chronic,Moodrex,Refill,Medicare,22.37,True,False,False,False,0,30,7.5,True,3,10,Mon,0,2,1,False,none,False,<$25,0
+SYN-NEW-00239,49,45-59,Type 2 Diabetes,chronic,Insunova,Refill,Commercial,29.51,False,False,False,False,0,30,4.0,True,1,15,Fri,0,5,1,False,none,False,$25-50,0
+SYN-NEW-00240,66,60-74,Major Depressive Disorder,chronic,Moodrex,New,Commercial,14.14,False,False,False,False,0,30,13.1,False,0,15,Fri,1,4,0,False,none,False,<$25,1
+SYN-NEW-00241,64,60-74,Type 2 Diabetes,chronic,Insunova,Refill,Medicare,136.39,False,False,False,False,0,30,9.8,False,1,10,Tue,0,3,0,False,none,False,$100-200,0
+SYN-NEW-00242,50,45-59,Post-Surgical Pain,acute,Recuparin,Refill,Medicare,18.35,True,True,True,False,0,60,7.2,False,0,10,Wed,3,1,0,False,none,False,<$25,2
+SYN-NEW-00243,60,60-74,Major Depressive Disorder,chronic,Moodrex,Refill,Commercial,61.22,True,False,False,False,0,30,2.3,False,5,20,Fri,1,3,1,False,none,False,$50-100,1
+SYN-NEW-00244,60,60-74,Asthma,chronic,Airoflex,Refill,Commercial,68.87,False,False,False,False,0,30,12.1,True,0,30,Mon,4,2,0,False,none,False,$50-100,2
+SYN-NEW-00245,40,30-44,Acute Bacterial Infection,acute,Cephadex,Refill,Commercial,28.59,True,False,False,False,0,30,3.1,False,1,20,Fri,0,2,0,False,none,False,$25-50,0
+SYN-NEW-00246,52,45-59,Hypertension,chronic,Vaslorin,New,Medicare,8.46,False,True,True,False,0,30,21.4,False,3,10,Fri,0,3,0,False,none,False,<$25,0
+SYN-NEW-00247,51,45-59,Psoriasis,specialty,Dermalis,New,Medicaid,31.88,True,True,False,True,7,30,9.7,True,4,20,Mon,0,2,0,False,none,False,$25-50,0
+SYN-NEW-00248,74,60-74,Rheumatoid Arthritis,specialty,Immunara,Refill,Commercial,75.69,False,True,False,True,16,90,1.2,True,1,45,Thu,1,3,1,False,none,False,$50-100,1
+SYN-NEW-00249,38,30-44,Asthma,chronic,Airoflex,Refill,Commercial,6.18,True,False,False,True,1,90,5.6,True,1,10,Tue,0,4,1,False,none,False,<$25,0
+SYN-NEW-00250,55,45-59,Type 2 Diabetes,chronic,Metforal,Refill,Medicaid,31.74,True,True,True,False,0,30,10.5,True,3,20,Mon,0,1,1,False,none,False,$25-50,0
+SYN-NEW-00251,55,45-59,Multiple Sclerosis,specialty,Neurovex,New,Commercial,197.78,True,True,True,True,7,60,4.0,True,0,10,Wed,1,2,0,False,none,False,$100-200,1
+SYN-NEW-00252,41,30-44,Hyperlipidemia,chronic,Cholestara,Refill,Commercial,60.25,True,True,True,False,0,90,1.2,False,5,15,Mon,0,2,0,True,cost,True,$50-100,0
+SYN-NEW-00253,73,60-74,Hyperlipidemia,chronic,Lipatrex,New,Medicare,21.7,False,False,False,True,5,30,8.9,True,0,20,Mon,0,1,0,False,none,False,<$25,0
+SYN-NEW-00254,40,30-44,Hypertension,chronic,Cardiozem,Refill,Commercial,25.22,True,True,False,True,2,60,1.7,True,1,20,Mon,0,2,0,False,none,False,$25-50,0
+SYN-NEW-00255,56,45-59,Hypertension,chronic,Vaslorin,Refill,Commercial,90.64,False,False,False,True,5,30,2.6,True,3,30,Wed,0,2,0,False,none,False,$50-100,0
+SYN-NEW-00256,58,45-59,Post-Surgical Pain,acute,Recuparin,Refill,Medicaid,2.86,True,False,False,False,0,30,19.1,True,0,20,Tue,1,2,1,False,none,False,<$25,1
+SYN-NEW-00257,53,45-59,Multiple Sclerosis,specialty,Myelara,Refill,Commercial,335.98,False,True,True,True,13,30,6.0,False,3,15,Fri,0,3,0,True,cost,False,$200+,0
+SYN-NEW-00258,87,75+,Rheumatoid Arthritis,specialty,Immunara,Refill,Medicare,166.63,False,False,False,False,0,30,9.6,True,2,10,Tue,0,3,0,False,none,False,$100-200,0
+SYN-NEW-00259,63,60-74,Post-Surgical Pain,acute,Analgex,Refill,Commercial,6.33,True,False,False,False,0,60,5.9,False,2,10,Mon,0,3,0,False,none,False,<$25,0
+SYN-NEW-00260,25,18-29,Hyperlipidemia,chronic,Lipatrex,Refill,Commercial,38.41,False,False,False,True,3,60,3.7,True,3,10,Mon,0,4,2,False,none,False,$25-50,0
+SYN-NEW-00261,19,18-29,Multiple Sclerosis,specialty,Myelara,Refill,Commercial,166.34,True,False,False,True,8,30,3.3,False,3,30,Wed,0,1,0,False,none,False,$100-200,0
+SYN-NEW-00262,19,18-29,Acute Bacterial Infection,acute,Cephadex,Refill,Commercial,40.17,True,False,False,False,0,60,11.2,False,3,15,Wed,1,2,0,False,none,False,$25-50,1
+SYN-NEW-00263,41,30-44,Hypertension,chronic,Cardiozem,Refill,Uninsured,195.27,False,False,False,False,0,60,1.3,True,4,20,Thu,1,5,0,True,cost,True,$100-200,1
+SYN-NEW-00264,50,45-59,Asthma,chronic,Airoflex,New,Medicare,22.71,True,False,False,True,7,60,0.7,False,1,15,Fri,0,3,0,False,none,False,<$25,0
+SYN-NEW-00265,62,60-74,Rheumatoid Arthritis,specialty,Immunara,Refill,Commercial,105.51,True,True,True,True,7,30,4.2,False,1,15,Fri,0,1,0,False,none,False,$100-200,0
+SYN-NEW-00266,31,30-44,Hypertension,chronic,Cardiozem,Refill,Commercial,32.89,True,False,False,False,0,60,12.9,True,3,20,Wed,0,5,1,False,none,False,$25-50,0
+SYN-NEW-00267,34,30-44,Hypertension,chronic,Cardiozem,Refill,Uninsured,35.42,False,True,False,False,0,60,15.0,False,9,45,Fri,1,5,0,True,cost,True,$25-50,1
+SYN-NEW-00268,83,75+,Multiple Sclerosis,specialty,Neurovex,New,Commercial,55.33,True,True,True,True,7,30,19.0,True,4,10,Tue,1,4,0,False,none,False,$50-100,1
+SYN-NEW-00269,23,18-29,Post-Surgical Pain,acute,Recuparin,Refill,Commercial,25.33,False,False,False,False,0,30,9.2,False,3,30,Tue,0,3,0,False,none,False,$25-50,0
+SYN-NEW-00270,58,45-59,Psoriasis,specialty,Cutinex,New,Commercial,108.57,False,True,True,True,13,30,2.6,True,2,15,Tue,0,5,1,True,perceived_ineffective,True,$100-200,0
+SYN-NEW-00271,52,45-59,Hypertension,chronic,Cardiozem,Refill,Commercial,38.96,False,True,True,False,0,30,10.3,True,2,15,Fri,0,3,1,False,none,False,$25-50,0
+SYN-NEW-00272,77,75+,Post-Surgical Pain,acute,Analgex,Refill,Medicare,11.29,True,False,False,True,1,60,13.0,True,1,10,Mon,1,5,0,False,none,False,<$25,1
+SYN-NEW-00273,27,18-29,Post-Surgical Pain,acute,Analgex,Refill,Commercial,21.75,False,False,False,False,0,90,13.7,True,1,20,Tue,0,2,1,False,none,False,<$25,0
+SYN-NEW-00274,76,75+,Multiple Sclerosis,specialty,Myelara,New,Commercial,100.36,False,False,False,False,0,60,5.0,True,2,30,Fri,1,1,0,False,none,False,$100-200,1
+SYN-NEW-00275,62,60-74,Rheumatoid Arthritis,specialty,Rheumatex,New,Commercial,230.18,True,False,False,True,10,60,15.8,False,1,15,Mon,0,1,1,True,cost,True,$200+,0
+SYN-NEW-00276,18,18-29,Post-Surgical Pain,acute,Analgex,New,Commercial,20.21,True,False,False,False,0,30,1.9,True,0,20,Wed,1,2,0,False,none,False,<$25,1
+SYN-NEW-00277,61,60-74,Hyperlipidemia,chronic,Cholestara,Refill,Commercial,40.78,True,True,True,False,0,30,17.0,False,2,10,Tue,1,1,1,False,none,False,$25-50,1
+SYN-NEW-00278,81,75+,Hypertension,chronic,Presolol,Refill,Commercial,16.04,False,False,False,False,0,90,2.3,True,3,10,Fri,0,4,1,False,none,False,<$25,0
+SYN-NEW-00279,53,45-59,Psoriasis,specialty,Dermalis,Refill,Uninsured,481.77,True,True,True,False,0,30,5.4,True,2,15,Wed,0,3,1,True,cost,True,$200+,0
+SYN-NEW-00280,48,45-59,Asthma,chronic,Airoflex,Refill,Commercial,22.4,False,False,False,True,2,30,7.3,True,4,10,Wed,0,3,0,False,none,False,<$25,0
+SYN-NEW-00281,45,45-59,Hyperlipidemia,chronic,Lipatrex,Refill,Uninsured,102.97,False,False,False,False,0,30,3.6,True,2,30,Fri,2,3,1,True,cost,True,$100-200,2
+SYN-NEW-00282,34,30-44,Hypertension,chronic,Cardiozem,Refill,Medicare,23.03,False,False,False,True,4,90,8.6,False,2,15,Mon,1,3,0,False,none,False,<$25,1
+SYN-NEW-00283,37,30-44,Hypertension,chronic,Cardiozem,Refill,Medicare,23.22,False,False,False,False,0,60,4.6,True,0,15,Thu,0,1,0,False,none,False,<$25,0
+SYN-NEW-00284,80,75+,Major Depressive Disorder,chronic,Moodrex,Refill,Medicare,22.75,True,True,False,True,3,30,1.7,False,5,15,Fri,1,5,1,True,access_logistics,True,<$25,1
+SYN-NEW-00285,46,45-59,Multiple Sclerosis,specialty,Neurovex,New,Commercial,191.72,True,True,False,True,19,90,16.8,False,3,15,Tue,0,1,0,True,cost,True,$100-200,0
+SYN-NEW-00286,78,75+,Major Depressive Disorder,chronic,Moodrex,New,Uninsured,156.78,True,False,False,True,7,30,10.4,False,1,20,Fri,0,3,0,True,cost,False,$100-200,0
+SYN-NEW-00287,54,45-59,Post-Surgical Pain,acute,Analgex,Refill,Commercial,10.26,True,False,False,False,0,90,6.4,True,2,15,Tue,0,2,1,False,none,False,<$25,0
+SYN-NEW-00288,80,75+,Psoriasis,specialty,Dermalis,Refill,Commercial,357.95,False,True,False,True,3,60,4.1,True,3,30,Thu,1,3,0,True,cost,False,$200+,1
+SYN-NEW-00289,80,75+,Post-Surgical Pain,acute,Recuparin,Refill,Commercial,20.65,True,False,False,False,0,60,6.5,True,5,10,Thu,0,2,0,False,none,False,<$25,0
+SYN-NEW-00290,81,75+,Post-Surgical Pain,acute,Recuparin,Refill,Commercial,6.88,False,False,False,False,0,30,4.4,False,3,10,Mon,0,2,0,False,none,False,<$25,0
+SYN-NEW-00291,34,30-44,Major Depressive Disorder,chronic,Serenol,Refill,Commercial,49.09,True,False,False,False,0,30,4.4,True,1,30,Mon,2,1,0,False,none,False,$25-50,2
+SYN-NEW-00292,87,75+,Multiple Sclerosis,specialty,Myelara,New,Commercial,152.19,False,False,False,False,0,30,5.2,True,2,10,Thu,0,2,0,False,none,False,$100-200,0
+SYN-NEW-00293,31,30-44,Major Depressive Disorder,chronic,Moodrex,New,Uninsured,124.82,False,False,False,False,0,30,11.0,True,2,15,Mon,0,3,1,False,none,False,$100-200,0
+SYN-NEW-00294,36,30-44,Multiple Sclerosis,specialty,Neurovex,New,Medicare,328.61,True,True,True,True,5,30,6.4,False,2,10,Fri,0,5,1,True,cost,False,$200+,0
+SYN-NEW-00295,77,75+,Rheumatoid Arthritis,specialty,Rheumatex,Refill,Medicaid,18.61,True,True,False,True,17,30,3.9,True,2,10,Thu,0,3,0,False,none,False,<$25,0
+SYN-NEW-00296,35,30-44,Major Depressive Disorder,chronic,Moodrex,Refill,Commercial,38.22,True,False,False,False,0,30,8.9,True,2,30,Thu,0,4,1,False,none,False,$25-50,0
+SYN-NEW-00297,82,75+,Hyperlipidemia,chronic,Cholestara,Refill,Commercial,17.88,True,False,False,True,3,90,2.1,False,0,15,Mon,0,2,0,True,side_effects,True,<$25,0
+SYN-NEW-00298,22,18-29,Type 2 Diabetes,chronic,Glucotrol-X,Refill,Medicaid,20.23,False,False,False,False,0,30,8.2,True,2,10,Mon,1,5,0,False,none,False,<$25,1
+SYN-NEW-00299,22,18-29,Psoriasis,specialty,Cutinex,New,Commercial,106.42,True,True,False,True,9,30,6.8,True,3,10,Tue,1,3,1,False,none,False,$100-200,1
+SYN-NEW-00300,71,60-74,Multiple Sclerosis,specialty,Neurovex,New,Medicaid,32.5,True,False,False,True,6,30,14.0,False,2,10,Thu,0,2,0,False,none,False,$25-50,0
+SYN-NEW-00301,72,60-74,Hypertension,chronic,Presolol,Refill,Medicare,62.19,True,False,False,True,5,30,2.1,True,2,30,Tue,0,1,0,False,none,False,$50-100,0
+SYN-NEW-00302,44,30-44,Major Depressive Disorder,chronic,Moodrex,Refill,Commercial,40.08,True,True,False,False,0,90,4.2,False,2,15,Wed,0,1,0,False,none,False,$25-50,0
+SYN-NEW-00303,25,18-29,Rheumatoid Arthritis,specialty,Rheumatex,Refill,Medicaid,18.0,True,False,False,True,15,90,5.2,True,2,30,Mon,0,1,1,False,none,False,<$25,0
+SYN-NEW-00304,66,60-74,Rheumatoid Arthritis,specialty,Immunara,Refill,Commercial,232.76,True,False,False,True,3,30,8.2,True,4,10,Fri,0,1,0,True,cost,True,$200+,0
+SYN-NEW-00305,75,75+,Asthma,chronic,Airoflex,Refill,Medicare,40.41,True,False,False,False,0,30,3.4,True,0,10,Mon,1,5,1,False,none,False,$25-50,1
+SYN-NEW-00306,75,75+,Hypertension,chronic,Presolol,Refill,Medicaid,18.09,False,True,True,False,0,30,9.8,True,2,15,Tue,1,4,1,False,none,False,<$25,1
+SYN-NEW-00307,81,75+,Hyperlipidemia,chronic,Lipatrex,New,Commercial,19.99,False,False,False,True,4,90,6.4,False,1,10,Tue,0,3,1,True,side_effects,True,<$25,0
+SYN-NEW-00308,36,30-44,Rheumatoid Arthritis,specialty,Rheumatex,Refill,Medicaid,40.55,True,True,False,True,12,60,6.8,False,2,20,Thu,0,4,1,False,none,False,$25-50,0
+SYN-NEW-00309,84,75+,Major Depressive Disorder,chronic,Serenol,New,Medicaid,12.29,True,False,False,False,0,60,19.6,True,1,20,Tue,0,5,2,False,none,False,<$25,0
+SYN-NEW-00310,89,75+,Post-Surgical Pain,acute,Recuparin,New,Commercial,42.61,False,False,False,False,0,60,4.2,True,4,45,Tue,0,4,0,False,none,False,$25-50,0
+SYN-NEW-00311,31,30-44,Major Depressive Disorder,chronic,Moodrex,Refill,Commercial,59.15,True,True,True,True,4,60,20.2,True,1,10,Tue,0,2,0,False,none,False,$50-100,0
+SYN-NEW-00312,61,60-74,Psoriasis,specialty,Dermalis,Refill,Medicare,120.39,False,True,True,True,10,90,2.8,True,3,15,Fri,1,1,0,False,none,False,$100-200,1
+SYN-NEW-00313,51,45-59,Post-Surgical Pain,acute,Analgex,New,Medicare,14.32,False,False,False,False,0,30,5.6,True,2,10,Tue,1,1,0,False,none,False,<$25,1
+SYN-NEW-00314,82,75+,Psoriasis,specialty,Dermalis,New,Commercial,228.87,True,False,False,True,9,60,13.6,True,3,15,Wed,1,4,0,False,none,False,$200+,1
+SYN-NEW-00315,29,18-29,Hyperlipidemia,chronic,Cholestara,New,Commercial,61.41,False,False,False,True,7,30,16.7,True,0,20,Fri,1,1,1,True,perceived_ineffective,True,$50-100,1
+SYN-NEW-00316,55,45-59,Hypertension,chronic,Presolol,Refill,Commercial,78.98,True,False,False,True,3,30,8.4,False,2,15,Fri,1,1,0,False,none,False,$50-100,1
+SYN-NEW-00317,47,45-59,Asthma,chronic,Bronchara,Refill,Commercial,57.99,False,False,False,False,0,30,6.6,True,7,10,Thu,0,2,0,False,none,False,$50-100,0
+SYN-NEW-00318,83,75+,Acute Bacterial Infection,acute,Amoxinol,Refill,Commercial,8.09,False,False,False,False,0,60,4.6,True,1,10,Thu,0,4,0,False,none,False,<$25,0
+SYN-NEW-00319,79,75+,Rheumatoid Arthritis,specialty,Immunara,New,Commercial,259.53,True,True,False,True,18,30,42.0,True,8,20,Thu,1,4,0,True,cost,True,$200+,1
+SYN-NEW-00320,53,45-59,Hypertension,chronic,Cardiozem,Refill,Uninsured,16.35,True,False,False,False,0,30,2.0,True,1,10,Tue,2,4,0,True,cost,False,<$25,2
+SYN-NEW-00321,80,75+,Post-Surgical Pain,acute,Recuparin,New,Medicaid,2.75,True,False,False,False,0,60,5.9,True,1,20,Thu,1,1,0,False,none,False,<$25,1
+SYN-NEW-00322,76,75+,Hyperlipidemia,chronic,Cholestara,New,Uninsured,270.0,False,True,True,False,0,90,3.6,False,2,15,Mon,0,2,0,False,none,False,$200+,0
+SYN-NEW-00323,21,18-29,Acute Bacterial Infection,acute,Amoxinol,Refill,Medicare,15.73,True,False,False,False,0,30,5.8,False,2,15,Thu,2,3,0,False,none,False,<$25,2
+SYN-NEW-00324,45,45-59,Multiple Sclerosis,specialty,Myelara,New,Commercial,132.03,False,True,True,True,12,60,3.4,True,6,15,Tue,1,2,0,True,cost,True,$100-200,1
+SYN-NEW-00325,73,60-74,Asthma,chronic,Bronchara,Refill,Medicare,22.49,False,False,False,False,0,30,2.8,False,1,10,Tue,2,3,0,False,none,False,<$25,2
+SYN-NEW-00326,18,18-29,Major Depressive Disorder,chronic,Moodrex,Refill,Commercial,18.81,False,False,False,True,3,60,9.8,True,3,20,Thu,1,2,0,False,none,False,<$25,1
+SYN-NEW-00327,39,30-44,Asthma,chronic,Bronchara,Refill,Commercial,7.23,False,False,False,True,5,60,16.8,True,1,20,Tue,0,3,1,False,none,False,<$25,0
+SYN-NEW-00328,70,60-74,Multiple Sclerosis,specialty,Myelara,Refill,Medicare,260.88,False,True,True,True,8,30,9.1,False,2,15,Wed,0,5,1,True,cost,True,$200+,0
+SYN-NEW-00329,65,60-74,Acute Bacterial Infection,acute,Cephadex,Refill,Medicare,19.46,True,False,False,False,0,30,11.9,True,3,30,Tue,1,5,0,False,none,False,<$25,1
+SYN-NEW-00330,26,18-29,Hypertension,chronic,Presolol,Refill,Commercial,75.11,True,False,False,True,4,60,3.0,False,5,45,Wed,0,4,0,False,none,False,$50-100,0
+SYN-NEW-00331,34,30-44,Acute Bacterial Infection,acute,Amoxinol,New,Medicare,16.04,True,False,False,False,0,30,3.0,False,0,10,Fri,0,2,1,False,none,False,<$25,0
+SYN-NEW-00332,86,75+,Major Depressive Disorder,chronic,Serenol,Refill,Commercial,23.93,True,False,False,True,4,30,4.9,False,3,30,Tue,1,1,0,False,none,False,<$25,1
+SYN-NEW-00333,51,45-59,Type 2 Diabetes,chronic,Metforal,Refill,Medicare,27.13,False,False,False,False,0,60,2.6,True,3,15,Thu,1,3,1,False,none,False,$25-50,1
+SYN-NEW-00334,58,45-59,Acute Bacterial Infection,acute,Cephadex,Refill,Medicare,14.48,True,False,False,False,0,90,7.1,True,2,45,Tue,1,5,0,False,none,False,<$25,1
+SYN-NEW-00335,60,60-74,Acute Bacterial Infection,acute,Cephadex,New,Medicaid,8.64,True,False,False,False,0,60,0.6,True,1,20,Mon,0,3,0,False,none,False,<$25,0
+SYN-NEW-00336,43,30-44,Major Depressive Disorder,chronic,Serenol,Refill,Commercial,15.35,False,True,True,False,0,60,3.2,True,3,15,Fri,1,5,0,False,none,False,<$25,1
+SYN-NEW-00337,59,45-59,Major Depressive Disorder,chronic,Moodrex,Refill,Medicaid,18.38,False,False,False,False,0,60,9.8,True,5,15,Mon,0,3,0,False,none,False,<$25,0
+SYN-NEW-00338,73,60-74,Multiple Sclerosis,specialty,Neurovex,Refill,Medicare,102.59,True,True,True,True,10,90,11.1,False,5,15,Tue,1,2,0,False,none,False,$100-200,1
+SYN-NEW-00339,88,75+,Rheumatoid Arthritis,specialty,Immunara,New,Medicaid,66.2,True,True,False,True,12,90,2.0,False,3,15,Thu,0,2,1,True,perceived_ineffective,True,$50-100,0
+SYN-NEW-00340,86,75+,Multiple Sclerosis,specialty,Neurovex,Refill,Commercial,130.36,True,True,True,True,3,30,6.3,False,1,30,Mon,2,5,1,True,cost,True,$100-200,2
+SYN-NEW-00341,71,60-74,Post-Surgical Pain,acute,Analgex,Refill,Medicare,7.61,False,False,False,False,0,60,13.5,False,2,20,Mon,1,5,0,False,none,False,<$25,1
+SYN-NEW-00342,47,45-59,Multiple Sclerosis,specialty,Neurovex,New,Medicaid,69.64,False,True,True,True,17,90,18.8,False,1,10,Fri,0,5,1,True,access_logistics,True,$50-100,0
+SYN-NEW-00343,84,75+,Major Depressive Disorder,chronic,Moodrex,New,Commercial,33.89,False,False,False,False,0,60,1.5,True,4,10,Tue,0,2,1,False,none,False,$25-50,0
+SYN-NEW-00344,68,60-74,Rheumatoid Arthritis,specialty,Rheumatex,Refill,Uninsured,433.55,False,True,True,True,16,30,3.7,False,3,15,Fri,2,5,1,True,cost,False,$200+,2
+SYN-NEW-00345,43,30-44,Post-Surgical Pain,acute,Analgex,Refill,Medicare,8.97,True,False,False,False,0,30,7.2,False,1,30,Wed,1,5,1,False,none,False,<$25,1
+SYN-NEW-00346,48,45-59,Psoriasis,specialty,Dermalis,Refill,Uninsured,325.81,True,False,False,True,17,60,4.5,True,0,20,Wed,1,2,0,True,cost,True,$200+,1
+SYN-NEW-00347,64,60-74,Rheumatoid Arthritis,specialty,Immunara,New,Commercial,263.79,False,True,False,False,0,30,20.0,True,0,15,Wed,1,4,0,True,cost,False,$200+,1
+SYN-NEW-00348,26,18-29,Multiple Sclerosis,specialty,Neurovex,Refill,Commercial,27.15,True,False,False,True,13,30,5.9,True,0,10,Thu,1,5,1,False,none,False,$25-50,1
+SYN-NEW-00349,53,45-59,Major Depressive Disorder,chronic,Serenol,Refill,Commercial,68.63,True,False,False,True,4,90,1.8,True,3,20,Mon,1,4,1,False,none,False,$50-100,1
+SYN-NEW-00350,30,30-44,Post-Surgical Pain,acute,Recuparin,Refill,Medicare,27.06,False,False,False,False,0,60,3.2,True,4,10,Tue,0,4,1,False,none,False,$25-50,0
+SYN-NEW-00351,49,45-59,Multiple Sclerosis,specialty,Myelara,New,Medicare,95.65,True,True,True,True,5,30,21.0,True,1,15,Fri,0,2,0,False,none,False,$50-100,0
+SYN-NEW-00352,79,75+,Acute Bacterial Infection,acute,Amoxinol,New,Medicare,8.78,False,False,False,False,0,60,25.9,True,2,10,Tue,0,4,1,False,none,False,<$25,0
+SYN-NEW-00353,66,60-74,Type 2 Diabetes,chronic,Metforal,Refill,Commercial,25.84,True,False,False,True,2,30,8.3,True,2,30,Tue,0,5,2,False,none,False,$25-50,0
+SYN-NEW-00354,50,45-59,Major Depressive Disorder,chronic,Moodrex,Refill,Medicare,45.42,True,False,False,True,6,60,6.4,True,2,15,Tue,0,3,0,False,none,False,$25-50,0
+SYN-NEW-00355,46,45-59,Asthma,chronic,Airoflex,Refill,Commercial,63.43,True,True,False,True,5,30,3.5,True,3,15,Wed,0,3,1,False,none,False,$50-100,0
+SYN-NEW-00356,43,30-44,Major Depressive Disorder,chronic,Serenol,New,Commercial,46.58,True,True,True,False,0,90,0.9,False,3,10,Tue,1,3,1,False,none,False,$25-50,1
+SYN-NEW-00357,30,30-44,Asthma,chronic,Bronchara,Refill,Medicare,77.3,True,False,False,True,5,60,8.6,False,1,30,Mon,1,3,0,False,none,False,$50-100,1
+SYN-NEW-00358,41,30-44,Hyperlipidemia,chronic,Cholestara,New,Commercial,36.1,True,False,False,False,0,30,4.0,True,2,20,Fri,1,2,0,False,none,False,$25-50,1
+SYN-NEW-00359,32,30-44,Multiple Sclerosis,specialty,Myelara,Refill,Commercial,269.8,True,False,False,True,20,60,6.7,False,3,30,Wed,0,5,1,False,none,False,$200+,0
+SYN-NEW-00360,43,30-44,Multiple Sclerosis,specialty,Neurovex,New,Medicare,122.61,False,True,True,True,16,30,3.9,True,1,10,Wed,0,3,0,False,none,False,$100-200,0
+SYN-NEW-00361,23,18-29,Post-Surgical Pain,acute,Analgex,Refill,Commercial,6.75,False,False,False,False,0,90,3.3,True,3,10,Fri,0,2,0,False,none,False,<$25,0
+SYN-NEW-00362,39,30-44,Asthma,chronic,Bronchara,Refill,Commercial,24.81,False,False,False,True,1,90,4.0,True,3,30,Mon,0,1,0,False,none,False,<$25,0
+SYN-NEW-00363,76,75+,Multiple Sclerosis,specialty,Myelara,New,Medicaid,27.86,False,False,False,True,9,30,3.5,True,3,15,Tue,0,5,1,False,none,False,$25-50,0
+SYN-NEW-00364,74,60-74,Hyperlipidemia,chronic,Cholestara,New,Medicaid,12.0,False,False,False,True,1,90,2.1,True,5,15,Thu,1,2,1,False,none,False,<$25,1
+SYN-NEW-00365,63,60-74,Asthma,chronic,Airoflex,New,Commercial,29.4,False,False,False,False,0,90,3.6,True,4,10,Thu,0,5,0,False,none,False,$25-50,0
+SYN-NEW-00366,68,60-74,Rheumatoid Arthritis,specialty,Rheumatex,New,Commercial,191.43,False,True,True,False,0,30,15.8,True,3,20,Tue,0,5,1,False,none,False,$100-200,0
+SYN-NEW-00367,19,18-29,Acute Bacterial Infection,acute,Amoxinol,Refill,Commercial,42.08,False,False,False,True,7,30,4.6,True,2,30,Wed,1,3,1,False,none,False,$25-50,1
+SYN-NEW-00368,60,60-74,Acute Bacterial Infection,acute,Amoxinol,New,Medicaid,2.85,True,False,False,False,0,90,0.5,True,4,10,Fri,1,4,1,False,none,False,<$25,1
+SYN-NEW-00369,72,60-74,Hypertension,chronic,Presolol,Refill,Commercial,16.95,False,False,False,False,0,30,8.4,False,4,10,Tue,0,3,1,False,none,False,<$25,0
+SYN-NEW-00370,75,75+,Asthma,chronic,Bronchara,Refill,Medicare,77.16,True,False,False,False,0,30,10.2,False,1,10,Mon,0,1,0,False,none,False,$50-100,0
+SYN-NEW-00371,87,75+,Rheumatoid Arthritis,specialty,Rheumatex,New,Medicaid,33.34,False,True,True,True,20,90,7.2,True,5,15,Thu,0,5,0,True,access_logistics,True,$25-50,0
+SYN-NEW-00372,26,18-29,Psoriasis,specialty,Dermalis,New,Medicaid,115.58,True,False,False,True,19,30,5.6,True,0,20,Wed,0,3,1,True,cost,False,$100-200,0
+SYN-NEW-00373,55,45-59,Type 2 Diabetes,chronic,Insunova,Refill,Medicare,15.11,True,True,True,False,0,90,8.6,True,4,15,Tue,0,1,0,False,none,False,<$25,0
+SYN-NEW-00374,78,75+,Type 2 Diabetes,chronic,Metforal,Refill,Commercial,8.66,False,False,False,True,6,90,7.7,False,1,20,Mon,0,3,0,False,none,False,<$25,0
+SYN-NEW-00375,20,18-29,Rheumatoid Arthritis,specialty,Rheumatex,New,Medicare,83.88,True,True,True,True,6,90,5.3,False,6,10,Tue,1,4,0,True,perceived_ineffective,True,$50-100,1
+SYN-NEW-00376,35,30-44,Asthma,chronic,Airoflex,Refill,Medicaid,8.44,True,False,False,False,0,90,4.8,False,4,10,Fri,1,5,0,False,none,False,<$25,1
+SYN-NEW-00377,23,18-29,Asthma,chronic,Airoflex,Refill,Uninsured,42.43,False,False,False,False,0,30,10.8,False,1,10,Wed,0,5,0,False,none,False,$25-50,0
+SYN-NEW-00378,26,18-29,Psoriasis,specialty,Dermalis,Refill,Commercial,152.51,False,False,False,True,5,60,3.4,True,5,20,Wed,1,4,0,True,cost,True,$100-200,1
+SYN-NEW-00379,21,18-29,Asthma,chronic,Bronchara,Refill,Commercial,21.41,False,True,True,False,0,60,8.0,False,4,15,Tue,1,2,0,False,none,False,<$25,1
+SYN-NEW-00380,55,45-59,Acute Bacterial Infection,acute,Amoxinol,New,Uninsured,60.87,True,False,False,False,0,60,15.2,True,5,20,Tue,0,4,1,False,none,False,$50-100,0
+SYN-NEW-00381,62,60-74,Acute Bacterial Infection,acute,Cephadex,New,Medicare,2.34,True,False,False,False,0,30,5.6,True,2,15,Tue,1,4,0,False,none,False,<$25,1
+SYN-NEW-00382,44,30-44,Rheumatoid Arthritis,specialty,Rheumatex,New,Commercial,79.2,False,False,False,True,8,30,2.8,False,3,10,Tue,0,4,1,True,cost,False,$50-100,0
+SYN-NEW-00383,27,18-29,Asthma,chronic,Airoflex,Refill,Medicaid,11.26,True,False,False,False,0,90,4.7,False,2,15,Fri,0,5,0,False,none,False,<$25,0
+SYN-NEW-00384,69,60-74,Hypertension,chronic,Presolol,Refill,Medicare,20.15,True,False,False,False,0,60,1.3,True,1,10,Tue,1,3,0,False,none,False,<$25,1
+SYN-NEW-00385,37,30-44,Hyperlipidemia,chronic,Lipatrex,Refill,Commercial,5.11,True,False,False,True,4,90,7.3,False,6,15,Thu,0,4,1,False,none,False,<$25,0
+SYN-NEW-00386,72,60-74,Psoriasis,specialty,Dermalis,Refill,Medicaid,104.03,True,True,True,True,8,30,10.6,False,0,20,Tue,1,4,0,False,none,False,$100-200,1
+SYN-NEW-00387,40,30-44,Hyperlipidemia,chronic,Lipatrex,Refill,Commercial,21.0,False,False,False,True,6,90,9.1,False,1,10,Wed,1,5,0,False,none,False,<$25,1
+SYN-NEW-00388,78,75+,Psoriasis,specialty,Cutinex,Refill,Medicaid,31.29,False,True,False,True,15,60,7.4,False,0,30,Wed,0,1,0,False,none,False,$25-50,0
+SYN-NEW-00389,52,45-59,Hypertension,chronic,Presolol,Refill,Commercial,63.56,False,False,False,False,0,90,8.4,False,0,20,Wed,2,5,0,True,cost,True,$50-100,2
+SYN-NEW-00390,30,30-44,Hyperlipidemia,chronic,Lipatrex,Refill,Uninsured,123.6,True,False,False,False,0,60,6.4,False,0,10,Fri,1,1,0,False,none,False,$100-200,1
+SYN-NEW-00391,29,18-29,Psoriasis,specialty,Cutinex,Refill,Uninsured,589.83,False,False,False,False,0,60,4.9,True,1,10,Fri,0,3,0,True,cost,True,$200+,0
+SYN-NEW-00392,65,60-74,Psoriasis,specialty,Dermalis,New,Medicare,208.55,True,False,False,True,6,30,8.9,False,1,10,Mon,1,5,0,True,cost,False,$200+,1
+SYN-NEW-00393,83,75+,Multiple Sclerosis,specialty,Myelara,New,Medicare,241.59,False,True,True,True,13,30,3.3,True,2,15,Fri,0,1,0,True,cost,True,$200+,0
+SYN-NEW-00394,42,30-44,Post-Surgical Pain,acute,Analgex,Refill,Uninsured,30.55,True,False,False,False,0,60,5.7,False,2,15,Tue,1,4,2,False,none,False,$25-50,1
+SYN-NEW-00395,74,60-74,Psoriasis,specialty,Cutinex,Refill,Commercial,187.92,True,True,True,False,0,30,0.9,False,5,15,Thu,0,4,1,False,none,False,$100-200,0
+SYN-NEW-00396,66,60-74,Major Depressive Disorder,chronic,Serenol,New,Commercial,32.58,True,True,False,False,0,30,9.4,False,1,10,Thu,1,5,3,False,none,False,$25-50,1
+SYN-NEW-00397,48,45-59,Rheumatoid Arthritis,specialty,Rheumatex,Refill,Commercial,225.07,True,True,False,True,6,30,7.9,True,0,20,Tue,1,4,0,True,cost,True,$200+,1
+SYN-NEW-00398,70,60-74,Post-Surgical Pain,acute,Analgex,Refill,Commercial,45.81,True,False,False,False,0,30,9.1,False,4,20,Mon,0,4,0,False,none,False,$25-50,0
+SYN-NEW-00399,64,60-74,Rheumatoid Arthritis,specialty,Immunara,Refill,Medicaid,112.53,True,False,False,False,0,60,16.1,False,2,20,Wed,0,5,1,True,cost,True,$100-200,0
+SYN-NEW-00400,77,75+,Multiple Sclerosis,specialty,Myelara,Refill,Commercial,262.28,True,False,False,False,0,90,6.9,False,1,10,Wed,0,5,0,True,cost,True,$200+,0
+SYN-NEW-00401,77,75+,Rheumatoid Arthritis,specialty,Rheumatex,Refill,Medicare,220.05,True,True,True,True,15,30,9.1,False,1,20,Thu,0,3,1,False,none,False,$200+,0
+SYN-NEW-00402,49,45-59,Asthma,chronic,Airoflex,Refill,Commercial,20.86,False,True,True,False,0,60,7.2,True,4,15,Wed,2,1,1,False,none,False,<$25,2
+SYN-NEW-00403,34,30-44,Type 2 Diabetes,chronic,Metforal,Refill,Commercial,54.93,False,False,False,False,0,90,19.5,True,3,10,Thu,0,2,0,False,none,False,$50-100,0
+SYN-NEW-00404,54,45-59,Rheumatoid Arthritis,specialty,Rheumatex,Refill,Commercial,123.32,False,True,True,True,14,60,5.8,False,3,30,Mon,0,4,0,False,none,False,$100-200,0
+SYN-NEW-00405,25,18-29,Psoriasis,specialty,Dermalis,New,Commercial,152.06,True,True,True,True,14,30,8.5,True,3,10,Tue,0,5,0,False,none,False,$100-200,0
+SYN-NEW-00406,58,45-59,Post-Surgical Pain,acute,Analgex,Refill,Uninsured,8.26,True,False,False,False,0,30,5.4,False,1,15,Wed,1,1,1,False,none,False,<$25,1
+SYN-NEW-00407,70,60-74,Major Depressive Disorder,chronic,Moodrex,New,Medicare,79.72,True,False,False,False,0,60,4.7,False,0,10,Fri,0,4,1,False,none,False,$50-100,0
+SYN-NEW-00408,56,45-59,Asthma,chronic,Airoflex,New,Medicare,25.25,False,False,False,False,0,90,10.1,True,4,20,Mon,0,4,0,False,none,False,$25-50,0
+SYN-NEW-00409,67,60-74,Multiple Sclerosis,specialty,Myelara,Refill,Commercial,230.41,True,False,False,False,0,90,12.4,False,2,10,Thu,1,5,2,True,cost,True,$200+,1
+SYN-NEW-00410,76,75+,Psoriasis,specialty,Cutinex,New,Medicare,117.76,False,False,False,True,3,60,13.4,True,2,10,Tue,0,5,0,False,none,False,$100-200,0
+SYN-NEW-00411,60,60-74,Asthma,chronic,Bronchara,Refill,Commercial,63.79,False,False,False,False,0,30,17.8,False,2,20,Mon,0,4,2,False,none,False,$50-100,0
+SYN-NEW-00412,42,30-44,Acute Bacterial Infection,acute,Cephadex,Refill,Commercial,40.77,False,False,False,False,0,90,4.7,True,0,30,Wed,2,5,1,False,none,False,$25-50,2
+SYN-NEW-00413,64,60-74,Hyperlipidemia,chronic,Lipatrex,Refill,Medicare,13.38,True,False,False,False,0,90,3.4,True,7,30,Thu,0,2,0,False,none,False,<$25,0
+SYN-NEW-00414,79,75+,Asthma,chronic,Airoflex,Refill,Commercial,21.62,False,False,False,True,1,90,2.4,True,2,10,Tue,1,1,0,False,none,False,<$25,1
+SYN-NEW-00415,48,45-59,Rheumatoid Arthritis,specialty,Immunara,New,Commercial,180.72,False,True,True,True,9,30,2.5,True,4,15,Mon,1,2,0,True,cost,True,$100-200,1
+SYN-NEW-00416,29,18-29,Psoriasis,specialty,Dermalis,Refill,Medicaid,49.02,True,False,False,True,6,90,27.7,True,0,10,Wed,0,4,0,False,none,False,$25-50,0
+SYN-NEW-00417,46,45-59,Major Depressive Disorder,chronic,Moodrex,Refill,Medicaid,10.04,True,False,False,False,0,30,5.0,True,1,20,Mon,0,1,0,False,none,False,<$25,0
+SYN-NEW-00418,69,60-74,Hypertension,chronic,Cardiozem,Refill,Medicaid,7.26,False,False,False,True,3,60,4.2,False,1,10,Thu,0,1,0,False,none,False,<$25,0
+SYN-NEW-00419,72,60-74,Asthma,chronic,Airoflex,New,Commercial,14.57,True,True,True,False,0,30,15.1,True,1,30,Wed,0,5,0,False,none,False,<$25,0
+SYN-NEW-00420,70,60-74,Acute Bacterial Infection,acute,Amoxinol,Refill,Commercial,36.65,False,False,False,True,1,90,8.0,False,3,30,Wed,0,3,0,True,side_effects,True,$25-50,0
+SYN-NEW-00421,80,75+,Post-Surgical Pain,acute,Analgex,Refill,Medicaid,2.2,False,False,False,False,0,60,5.2,False,2,20,Mon,0,5,0,False,none,False,<$25,0
+SYN-NEW-00422,60,60-74,Post-Surgical Pain,acute,Recuparin,Refill,Medicaid,7.23,True,False,False,False,0,30,4.9,True,3,10,Fri,1,2,0,False,none,False,<$25,1
+SYN-NEW-00423,59,45-59,Multiple Sclerosis,specialty,Neurovex,Refill,Commercial,148.44,False,False,False,False,0,30,10.5,True,2,15,Mon,0,4,2,False,none,False,$100-200,0
+SYN-NEW-00424,36,30-44,Major Depressive Disorder,chronic,Moodrex,Refill,Medicaid,15.2,False,False,False,False,0,30,8.4,True,0,10,Wed,0,2,1,True,perceived_ineffective,False,<$25,0
+SYN-NEW-00425,65,60-74,Asthma,chronic,Bronchara,Refill,Commercial,69.37,True,False,False,False,0,60,12.8,True,5,20,Tue,1,1,0,False,none,False,$50-100,1
+SYN-NEW-00426,61,60-74,Major Depressive Disorder,chronic,Serenol,Refill,Commercial,67.09,True,False,False,False,0,30,19.7,True,3,10,Wed,0,4,0,False,none,False,$50-100,0
+SYN-NEW-00427,33,30-44,Acute Bacterial Infection,acute,Cephadex,New,Medicare,17.97,False,False,False,False,0,60,13.1,True,3,15,Wed,0,5,2,True,perceived_ineffective,True,<$25,0
+SYN-NEW-00428,33,30-44,Type 2 Diabetes,chronic,Glucotrol-X,Refill,Commercial,39.91,False,True,True,True,3,60,1.1,False,3,15,Thu,0,5,1,False,none,False,$25-50,0
+SYN-NEW-00429,39,30-44,Psoriasis,specialty,Cutinex,Refill,Commercial,239.49,False,True,True,True,3,60,7.2,False,2,30,Wed,0,2,0,True,cost,True,$200+,0
+SYN-NEW-00430,21,18-29,Psoriasis,specialty,Cutinex,Refill,Commercial,151.11,True,True,False,True,16,90,21.3,True,3,15,Fri,0,2,0,True,cost,True,$100-200,0
+SYN-NEW-00431,84,75+,Rheumatoid Arthritis,specialty,Immunara,New,Medicare,99.0,True,True,True,True,12,60,2.8,True,3,15,Tue,0,3,1,False,none,False,$50-100,0
+SYN-NEW-00432,73,60-74,Post-Surgical Pain,acute,Analgex,New,Commercial,29.99,True,False,False,False,0,30,13.9,True,1,15,Wed,2,5,1,False,none,False,$25-50,2
+SYN-NEW-00433,40,30-44,Hyperlipidemia,chronic,Cholestara,Refill,Medicare,32.74,False,True,True,False,0,30,0.1,True,2,20,Fri,1,5,0,False,none,False,$25-50,1
+SYN-NEW-00434,47,45-59,Multiple Sclerosis,specialty,Neurovex,Refill,Medicare,151.51,True,False,False,True,8,60,18.0,True,2,10,Mon,0,4,0,False,none,False,$100-200,0
+SYN-NEW-00435,83,75+,Major Depressive Disorder,chronic,Moodrex,Refill,Medicare,37.69,False,False,False,False,0,30,6.1,True,1,45,Tue,1,3,0,False,none,False,$25-50,1
+SYN-NEW-00436,35,30-44,Acute Bacterial Infection,acute,Amoxinol,Refill,Commercial,21.12,True,False,False,False,0,30,6.5,True,2,20,Mon,1,4,0,False,none,False,<$25,1
+SYN-NEW-00437,28,18-29,Post-Surgical Pain,acute,Recuparin,New,Commercial,4.9,False,False,False,False,0,30,4.1,True,2,10,Thu,1,3,1,False,none,False,<$25,1
+SYN-NEW-00438,69,60-74,Psoriasis,specialty,Cutinex,Refill,Medicare,217.38,True,False,False,True,20,60,11.3,False,1,10,Wed,2,2,0,True,cost,True,$200+,2
+SYN-NEW-00439,59,45-59,Hypertension,chronic,Vaslorin,Refill,Commercial,29.44,False,False,False,False,0,60,4.3,True,1,15,Mon,1,4,2,False,none,False,$25-50,1
+SYN-NEW-00440,44,30-44,Post-Surgical Pain,acute,Analgex,Refill,Medicare,20.01,True,False,False,False,0,90,4.0,True,2,30,Mon,0,5,2,False,none,False,<$25,0
+SYN-NEW-00441,25,18-29,Post-Surgical Pain,acute,Recuparin,New,Medicaid,2.28,True,False,False,False,0,90,4.9,True,2,15,Tue,0,1,1,False,none,False,<$25,0
+SYN-NEW-00442,59,45-59,Asthma,chronic,Bronchara,New,Commercial,46.36,True,True,True,False,0,90,4.5,False,2,30,Tue,0,5,1,False,none,False,$25-50,0
+SYN-NEW-00443,33,30-44,Multiple Sclerosis,specialty,Myelara,Refill,Commercial,152.73,True,True,True,True,18,90,6.6,True,1,15,Wed,2,4,1,False,none,False,$100-200,2
+SYN-NEW-00444,40,30-44,Psoriasis,specialty,Cutinex,Refill,Medicare,63.59,True,True,False,True,16,30,5.6,False,3,20,Mon,0,3,0,False,none,False,$50-100,0
+SYN-NEW-00445,63,60-74,Asthma,chronic,Airoflex,Refill,Commercial,20.67,True,False,False,False,0,30,5.6,True,2,15,Mon,0,1,0,False,none,False,<$25,0
+SYN-NEW-00446,28,18-29,Major Depressive Disorder,chronic,Serenol,Refill,Medicaid,22.11,True,False,False,True,4,30,1.1,False,2,15,Mon,0,1,0,False,none,False,<$25,0
+SYN-NEW-00447,39,30-44,Rheumatoid Arthritis,specialty,Rheumatex,Refill,Medicare,151.36,False,True,False,False,0,30,3.3,False,4,15,Mon,1,3,0,True,cost,True,$100-200,1
+SYN-NEW-00448,33,30-44,Major Depressive Disorder,chronic,Serenol,New,Medicaid,23.21,True,False,False,False,0,30,5.2,True,5,10,Mon,0,1,1,False,none,False,<$25,0
+SYN-NEW-00449,53,45-59,Hypertension,chronic,Presolol,Refill,Medicaid,6.44,False,False,False,False,0,30,4.0,True,3,45,Mon,0,5,2,False,none,False,<$25,0
+SYN-NEW-00450,38,30-44,Multiple Sclerosis,specialty,Myelara,Refill,Commercial,149.15,True,True,False,True,17,30,12.1,True,2,10,Mon,0,3,0,True,cost,True,$100-200,0
+SYN-NEW-00451,86,75+,Hypertension,chronic,Cardiozem,Refill,Commercial,14.44,True,False,False,False,0,60,3.8,True,0,30,Mon,1,5,0,False,none,False,<$25,1
+SYN-NEW-00452,54,45-59,Hyperlipidemia,chronic,Lipatrex,Refill,Commercial,21.29,True,True,False,False,0,30,16.7,False,2,10,Tue,0,1,1,False,none,False,<$25,0
+SYN-NEW-00453,20,18-29,Hypertension,chronic,Cardiozem,Refill,Medicare,47.76,False,False,False,True,7,30,6.1,False,2,10,Wed,1,3,2,False,none,False,$25-50,1
+SYN-NEW-00454,64,60-74,Multiple Sclerosis,specialty,Myelara,Refill,Medicare,340.05,True,False,False,False,0,60,6.3,True,7,20,Thu,1,1,0,True,cost,True,$200+,1
+SYN-NEW-00455,83,75+,Multiple Sclerosis,specialty,Myelara,New,Medicaid,38.17,False,True,True,True,19,30,7.6,False,2,10,Thu,0,3,0,False,none,False,$25-50,0
+SYN-NEW-00456,87,75+,Asthma,chronic,Airoflex,Refill,Commercial,41.51,True,True,False,False,0,90,9.3,False,1,10,Fri,0,1,0,False,none,False,$25-50,0
+SYN-NEW-00457,69,60-74,Hyperlipidemia,chronic,Lipatrex,New,Medicare,28.26,False,True,False,True,1,60,6.2,True,2,20,Tue,0,1,0,False,none,False,$25-50,0
+SYN-NEW-00458,60,60-74,Post-Surgical Pain,acute,Recuparin,Refill,Commercial,13.86,True,True,False,False,0,30,14.7,True,4,10,Wed,0,5,1,False,none,False,<$25,0
+SYN-NEW-00459,31,30-44,Major Depressive Disorder,chronic,Serenol,New,Commercial,66.12,False,False,False,True,6,90,7.0,True,1,15,Mon,1,2,0,True,side_effects,True,$50-100,1
+SYN-NEW-00460,87,75+,Major Depressive Disorder,chronic,Moodrex,Refill,Medicare,12.8,False,False,False,False,0,90,7.9,True,1,20,Thu,0,5,1,False,none,False,<$25,0
+SYN-NEW-00461,33,30-44,Type 2 Diabetes,chronic,Glucotrol-X,Refill,Commercial,55.47,False,True,True,True,4,60,9.7,True,4,20,Thu,0,4,0,False,none,False,$50-100,0
+SYN-NEW-00462,30,30-44,Hypertension,chronic,Vaslorin,New,Commercial,31.44,True,True,True,True,3,60,7.3,True,0,10,Fri,0,3,0,False,none,False,$25-50,0
+SYN-NEW-00463,36,30-44,Rheumatoid Arthritis,specialty,Rheumatex,Refill,Commercial,225.89,True,True,True,True,18,60,4.0,True,2,15,Tue,0,3,0,True,cost,True,$200+,0
+SYN-NEW-00464,24,18-29,Multiple Sclerosis,specialty,Neurovex,Refill,Commercial,184.6,False,True,True,True,8,30,4.6,True,3,10,Tue,0,1,0,False,none,False,$100-200,0
+SYN-NEW-00465,61,60-74,Rheumatoid Arthritis,specialty,Immunara,Refill,Commercial,157.87,False,False,False,False,0,60,12.5,True,1,45,Tue,0,2,0,False,none,False,$100-200,0
+SYN-NEW-00466,25,18-29,Asthma,chronic,Bronchara,Refill,Commercial,13.38,True,True,False,False,0,60,9.6,True,3,10,Thu,0,3,1,False,none,False,<$25,0
+SYN-NEW-00467,58,45-59,Acute Bacterial Infection,acute,Cephadex,Refill,Medicare,7.85,True,False,False,False,0,60,7.6,False,3,15,Fri,2,3,0,False,none,False,<$25,2
+SYN-NEW-00468,46,45-59,Hyperlipidemia,chronic,Lipatrex,Refill,Commercial,52.62,True,False,False,True,6,30,6.8,True,0,15,Mon,0,1,0,False,none,False,$50-100,0
+SYN-NEW-00469,81,75+,Asthma,chronic,Airoflex,Refill,Medicare,29.41,False,False,False,False,0,60,10.8,False,4,10,Fri,1,3,0,False,none,False,$25-50,1
+SYN-NEW-00470,44,30-44,Major Depressive Disorder,chronic,Serenol,Refill,Medicare,27.6,False,True,True,False,0,60,3.4,False,4,30,Wed,2,4,3,False,none,False,$25-50,2
+SYN-NEW-00471,21,18-29,Post-Surgical Pain,acute,Recuparin,Refill,Medicare,17.48,True,False,False,False,0,60,2.6,True,1,10,Mon,0,3,0,False,none,False,<$25,0
+SYN-NEW-00472,75,75+,Rheumatoid Arthritis,specialty,Immunara,Refill,Commercial,131.34,False,True,True,True,10,30,11.3,False,2,45,Mon,0,4,0,False,none,False,$100-200,0
+SYN-NEW-00473,25,18-29,Asthma,chronic,Bronchara,Refill,Commercial,65.76,True,False,False,False,0,30,1.1,True,3,20,Wed,0,4,0,False,none,False,$50-100,0
+SYN-NEW-00474,20,18-29,Post-Surgical Pain,acute,Recuparin,Refill,Commercial,1.94,True,False,False,False,0,60,4.6,False,2,10,Mon,1,2,0,False,none,False,<$25,1
+SYN-NEW-00475,38,30-44,Type 2 Diabetes,chronic,Metforal,Refill,Commercial,40.7,True,True,True,False,0,30,0.9,True,3,10,Mon,2,5,1,False,none,False,$25-50,2
+SYN-NEW-00476,60,60-74,Post-Surgical Pain,acute,Recuparin,Refill,Commercial,29.42,False,False,False,False,0,30,5.5,True,3,10,Tue,2,3,0,False,none,False,$25-50,2
+SYN-NEW-00477,77,75+,Asthma,chronic,Airoflex,Refill,Medicaid,9.95,True,False,False,True,2,60,3.2,True,0,30,Mon,0,5,2,False,none,False,<$25,0
+SYN-NEW-00478,88,75+,Post-Surgical Pain,acute,Recuparin,Refill,Commercial,6.92,False,False,False,False,0,60,1.7,True,2,20,Fri,0,1,0,False,none,False,<$25,0
+SYN-NEW-00479,55,45-59,Multiple Sclerosis,specialty,Myelara,Refill,Medicare,264.83,False,True,False,True,8,30,6.3,False,3,20,Wed,2,1,0,True,cost,True,$200+,2
+SYN-NEW-00480,42,30-44,Asthma,chronic,Bronchara,Refill,Commercial,31.68,True,True,True,False,0,30,2.2,True,2,15,Mon,1,1,0,False,none,False,$25-50,1
+SYN-NEW-00481,72,60-74,Psoriasis,specialty,Cutinex,Refill,Medicare,310.04,True,True,True,True,14,30,2.9,True,3,10,Mon,0,2,0,False,none,False,$200+,0
+SYN-NEW-00482,55,45-59,Acute Bacterial Infection,acute,Cephadex,New,Commercial,8.92,True,False,False,False,0,90,4.9,False,4,45,Mon,0,2,0,False,none,False,<$25,0
+SYN-NEW-00483,84,75+,Asthma,chronic,Bronchara,Refill,Commercial,22.16,True,False,False,False,0,30,12.4,False,2,15,Mon,0,1,0,False,none,False,<$25,0
+SYN-NEW-00484,62,60-74,Rheumatoid Arthritis,specialty,Rheumatex,New,Commercial,323.34,False,False,False,True,12,30,18.2,True,4,10,Fri,0,2,0,True,cost,True,$200+,0
+SYN-NEW-00485,30,30-44,Asthma,chronic,Airoflex,Refill,Commercial,49.83,True,True,True,True,6,60,5.4,True,1,10,Thu,0,1,0,False,none,False,$25-50,0
+SYN-NEW-00486,62,60-74,Rheumatoid Arthritis,specialty,Rheumatex,Refill,Medicare,307.74,False,True,True,True,11,30,7.6,True,4,10,Fri,1,2,0,True,cost,False,$200+,1
+SYN-NEW-00487,25,18-29,Acute Bacterial Infection,acute,Cephadex,Refill,Medicaid,8.04,False,False,False,True,4,30,2.1,False,5,15,Wed,0,3,1,True,side_effects,False,<$25,0
+SYN-NEW-00488,57,45-59,Post-Surgical Pain,acute,Analgex,New,Medicaid,5.12,True,False,False,False,0,30,1.7,True,1,20,Wed,0,3,1,False,none,False,<$25,0
+SYN-NEW-00489,59,45-59,Acute Bacterial Infection,acute,Amoxinol,New,Medicare,12.92,False,False,False,False,0,90,3.6,False,3,10,Fri,0,2,1,False,none,False,<$25,0
+SYN-NEW-00490,47,45-59,Acute Bacterial Infection,acute,Cephadex,Refill,Medicare,4.29,False,False,False,False,0,30,9.9,True,3,15,Mon,0,4,1,False,none,False,<$25,0
+SYN-NEW-00491,79,75+,Rheumatoid Arthritis,specialty,Rheumatex,New,Medicare,109.92,False,True,True,True,20,30,13.1,True,5,20,Thu,0,5,0,False,none,False,$100-200,0
+SYN-NEW-00492,46,45-59,Psoriasis,specialty,Cutinex,Refill,Medicare,56.15,True,True,False,True,14,30,4.4,True,2,15,Fri,0,3,1,True,side_effects,True,$50-100,0
+SYN-NEW-00493,23,18-29,Major Depressive Disorder,chronic,Serenol,Refill,Commercial,16.15,False,False,False,False,0,60,1.2,True,0,10,Mon,1,3,0,False,none,False,<$25,1
+SYN-NEW-00494,27,18-29,Asthma,chronic,Airoflex,Refill,Commercial,26.96,False,True,True,False,0,30,2.6,True,2,45,Tue,0,5,0,False,none,False,$25-50,0
+SYN-NEW-00495,73,60-74,Type 2 Diabetes,chronic,Glucotrol-X,Refill,Medicare,56.11,False,True,False,False,0,60,2.8,True,3,15,Fri,0,3,1,False,none,False,$50-100,0
+SYN-NEW-00496,75,75+,Multiple Sclerosis,specialty,Myelara,New,Commercial,208.06,True,True,False,True,19,30,3.9,True,1,15,Wed,0,3,0,False,none,False,$200+,0
+SYN-NEW-00497,64,60-74,Hyperlipidemia,chronic,Lipatrex,Refill,Medicare,43.48,True,False,False,True,2,30,2.5,False,1,15,Fri,1,2,0,False,none,False,$25-50,1
+SYN-NEW-00498,84,75+,Acute Bacterial Infection,acute,Cephadex,Refill,Medicare,5.85,True,False,False,False,0,60,4.6,False,3,30,Mon,0,2,1,False,none,False,<$25,0
+SYN-NEW-00499,62,60-74,Hyperlipidemia,chronic,Cholestara,Refill,Commercial,36.49,False,False,False,False,0,30,7.4,False,2,30,Tue,0,1,0,False,none,False,$25-50,0
+SYN-NEW-00500,29,18-29,Type 2 Diabetes,chronic,Insunova,New,Medicare,44.62,True,False,False,False,0,90,11.2,True,3,30,Fri,2,1,0,False,none,False,$25-50,2
