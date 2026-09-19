@@ -1,0 +1,8328 @@
+[
+  {
+    "patient_id": "SYN-00052",
+    "age": 32,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.9217
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4143
+      },
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.293
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00191",
+    "age": 67,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.5331
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3069
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.2632
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00205",
+    "age": 50,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.1867
+      },
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.4037
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3442
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00456",
+    "age": 57,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.3372
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5365
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3883
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00524",
+    "age": 77,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.3687
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.375
+      },
+      {
+        "factor": "age",
+        "impact": -0.3577
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00538",
+    "age": 26,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.5882
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4027
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.3645
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00566",
+    "age": 35,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.4149
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.4724
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.2805
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00609",
+    "age": 87,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.9756
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.5157
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4263
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00749",
+    "age": 40,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.7649
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3754
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.3632
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00759",
+    "age": 27,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.0546
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3952
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.2838
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00781",
+    "age": 81,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.8775
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4159
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.4132
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00834",
+    "age": 28,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.2125
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3825
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3213
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00925",
+    "age": 35,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.6253
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4325
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.4119
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00959",
+    "age": 87,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.7329
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.2623
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.2131
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00976",
+    "age": 34,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.6452
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3557
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.2482
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01044",
+    "age": 44,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.5244
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4498
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.3635
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01106",
+    "age": 31,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.2046
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.3475
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3171
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01176",
+    "age": 42,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.3005
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.352
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.3188
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01259",
+    "age": 56,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.7543
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.423
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4199
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01407",
+    "age": 42,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.54
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.3994
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.2981
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01410",
+    "age": 38,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.4198
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3468
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.2654
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01450",
+    "age": 25,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.6716
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4364
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4357
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01460",
+    "age": 55,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.5921
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3719
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.2565
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01485",
+    "age": 47,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.376
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.3202
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.2678
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01487",
+    "age": 29,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.1615
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.478
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3995
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01771",
+    "age": 42,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.5855
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5533
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4367
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01780",
+    "age": 67,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.3561
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3894
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.3682
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01886",
+    "age": 30,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.3656
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.4111
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3079
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01995",
+    "age": 72,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 99,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.4836
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5368
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3956
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00007",
+    "age": 24,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.2756
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3432
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.2857
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00130",
+    "age": 63,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.7477
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4898
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3324
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00157",
+    "age": 27,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.5081
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4388
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4194
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00279",
+    "age": 22,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.61
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4033
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.3871
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00350",
+    "age": 29,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.1255
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4552
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4491
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00395",
+    "age": 69,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.4108
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3403
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.323
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00445",
+    "age": 54,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.6881
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.4332
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.3302
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00476",
+    "age": 74,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.6183
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3953
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3671
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00477",
+    "age": 78,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.4065
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3574
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3235
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00540",
+    "age": 19,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.2956
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.404
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.39
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00569",
+    "age": 64,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.3792
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.4879
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3884
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00590",
+    "age": 78,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.4116
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3595
+      },
+      {
+        "factor": "age",
+        "impact": -0.2815
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00661",
+    "age": 30,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.4917
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3526
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3194
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00696",
+    "age": 36,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.7388
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5218
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4307
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00924",
+    "age": 28,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.6527
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.2941
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": -0.2188
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00952",
+    "age": 39,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.3801
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4787
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4252
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01062",
+    "age": 67,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.6662
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3462
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3133
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01063",
+    "age": 28,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.6068
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4528
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4151
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01137",
+    "age": 70,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.4612
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4156
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.3621
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01188",
+    "age": 61,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.4058
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5517
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.3077
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01272",
+    "age": 25,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.6464
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5586
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.501
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01369",
+    "age": 87,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.4843
+      },
+      {
+        "factor": "age",
+        "impact": -0.4144
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.345
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01503",
+    "age": 34,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.4711
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5204
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3706
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01597",
+    "age": 65,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.0829
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.6369
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.3673
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01624",
+    "age": 19,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.5086
+      },
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.5295
+      },
+      {
+        "factor": "age",
+        "impact": 0.4483
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01677",
+    "age": 28,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.6692
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3912
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3178
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01709",
+    "age": 35,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.2742
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.4497
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3645
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01735",
+    "age": 80,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.3295
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.4794
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3754
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01770",
+    "age": 32,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.7134
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3412
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3251
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01817",
+    "age": 34,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.7324
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4309
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.3863
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01859",
+    "age": 55,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.6242
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4867
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3783
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01861",
+    "age": 71,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.6287
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3403
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": -0.2227
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01867",
+    "age": 25,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.1139
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.4906
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3484
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01927",
+    "age": 43,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 98,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.5421
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3578
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.2545
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00029",
+    "age": 57,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.4687
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5294
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.2312
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00139",
+    "age": 43,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.6252
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.4989
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3239
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00405",
+    "age": 53,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.0643
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4394
+      },
+      {
+        "factor": "concurrent_medication_count",
+        "impact": 0.2781
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00407",
+    "age": 49,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.2688
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5374
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.441
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00416",
+    "age": 66,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.0486
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4885
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.3878
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00546",
+    "age": 21,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.3419
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4324
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3556
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00586",
+    "age": 84,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.5907
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4784
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.3734
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00595",
+    "age": 41,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.2334
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5817
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.2884
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00753",
+    "age": 24,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.7829
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.473
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3715
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00884",
+    "age": 29,
+    "condition": "Type 2 Diabetes",
+    "medication_name": "Glucotrol-X",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.7666
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.4493
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.2545
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00921",
+    "age": 80,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.4767
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.7273
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4337
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01337",
+    "age": 63,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.6165
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4337
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.2701
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01574",
+    "age": 76,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.7391
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4217
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3985
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01644",
+    "age": 60,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.267
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.488
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4525
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01756",
+    "age": 40,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.5538
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5384
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.2348
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01809",
+    "age": 24,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.5967
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.6119
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4224
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01844",
+    "age": 78,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.6411
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4761
+      },
+      {
+        "factor": "age",
+        "impact": -0.3796
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01948",
+    "age": 84,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.4739
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3956
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3765
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01989",
+    "age": 33,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 97,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.1743
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4316
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.401
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00062",
+    "age": 71,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.4566
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4516
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3514
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00069",
+    "age": 23,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.8276
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5669
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4438
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00076",
+    "age": 52,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.6739
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.4855
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3476
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00224",
+    "age": 32,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.5503
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.7701
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.3071
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00283",
+    "age": 66,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.5683
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5292
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.3262
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00432",
+    "age": 71,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.2371
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4283
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.379
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00537",
+    "age": 50,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.7909
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5112
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.4622
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00549",
+    "age": 55,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.1507
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3275
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.2811
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00626",
+    "age": 34,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.2883
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.6022
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3427
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00891",
+    "age": 25,
+    "condition": "Hypertension",
+    "medication_name": "Vaslorin",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.6874
+      },
+      {
+        "factor": "medication_name",
+        "impact": -1.0605
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.5128
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00892",
+    "age": 69,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.6181
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.2575
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": -0.238
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00916",
+    "age": 51,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.1722
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.4952
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4573
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00977",
+    "age": 24,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.7985
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4243
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3776
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01021",
+    "age": 22,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.1605
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.6334
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.3451
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01023",
+    "age": 80,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.8339
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3242
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3179
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01125",
+    "age": 78,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.1085
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.4109
+      },
+      {
+        "factor": "age",
+        "impact": -0.381
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01131",
+    "age": 47,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.5374
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3916
+      },
+      {
+        "factor": "days_supply",
+        "impact": -0.2348
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01218",
+    "age": 70,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.5719
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.6947
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.346
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01244",
+    "age": 53,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.5929
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.5357
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3381
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01248",
+    "age": 51,
+    "condition": "Type 2 Diabetes",
+    "medication_name": "Insunova",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.9973
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5689
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.3692
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01373",
+    "age": 50,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.1201
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.507
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.3094
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01469",
+    "age": 73,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.3766
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5298
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4083
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01498",
+    "age": 74,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.677
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5762
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.4565
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01558",
+    "age": 73,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.2927
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4399
+      },
+      {
+        "factor": "appointment_length_minutes",
+        "impact": -0.2846
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01567",
+    "age": 87,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.9564
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3802
+      },
+      {
+        "factor": "age",
+        "impact": -0.3719
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01751",
+    "age": 85,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.8097
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3442
+      },
+      {
+        "factor": "age",
+        "impact": -0.2657
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01762",
+    "age": 47,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.4509
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3897
+      },
+      {
+        "factor": "appointment_length_minutes",
+        "impact": -0.3641
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01825",
+    "age": 73,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.6133
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4046
+      },
+      {
+        "factor": "missed_visits_count",
+        "impact": 0.2801
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01914",
+    "age": 73,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.2425
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.672
+      },
+      {
+        "factor": "appointment_length_minutes",
+        "impact": -0.3712
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01957",
+    "age": 56,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.4266
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.52
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3736
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01981",
+    "age": 65,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 96,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.5903
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.7099
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4124
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00030",
+    "age": 49,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.8653
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4998
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3046
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00070",
+    "age": 51,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.9985
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5232
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4696
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00077",
+    "age": 41,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.4802
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.6863
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.3498
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00118",
+    "age": 28,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.225
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5971
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4372
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00145",
+    "age": 89,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.5275
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3915
+      },
+      {
+        "factor": "age",
+        "impact": -0.3185
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00290",
+    "age": 52,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.7495
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.559
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5257
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00292",
+    "age": 37,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.3501
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4688
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4561
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00415",
+    "age": 19,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.3101
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5241
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5215
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00593",
+    "age": 35,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.5308
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5295
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.4305
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00715",
+    "age": 84,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.2538
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3551
+      },
+      {
+        "factor": "appointment_length_minutes",
+        "impact": -0.3383
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00800",
+    "age": 49,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.4725
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5862
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.2956
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00860",
+    "age": 75,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.7161
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4868
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4356
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00975",
+    "age": 28,
+    "condition": "Type 2 Diabetes",
+    "medication_name": "Insunova",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "deductible_met",
+        "impact": 0.6045
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.5601
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.4634
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00997",
+    "age": 55,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.5211
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4736
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3889
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01017",
+    "age": 45,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.5784
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.5623
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4899
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01129",
+    "age": 58,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.8358
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4167
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.2225
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01143",
+    "age": 85,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.7996
+      },
+      {
+        "factor": "age",
+        "impact": -0.4551
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4161
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01144",
+    "age": 78,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.5721
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5835
+      },
+      {
+        "factor": "age",
+        "impact": -0.401
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01164",
+    "age": 56,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.0751
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.468
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3515
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01220",
+    "age": 49,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.5095
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4682
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4509
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01236",
+    "age": 42,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.5254
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5353
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3199
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01461",
+    "age": 74,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.4029
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4589
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3772
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01510",
+    "age": 67,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.6358
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5938
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4242
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01542",
+    "age": 35,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.4834
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3582
+      },
+      {
+        "factor": "appointment_length_minutes",
+        "impact": -0.3156
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01552",
+    "age": 79,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.2462
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3711
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3062
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01601",
+    "age": 39,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.3337
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.619
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5299
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01653",
+    "age": 21,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.5357
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5687
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.3981
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01659",
+    "age": 78,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.3388
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5047
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4036
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01695",
+    "age": 29,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.8443
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.6798
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4117
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01814",
+    "age": 53,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.3984
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4402
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3856
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01842",
+    "age": 24,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.3411
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.8075
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.3619
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01854",
+    "age": 29,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 95,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.3404
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.5654
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5412
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00216",
+    "age": 37,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.109
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4896
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4457
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00298",
+    "age": 49,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.7042
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.7629
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.3789
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00303",
+    "age": 18,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.2972
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3334
+      },
+      {
+        "factor": "appointment_length_minutes",
+        "impact": -0.3331
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00313",
+    "age": 26,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.2046
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.39
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.2947
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00345",
+    "age": 83,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.1481
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3989
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.343
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00357",
+    "age": 28,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.6114
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3508
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.26
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00374",
+    "age": 44,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.8203
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.6795
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.6201
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00767",
+    "age": 62,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.2549
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5468
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3902
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00980",
+    "age": 58,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.9501
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3571
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3271
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01081",
+    "age": 84,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.6984
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5277
+      },
+      {
+        "factor": "age",
+        "impact": -0.4695
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01286",
+    "age": 21,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.0147
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4868
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4306
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01374",
+    "age": 48,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.3457
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.2956
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.2816
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01638",
+    "age": 62,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.0397
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5002
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4297
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01652",
+    "age": 19,
+    "condition": "Type 2 Diabetes",
+    "medication_name": "Insunova",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.0676
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.6031
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.4117
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01656",
+    "age": 34,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.5786
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5579
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4295
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01728",
+    "age": 59,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.4225
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3962
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3383
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01737",
+    "age": 54,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.829
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5867
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.308
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01738",
+    "age": 25,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 94,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.8507
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4985
+      },
+      {
+        "factor": "missed_visits_count",
+        "impact": -0.2354
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00217",
+    "age": 23,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 93,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.3017
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5188
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4563
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00341",
+    "age": 63,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 93,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.5456
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.326
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.2819
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00411",
+    "age": 30,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 93,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.3331
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.6509
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4133
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00578",
+    "age": 55,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 93,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.5324
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.5142
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4721
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01041",
+    "age": 68,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 93,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.5948
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5567
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3794
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01090",
+    "age": 28,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 93,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.975
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4475
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4432
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01139",
+    "age": 71,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 93,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.3687
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4234
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.2474
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01173",
+    "age": 46,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 93,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.4809
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.4972
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4833
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01215",
+    "age": 23,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 93,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.7743
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5648
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.518
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01434",
+    "age": 58,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 93,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.6866
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.522
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4472
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01512",
+    "age": 34,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 93,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.8178
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.5366
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5174
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01616",
+    "age": 30,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 93,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.523
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.4885
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.4553
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-02000",
+    "age": 38,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 93,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.13
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.652
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.4603
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00127",
+    "age": 23,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 92,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.7136
+      },
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.5797
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.5107
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00163",
+    "age": 47,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 92,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.5383
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4497
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.4453
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00461",
+    "age": 70,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 92,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.6398
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4958
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3653
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00811",
+    "age": 21,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 92,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.4147
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4657
+      },
+      {
+        "factor": "appointment_length_minutes",
+        "impact": -0.3145
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00915",
+    "age": 60,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 92,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.4876
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.4727
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3887
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01092",
+    "age": 50,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 92,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.2136
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4566
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.2496
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01454",
+    "age": 35,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 92,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.9483
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5897
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.38
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01679",
+    "age": 84,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 92,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.4783
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4101
+      },
+      {
+        "factor": "age",
+        "impact": -0.3843
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01760",
+    "age": 59,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 92,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.4413
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.772
+      },
+      {
+        "factor": "appointment_length_minutes",
+        "impact": -0.3747
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00307",
+    "age": 39,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 91,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.1643
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.6803
+      },
+      {
+        "factor": "appointment_length_minutes",
+        "impact": -0.3824
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00464",
+    "age": 48,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 91,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.5573
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5306
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.2942
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00654",
+    "age": 75,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 91,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.1882
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.6062
+      },
+      {
+        "factor": "age",
+        "impact": -0.3562
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00680",
+    "age": 85,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 91,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.9905
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.5101
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.5065
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00737",
+    "age": 70,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 91,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.5953
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5587
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5385
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00954",
+    "age": 48,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 91,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.8489
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4165
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3585
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01098",
+    "age": 72,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 91,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.7856
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4668
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4571
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00156",
+    "age": 65,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 90,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.5003
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.4756
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.4236
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00251",
+    "age": 30,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 90,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.6122
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4646
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.396
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00391",
+    "age": 71,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 90,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.3711
+      },
+      {
+        "factor": "appointment_length_minutes",
+        "impact": -0.3476
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3424
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00435",
+    "age": 49,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 90,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.0613
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4556
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4272
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00467",
+    "age": 29,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 90,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.5492
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4526
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4073
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00518",
+    "age": 22,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 90,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.6349
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5387
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3578
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01007",
+    "age": 79,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 90,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.4911
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4884
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4691
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01311",
+    "age": 55,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 90,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.9419
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4622
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.379
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01669",
+    "age": 56,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 90,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.8715
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.366
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3249
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00137",
+    "age": 61,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 89,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.2215
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5165
+      },
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.4876
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00154",
+    "age": 39,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 89,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.5485
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5748
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.2622
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00354",
+    "age": 49,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 89,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.5256
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5047
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.5034
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00564",
+    "age": 31,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 89,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.2624
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5467
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5406
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00587",
+    "age": 67,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 89,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.7518
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.5017
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4261
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00622",
+    "age": 52,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 89,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.8618
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5982
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5563
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00743",
+    "age": 63,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 89,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.3196
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5525
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4231
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01427",
+    "age": 66,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 89,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.6373
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.4726
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3685
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01521",
+    "age": 80,
+    "condition": "Major Depressive Disorder",
+    "medication_name": "Serenol",
+    "risk_score": 89,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.8046
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.5368
+      },
+      {
+        "factor": "medication_name",
+        "impact": -0.4322
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01594",
+    "age": 19,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 89,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.6882
+      },
+      {
+        "factor": "missed_visits_count",
+        "impact": 0.4759
+      },
+      {
+        "factor": "age",
+        "impact": 0.4613
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01658",
+    "age": 80,
+    "condition": "Asthma",
+    "medication_name": "Bronchara",
+    "risk_score": 89,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.717
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.774
+      },
+      {
+        "factor": "medication_name",
+        "impact": -0.6998
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01827",
+    "age": 25,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 89,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.2472
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4864
+      },
+      {
+        "factor": "appointment_length_minutes",
+        "impact": -0.3494
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00026",
+    "age": 64,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 88,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.2858
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.6378
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4355
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00306",
+    "age": 28,
+    "condition": "Type 2 Diabetes",
+    "medication_name": "Insunova",
+    "risk_score": 88,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": -0.953
+      },
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.6516
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.6081
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00544",
+    "age": 30,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 88,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.4995
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4049
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.384
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00588",
+    "age": 25,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 88,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.6548
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.6228
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.5503
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00688",
+    "age": 60,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 88,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.5449
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.483
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.4567
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00920",
+    "age": 63,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 88,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.5076
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4551
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4164
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01584",
+    "age": 47,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 88,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "deductible_met",
+        "impact": -0.6814
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.5629
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.5402
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01777",
+    "age": 41,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 88,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.2498
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.7715
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4684
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01942",
+    "age": 36,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 88,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.7024
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4754
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3711
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00059",
+    "age": 71,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 87,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.5489
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.643
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.501
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00271",
+    "age": 39,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 87,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.8066
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5879
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.4737
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00539",
+    "age": 56,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 87,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.2206
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.6866
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4745
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00802",
+    "age": 39,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 87,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.1521
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5469
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.4515
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00876",
+    "age": 54,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 87,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.5256
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3532
+      },
+      {
+        "factor": "appointment_length_minutes",
+        "impact": -0.2927
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01300",
+    "age": 20,
+    "condition": "Major Depressive Disorder",
+    "medication_name": "Moodrex",
+    "risk_score": 87,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.8641
+      },
+      {
+        "factor": "medication_name",
+        "impact": -0.644
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.5449
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01563",
+    "age": 35,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 87,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.7873
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4164
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.323
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01579",
+    "age": 26,
+    "condition": "Major Depressive Disorder",
+    "medication_name": "Serenol",
+    "risk_score": 87,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.8034
+      },
+      {
+        "factor": "medication_name",
+        "impact": -0.9595
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.4791
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01697",
+    "age": 51,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 87,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.6885
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.5675
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.5552
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01891",
+    "age": 31,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 87,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.7029
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4788
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4086
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01901",
+    "age": 56,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 87,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.502
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3298
+      },
+      {
+        "factor": "days_supply",
+        "impact": -0.2618
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00247",
+    "age": 72,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 86,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.5746
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.4548
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4532
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00542",
+    "age": 21,
+    "condition": "Asthma",
+    "medication_name": "Bronchara",
+    "risk_score": 86,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "deductible_met",
+        "impact": 0.8004
+      },
+      {
+        "factor": "age",
+        "impact": 0.7142
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.3673
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01054",
+    "age": 87,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 86,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.7225
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5142
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3968
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01279",
+    "age": 18,
+    "condition": "Asthma",
+    "medication_name": "Airoflex",
+    "risk_score": 86,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.7147
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.6026
+      },
+      {
+        "factor": "age",
+        "impact": 0.5883
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01478",
+    "age": 46,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 86,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.5503
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5183
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.414
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01598",
+    "age": 70,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 86,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.2033
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5473
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3863
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01615",
+    "age": 22,
+    "condition": "Post-Surgical Pain",
+    "medication_name": "Recuparin",
+    "risk_score": 86,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": -0.8698
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.7098
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.6732
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01951",
+    "age": 83,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 86,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.6782
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.5191
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3601
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01954",
+    "age": 51,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 86,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.9111
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.8035
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3551
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00012",
+    "age": 88,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 85,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.5553
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.6064
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5816
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00250",
+    "age": 20,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 85,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.5649
+      },
+      {
+        "factor": "age",
+        "impact": 0.449
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.424
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00272",
+    "age": 19,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 85,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "age",
+        "impact": 0.6046
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.5949
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4771
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00647",
+    "age": 51,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 85,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.5818
+      },
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.5002
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3841
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00777",
+    "age": 48,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 85,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.5327
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.6729
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3167
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00844",
+    "age": 20,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 85,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "age",
+        "impact": 0.5468
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4161
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.416
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00982",
+    "age": 68,
+    "condition": "Type 2 Diabetes",
+    "medication_name": "Insunova",
+    "risk_score": 85,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.6791
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.51
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.467
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01035",
+    "age": 22,
+    "condition": "Type 2 Diabetes",
+    "medication_name": "Glucotrol-X",
+    "risk_score": 85,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "insurance_type",
+        "impact": 0.6553
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4124
+      },
+      {
+        "factor": "age",
+        "impact": 0.3823
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01072",
+    "age": 33,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 85,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.0309
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5176
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3908
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01209",
+    "age": 38,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 85,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.4442
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4317
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.3912
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01595",
+    "age": 68,
+    "condition": "Hyperlipidemia",
+    "medication_name": "Cholestara",
+    "risk_score": 85,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "insurance_type",
+        "impact": 0.5631
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4334
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.4141
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01698",
+    "age": 28,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 85,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.5164
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4971
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4341
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01857",
+    "age": 44,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 85,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.561
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.6712
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3023
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00020",
+    "age": 50,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 84,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.6624
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.8824
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.3421
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00048",
+    "age": 82,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 84,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.6244
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.421
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.3811
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00372",
+    "age": 65,
+    "condition": "Major Depressive Disorder",
+    "medication_name": "Serenol",
+    "risk_score": 84,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.7186
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.6056
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.469
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00560",
+    "age": 79,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 84,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.4896
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.4143
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3999
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00580",
+    "age": 25,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 84,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.5928
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5815
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.4708
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00592",
+    "age": 82,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 84,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.8198
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4891
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4544
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00729",
+    "age": 53,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 84,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.726
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.5249
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.442
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00901",
+    "age": 18,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 84,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.8162
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5091
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4926
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01011",
+    "age": 37,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 84,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.309
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.785
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4864
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01392",
+    "age": 56,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 84,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.6565
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5835
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3173
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01729",
+    "age": 49,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 84,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.5357
+      },
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.5297
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4364
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01860",
+    "age": 70,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 84,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.4186
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3756
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.3244
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00016",
+    "age": 74,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 83,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.666
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5788
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.5747
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00528",
+    "age": 28,
+    "condition": "Asthma",
+    "medication_name": "Airoflex",
+    "risk_score": 83,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.6943
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.6914
+      },
+      {
+        "factor": "age",
+        "impact": 0.4453
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00642",
+    "age": 83,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 83,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "deductible_met",
+        "impact": -0.6573
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.5418
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.4847
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01313",
+    "age": 74,
+    "condition": "Asthma",
+    "medication_name": "Airoflex",
+    "risk_score": 83,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.6531
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.5897
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4681
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01345",
+    "age": 31,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 83,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.5817
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5052
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4867
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01477",
+    "age": 53,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 83,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.8619
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.5378
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5241
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01990",
+    "age": 84,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 83,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.7064
+      },
+      {
+        "factor": "age",
+        "impact": -0.4906
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4867
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00146",
+    "age": 79,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 82,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.5969
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5943
+      },
+      {
+        "factor": "age",
+        "impact": -0.4567
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00484",
+    "age": 75,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 82,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.947
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.7176
+      },
+      {
+        "factor": "age",
+        "impact": -0.3709
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00495",
+    "age": 38,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 82,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.658
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3076
+      },
+      {
+        "factor": "missed_visits_count",
+        "impact": 0.2915
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00728",
+    "age": 24,
+    "condition": "Type 2 Diabetes",
+    "medication_name": "Insunova",
+    "risk_score": 82,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.7282
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.5023
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.4811
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01292",
+    "age": 79,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 82,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.7289
+      },
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.6179
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.5218
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01447",
+    "age": 85,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 82,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "deductible_met",
+        "impact": 0.4713
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4627
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3003
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01666",
+    "age": 46,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 82,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.3462
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5136
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.485
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01676",
+    "age": 88,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 82,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4774
+      },
+      {
+        "factor": "age",
+        "impact": -0.451
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.4126
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01848",
+    "age": 57,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 82,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.6004
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.5748
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5078
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01940",
+    "age": 32,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 82,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.3599
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.7793
+      },
+      {
+        "factor": "appointment_length_minutes",
+        "impact": -0.3703
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00053",
+    "age": 44,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 81,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.1907
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5961
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5428
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00695",
+    "age": 24,
+    "condition": "Asthma",
+    "medication_name": "Bronchara",
+    "risk_score": 81,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "deductible_met",
+        "impact": 0.8423
+      },
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.6316
+      },
+      {
+        "factor": "age",
+        "impact": 0.4732
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01075",
+    "age": 51,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 81,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.5447
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3487
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": -0.3307
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01091",
+    "age": 54,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 81,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.9542
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.8031
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3282
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01202",
+    "age": 52,
+    "condition": "Asthma",
+    "medication_name": "Airoflex",
+    "risk_score": 81,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": -1.0029
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.6443
+      },
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.5376
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01467",
+    "age": 63,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 81,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.6598
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5474
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.4883
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01637",
+    "age": 29,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 81,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.5163
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5603
+      },
+      {
+        "factor": "appointment_length_minutes",
+        "impact": -0.3229
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01955",
+    "age": 87,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 81,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.2408
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5933
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.4556
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00730",
+    "age": 65,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 80,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.206
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.9192
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.4932
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01250",
+    "age": 88,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 80,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.2358
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4774
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4249
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01657",
+    "age": 79,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 80,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.4535
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4422
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3879
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00750",
+    "age": 29,
+    "condition": "Asthma",
+    "medication_name": "Airoflex",
+    "risk_score": 79,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "insurance_type",
+        "impact": 0.5794
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5693
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.5603
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01123",
+    "age": 37,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 79,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.8129
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.9062
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.3494
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01172",
+    "age": 63,
+    "condition": "Asthma",
+    "medication_name": "Airoflex",
+    "risk_score": 79,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": -0.9123
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.5176
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.5017
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01493",
+    "age": 20,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 79,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "age",
+        "impact": 0.5535
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.5154
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.5056
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01766",
+    "age": 85,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 79,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.1046
+      },
+      {
+        "factor": "age",
+        "impact": -0.4793
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3617
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01830",
+    "age": 88,
+    "condition": "Hypertension",
+    "medication_name": "Presolol",
+    "risk_score": 79,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "deductible_met",
+        "impact": 0.7612
+      },
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.7239
+      },
+      {
+        "factor": "medication_name",
+        "impact": -0.3192
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01903",
+    "age": 69,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 79,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.2096
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.5436
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5134
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00235",
+    "age": 53,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 78,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.6855
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.6002
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.5401
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00934",
+    "age": 64,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 78,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.0927
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.55
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.3144
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01262",
+    "age": 84,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 78,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.5068
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4278
+      },
+      {
+        "factor": "age",
+        "impact": -0.3374
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00490",
+    "age": 61,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 77,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.8962
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.6152
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5761
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00966",
+    "age": 60,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 77,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.573
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3879
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3635
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01004",
+    "age": 81,
+    "condition": "Asthma",
+    "medication_name": "Bronchara",
+    "risk_score": 77,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.7535
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.7419
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.51
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01175",
+    "age": 18,
+    "condition": "Asthma",
+    "medication_name": "Airoflex",
+    "risk_score": 77,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": -0.8202
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.6392
+      },
+      {
+        "factor": "age",
+        "impact": 0.5655
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01518",
+    "age": 21,
+    "condition": "Asthma",
+    "medication_name": "Bronchara",
+    "risk_score": 77,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "deductible_met",
+        "impact": 0.7698
+      },
+      {
+        "factor": "age",
+        "impact": 0.7442
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": -0.279
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01663",
+    "age": 31,
+    "condition": "Asthma",
+    "medication_name": "Bronchara",
+    "risk_score": 77,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": -0.8928
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.8753
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.7549
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01703",
+    "age": 67,
+    "condition": "Hyperlipidemia",
+    "medication_name": "Lipatrex",
+    "risk_score": 77,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "insurance_type",
+        "impact": 0.5418
+      },
+      {
+        "factor": "medication_name",
+        "impact": -0.4388
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.4368
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01763",
+    "age": 18,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 77,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": -0.5205
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4302
+      },
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.428
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01923",
+    "age": 77,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 77,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.529
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5272
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.5245
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00522",
+    "age": 28,
+    "condition": "Type 2 Diabetes",
+    "medication_name": "Insunova",
+    "risk_score": 76,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": -0.7416
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.676
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5645
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00714",
+    "age": 73,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 76,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.7717
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.5057
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4713
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00888",
+    "age": 31,
+    "condition": "Type 2 Diabetes",
+    "medication_name": "Metforal",
+    "risk_score": 76,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.898
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.8386
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.489
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01547",
+    "age": 67,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 76,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.2114
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5884
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4706
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01717",
+    "age": 64,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 76,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "deductible_met",
+        "impact": 0.4317
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.3319
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.2937
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01843",
+    "age": 76,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 76,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.3655
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3568
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.3058
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00056",
+    "age": 21,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 75,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "age",
+        "impact": 0.6081
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4471
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": -0.3776
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00060",
+    "age": 67,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 75,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.2908
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.8325
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4353
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00678",
+    "age": 24,
+    "condition": "Major Depressive Disorder",
+    "medication_name": "Moodrex",
+    "risk_score": 75,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "deductible_met",
+        "impact": 0.7306
+      },
+      {
+        "factor": "age",
+        "impact": 0.4835
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.3629
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00847",
+    "age": 29,
+    "condition": "Major Depressive Disorder",
+    "medication_name": "Moodrex",
+    "risk_score": 75,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.9488
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.625
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.4836
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00900",
+    "age": 62,
+    "condition": "Hyperlipidemia",
+    "medication_name": "Cholestara",
+    "risk_score": 75,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": -1.1421
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.5362
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.4101
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01213",
+    "age": 51,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 75,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.1537
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.6969
+      },
+      {
+        "factor": "appointment_length_minutes",
+        "impact": 0.2792
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01284",
+    "age": 75,
+    "condition": "Type 2 Diabetes",
+    "medication_name": "Insunova",
+    "risk_score": 75,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.6521
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.5448
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.543
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01887",
+    "age": 64,
+    "condition": "Type 2 Diabetes",
+    "medication_name": "Insunova",
+    "risk_score": 75,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.6272
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4749
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.3097
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00160",
+    "age": 74,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 74,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.5514
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4778
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3402
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00426",
+    "age": 32,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 74,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.621
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.3888
+      },
+      {
+        "factor": "missed_visits_count",
+        "impact": 0.3854
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00486",
+    "age": 34,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 74,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.5123
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.4953
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.4743
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00521",
+    "age": 43,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 74,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.0749
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.7394
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5389
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00712",
+    "age": 55,
+    "condition": "Type 2 Diabetes",
+    "medication_name": "Insunova",
+    "risk_score": 74,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.7362
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.6647
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.5984
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01171",
+    "age": 63,
+    "condition": "Acute Bacterial Infection",
+    "medication_name": "Cephadex",
+    "risk_score": 74,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": -1.1871
+      },
+      {
+        "factor": "insurance_type",
+        "impact": 0.7663
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.5961
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01261",
+    "age": 37,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 74,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3915
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.3416
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.3406
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00679",
+    "age": 55,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Myelara",
+    "risk_score": 73,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": -0.5889
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.5256
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4827
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00931",
+    "age": 56,
+    "condition": "Hypertension",
+    "medication_name": "Cardiozem",
+    "risk_score": 73,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.7073
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.441
+      },
+      {
+        "factor": "medication_name",
+        "impact": -0.3863
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01315",
+    "age": 82,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 73,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.1247
+      },
+      {
+        "factor": "age",
+        "impact": -0.3948
+      },
+      {
+        "factor": "appointment_length_minutes",
+        "impact": -0.3613
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01488",
+    "age": 18,
+    "condition": "Asthma",
+    "medication_name": "Bronchara",
+    "risk_score": 73,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "deductible_met",
+        "impact": 0.7678
+      },
+      {
+        "factor": "age",
+        "impact": 0.6458
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.5791
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01617",
+    "age": 75,
+    "condition": "Type 2 Diabetes",
+    "medication_name": "Insunova",
+    "risk_score": 73,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "medication_name",
+        "impact": 0.6302
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.6001
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.547
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01996",
+    "age": 18,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 73,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "age",
+        "impact": 0.6283
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5699
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4595
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00282",
+    "age": 53,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 72,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 1.2471
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.6861
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.6478
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00384",
+    "age": 35,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 72,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 2.2569
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.6205
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4672
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00454",
+    "age": 19,
+    "condition": "Psoriasis",
+    "medication_name": "Cutinex",
+    "risk_score": 72,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.743
+      },
+      {
+        "factor": "age",
+        "impact": 0.7229
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4118
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00650",
+    "age": 79,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 72,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.5236
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4915
+      },
+      {
+        "factor": "age",
+        "impact": -0.3826
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00835",
+    "age": 79,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 72,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.6082
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.5652
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5283
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00918",
+    "age": 74,
+    "condition": "Asthma",
+    "medication_name": "Airoflex",
+    "risk_score": 72,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.557
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.5303
+      },
+      {
+        "factor": "age",
+        "impact": -0.3481
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00996",
+    "age": 63,
+    "condition": "Acute Bacterial Infection",
+    "medication_name": "Amoxinol",
+    "risk_score": 72,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "missed_visits_count",
+        "impact": 0.493
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.466
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.4237
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01228",
+    "age": 88,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 72,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 3.3
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.7808
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.4975
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01667",
+    "age": 72,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 72,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": -0.7542
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.7143
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5378
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01804",
+    "age": 36,
+    "condition": "Type 2 Diabetes",
+    "medication_name": "Insunova",
+    "risk_score": 72,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": -0.7788
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.6442
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.54
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01925",
+    "age": 44,
+    "condition": "Acute Bacterial Infection",
+    "medication_name": "Cephadex",
+    "risk_score": 72,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.9504
+      },
+      {
+        "factor": "medication_name",
+        "impact": -0.7244
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.6381
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00347",
+    "age": 89,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Immunara",
+    "risk_score": 71,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "deductible_met",
+        "impact": 0.4697
+      },
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4561
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.3702
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01216",
+    "age": 26,
+    "condition": "Hyperlipidemia",
+    "medication_name": "Lipatrex",
+    "risk_score": 71,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": -1.0383
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.7303
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.531
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01431",
+    "age": 51,
+    "condition": "Hyperlipidemia",
+    "medication_name": "Cholestara",
+    "risk_score": 71,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.7512
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": -0.7181
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.5773
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01511",
+    "age": 42,
+    "condition": "Asthma",
+    "medication_name": "Airoflex",
+    "risk_score": 71,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": -0.8577
+      },
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.7407
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.5869
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01691",
+    "age": 73,
+    "condition": "Psoriasis",
+    "medication_name": "Dermalis",
+    "risk_score": 71,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "distance_to_pharmacy_miles",
+        "impact": 0.7411
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.6128
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": -0.5316
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00119",
+    "age": 35,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 70,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "pa_turnaround_days",
+        "impact": 0.4372
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.4267
+      },
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": -0.3457
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-00368",
+    "age": 40,
+    "condition": "Hypertension",
+    "medication_name": "Cardiozem",
+    "risk_score": 70,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.7919
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4008
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.3762
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01395",
+    "age": 33,
+    "condition": "Rheumatoid Arthritis",
+    "medication_name": "Rheumatex",
+    "risk_score": 70,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "deductible_met",
+        "impact": 0.3238
+      },
+      {
+        "factor": "monthly_copay",
+        "impact": 0.3093
+      },
+      {
+        "factor": "copay_assistance_enrolled",
+        "impact": 0.2743
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01448",
+    "age": 87,
+    "condition": "Multiple Sclerosis",
+    "medication_name": "Neurovex",
+    "risk_score": 70,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "prior_abandoned_rx_count",
+        "impact": 0.7811
+      },
+      {
+        "factor": "medication_name",
+        "impact": 0.7498
+      },
+      {
+        "factor": "deductible_met",
+        "impact": -0.5603
+      }
+    ]
+  },
+  {
+    "patient_id": "SYN-01774",
+    "age": 46,
+    "condition": "Hypertension",
+    "medication_name": "Cardiozem",
+    "risk_score": 70,
+    "risk_tier": "high",
+    "reason": null,
+    "top_factors": [
+      {
+        "factor": "monthly_copay",
+        "impact": 0.6431
+      },
+      {
+        "factor": "medication_name",
+        "impact": -0.4183
+      },
+      {
+        "factor": "deductible_met",
+        "impact": 0.4054
+      }
+    ]
+  }
+]

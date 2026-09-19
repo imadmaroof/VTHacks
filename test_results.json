@@ -1,0 +1,526 @@
+{
+  "test_set_recovery": {
+    "method": "deterministic reconstruction (random_state=42)",
+    "saved_to_disk": false,
+    "exact_match_with_training_metrics": true,
+    "n_test": 400,
+    "n_train": 1600,
+    "test_positive_rate": 0.21
+  },
+  "overfitting": {
+    "train": {
+      "auc_roc": 0.9860956122994401,
+      "pr_auc": 0.9543321750982873,
+      "precision": 0.7705314009661836,
+      "recall": 0.9437869822485208,
+      "f1": 0.848404255319149,
+      "accuracy": 0.92875,
+      "tp": 319,
+      "fp": 95,
+      "tn": 1167,
+      "fn": 19,
+      "n": 1600,
+      "positives": 338,
+      "positive_rate": 0.21125
+    },
+    "test": {
+      "auc_roc": 0.902049427365883,
+      "pr_auc": 0.7932337699878543,
+      "precision": 0.6435643564356436,
+      "recall": 0.7738095238095238,
+      "f1": 0.7027027027027027,
+      "accuracy": 0.8625,
+      "tp": 65,
+      "fp": 36,
+      "tn": 280,
+      "fn": 19,
+      "n": 400,
+      "positives": 84,
+      "positive_rate": 0.21
+    },
+    "auc_gap": 0.08404618493355709,
+    "verdict": "mild"
+  },
+  "cross_validation": {
+    "folds": [
+      {
+        "auc_roc": 0.8795207956600362,
+        "pr_auc": 0.7840706259551904,
+        "precision": 0.6451612903225806,
+        "recall": 0.7142857142857143,
+        "f1": 0.6779661016949152,
+        "accuracy": 0.8575,
+        "tp": 60,
+        "fp": 33,
+        "tn": 283,
+        "fn": 24,
+        "n": 400,
+        "positives": 84,
+        "positive_rate": 0.21
+      },
+      {
+        "auc_roc": 0.8447860156720916,
+        "pr_auc": 0.7338574700764654,
+        "precision": 0.6082474226804123,
+        "recall": 0.7023809523809523,
+        "f1": 0.6519337016574586,
+        "accuracy": 0.8425,
+        "tp": 59,
+        "fp": 38,
+        "tn": 278,
+        "fn": 25,
+        "n": 400,
+        "positives": 84,
+        "positive_rate": 0.21
+      },
+      {
+        "auc_roc": 0.89624773960217,
+        "pr_auc": 0.7513784968134501,
+        "precision": 0.5714285714285714,
+        "recall": 0.7619047619047619,
+        "f1": 0.6530612244897959,
+        "accuracy": 0.83,
+        "tp": 64,
+        "fp": 48,
+        "tn": 268,
+        "fn": 20,
+        "n": 400,
+        "positives": 84,
+        "positive_rate": 0.21
+      },
+      {
+        "auc_roc": 0.8971055088702148,
+        "pr_auc": 0.7589306898656222,
+        "precision": 0.6363636363636364,
+        "recall": 0.7411764705882353,
+        "f1": 0.6847826086956522,
+        "accuracy": 0.855,
+        "tp": 63,
+        "fp": 36,
+        "tn": 279,
+        "fn": 22,
+        "n": 400,
+        "positives": 85,
+        "positive_rate": 0.2125
+      },
+      {
+        "auc_roc": 0.87062558356676,
+        "pr_auc": 0.7900468767314487,
+        "precision": 0.6222222222222222,
+        "recall": 0.6588235294117647,
+        "f1": 0.64,
+        "accuracy": 0.8425,
+        "tp": 56,
+        "fp": 34,
+        "tn": 281,
+        "fn": 29,
+        "n": 400,
+        "positives": 85,
+        "positive_rate": 0.2125
+      }
+    ],
+    "auc_mean": 0.8776571286742545,
+    "auc_std": 0.01927317440461399,
+    "auc_min": 0.8447860156720916,
+    "auc_max": 0.8971055088702148,
+    "pr_auc_mean": 0.7636568318884354,
+    "pr_auc_std": 0.02085307339482717
+  },
+  "tier_performance": {
+    "tier_breakdown": {
+      "high": {
+        "n": 67,
+        "discontinued": 53,
+        "retained": 14,
+        "actual_rate": 0.7910447761194029
+      },
+      "medium": {
+        "n": 50,
+        "discontinued": 17,
+        "retained": 33,
+        "actual_rate": 0.34
+      },
+      "low": {
+        "n": 283,
+        "discontinued": 14,
+        "retained": 269,
+        "actual_rate": 0.04946996466431095
+      }
+    },
+    "high_tier": {
+      "tp": 53,
+      "fp": 14,
+      "tn": 302,
+      "fn": 31,
+      "precision": 0.7910447761194029,
+      "recall": 0.6309523809523809
+    },
+    "threshold_50": {
+      "auc_roc": 0.902049427365883,
+      "pr_auc": 0.7932337699878543,
+      "precision": 0.6435643564356436,
+      "recall": 0.7738095238095238,
+      "f1": 0.7027027027027027,
+      "accuracy": 0.8625,
+      "tp": 65,
+      "fp": 36,
+      "tn": 280,
+      "fn": 19,
+      "n": 400,
+      "positives": 84,
+      "positive_rate": 0.21
+    },
+    "threshold_40": {
+      "auc_roc": 0.902049427365883,
+      "pr_auc": 0.7932337699878543,
+      "precision": 0.5982905982905983,
+      "recall": 0.8333333333333334,
+      "f1": 0.6965174129353234,
+      "accuracy": 0.8475,
+      "tp": 70,
+      "fp": 47,
+      "tn": 269,
+      "fn": 14,
+      "n": 400,
+      "positives": 84,
+      "positive_rate": 0.21
+    }
+  },
+  "comparison_to_training_run": {
+    "reported": {
+      "auc_roc": 0.902049427365883,
+      "average_precision": 0.7932337699878543,
+      "precision": 0.6435643564356436,
+      "recall": 0.7738095238095238
+    },
+    "recomputed_auc": 0.902049427365883,
+    "recomputed_precision_at_0.50": 0.6435643564356436,
+    "recomputed_recall_at_0.50": 0.7738095238095238,
+    "identical": true
+  },
+  "missing_data": {
+    "cases": [
+      {
+        "patient_id": "SYN-01087",
+        "field": "monthly_copay",
+        "kind": "numeric",
+        "original_score": 0,
+        "score_with_null": 70,
+        "shift": 70,
+        "error": null
+      },
+      {
+        "patient_id": "SYN-01845",
+        "field": "insurance_type",
+        "kind": "categorical",
+        "original_score": 3,
+        "score_with_null": 6,
+        "shift": 3,
+        "error": null
+      },
+      {
+        "patient_id": "SYN-01417",
+        "field": "prior_auth_required",
+        "kind": "boolean",
+        "original_score": 6,
+        "score_with_null": 6,
+        "shift": 0,
+        "error": null
+      },
+      {
+        "patient_id": "SYN-00153",
+        "field": "condition",
+        "kind": "categorical",
+        "original_score": 10,
+        "score_with_null": 12,
+        "shift": 2,
+        "error": null
+      },
+      {
+        "patient_id": "SYN-00644",
+        "field": "deductible_met",
+        "kind": "boolean",
+        "original_score": 16,
+        "score_with_null": 16,
+        "shift": 0,
+        "error": null
+      },
+      {
+        "patient_id": "SYN-00713",
+        "field": "distance_to_pharmacy_miles",
+        "kind": "numeric",
+        "original_score": 22,
+        "score_with_null": 41,
+        "shift": 19,
+        "error": null
+      },
+      {
+        "patient_id": "SYN-00794",
+        "field": "medication_name",
+        "kind": "categorical",
+        "original_score": 35,
+        "score_with_null": 70,
+        "shift": 35,
+        "error": null
+      },
+      {
+        "patient_id": "SYN-00192",
+        "field": "age",
+        "kind": "numeric",
+        "original_score": 58,
+        "score_with_null": 53,
+        "shift": -5,
+        "error": null
+      },
+      {
+        "patient_id": "SYN-00247",
+        "field": "copay_assistance_enrolled",
+        "kind": "boolean",
+        "original_score": 86,
+        "score_with_null": 31,
+        "shift": -55,
+        "error": null
+      },
+      {
+        "patient_id": "SYN-01487",
+        "field": "concurrent_medication_count",
+        "kind": "numeric",
+        "original_score": 99,
+        "score_with_null": 99,
+        "shift": 0,
+        "error": null
+      }
+    ],
+    "crashes": 0,
+    "mean_abs_shift": 18.9,
+    "max_abs_shift": 70,
+    "by_kind": {
+      "numeric": {
+        "n": 4,
+        "mean_abs_shift": 23.5,
+        "max_abs_shift": 70
+      },
+      "boolean": {
+        "n": 3,
+        "mean_abs_shift": 18.333333333333332,
+        "max_abs_shift": 55
+      },
+      "categorical": {
+        "n": 3,
+        "mean_abs_shift": 13.333333333333334,
+        "max_abs_shift": 35
+      }
+    },
+    "tier_flips": 4
+  },
+  "missing_data_sweep": {
+    "per_feature": [
+      {
+        "feature": "monthly_copay",
+        "kind": "numeric",
+        "mean_abs_shift": 62.575,
+        "max_abs_shift": 92,
+        "tier_flip_pct": 83.25
+      },
+      {
+        "feature": "medication_name",
+        "kind": "categorical",
+        "mean_abs_shift": 29.89,
+        "max_abs_shift": 70,
+        "tier_flip_pct": 60.25
+      },
+      {
+        "feature": "prior_abandoned_rx_count",
+        "kind": "numeric",
+        "mean_abs_shift": 9.1025,
+        "max_abs_shift": 39,
+        "tier_flip_pct": 19.5
+      },
+      {
+        "feature": "distance_to_pharmacy_miles",
+        "kind": "numeric",
+        "mean_abs_shift": 8.9975,
+        "max_abs_shift": 45,
+        "tier_flip_pct": 21.75
+      },
+      {
+        "feature": "copay_assistance_enrolled",
+        "kind": "boolean",
+        "mean_abs_shift": 7.99,
+        "max_abs_shift": 65,
+        "tier_flip_pct": 12.75
+      },
+      {
+        "feature": "insurance_type",
+        "kind": "categorical",
+        "mean_abs_shift": 7.0825,
+        "max_abs_shift": 35,
+        "tier_flip_pct": 15.0
+      },
+      {
+        "feature": "deductible_met",
+        "kind": "boolean",
+        "mean_abs_shift": 6.39,
+        "max_abs_shift": 46,
+        "tier_flip_pct": 9.25
+      },
+      {
+        "feature": "pa_turnaround_days",
+        "kind": "numeric",
+        "mean_abs_shift": 6.1875,
+        "max_abs_shift": 29,
+        "tier_flip_pct": 13.5
+      },
+      {
+        "feature": "age",
+        "kind": "numeric",
+        "mean_abs_shift": 3.915,
+        "max_abs_shift": 28,
+        "tier_flip_pct": 6.25
+      },
+      {
+        "feature": "concurrent_medication_count",
+        "kind": "numeric",
+        "mean_abs_shift": 3.77,
+        "max_abs_shift": 26,
+        "tier_flip_pct": 6.0
+      },
+      {
+        "feature": "missed_visits_count",
+        "kind": "numeric",
+        "mean_abs_shift": 3.4125,
+        "max_abs_shift": 28,
+        "tier_flip_pct": 6.0
+      },
+      {
+        "feature": "appointment_length_minutes",
+        "kind": "numeric",
+        "mean_abs_shift": 3.29,
+        "max_abs_shift": 25,
+        "tier_flip_pct": 5.25
+      },
+      {
+        "feature": "day_of_week_prescribed",
+        "kind": "categorical",
+        "mean_abs_shift": 3.0425,
+        "max_abs_shift": 21,
+        "tier_flip_pct": 6.25
+      },
+      {
+        "feature": "condition",
+        "kind": "categorical",
+        "mean_abs_shift": 2.6975,
+        "max_abs_shift": 13,
+        "tier_flip_pct": 4.0
+      },
+      {
+        "feature": "days_supply",
+        "kind": "numeric",
+        "mean_abs_shift": 1.2175,
+        "max_abs_shift": 14,
+        "tier_flip_pct": 1.25
+      },
+      {
+        "feature": "delivery_option_available",
+        "kind": "boolean",
+        "mean_abs_shift": 0.7275,
+        "max_abs_shift": 9,
+        "tier_flip_pct": 0.75
+      },
+      {
+        "feature": "copay_assistance_available",
+        "kind": "boolean",
+        "mean_abs_shift": 0.675,
+        "max_abs_shift": 10,
+        "tier_flip_pct": 1.0
+      },
+      {
+        "feature": "scheduled_visits_count",
+        "kind": "numeric",
+        "mean_abs_shift": 0.455,
+        "max_abs_shift": 6,
+        "tier_flip_pct": 0.75
+      },
+      {
+        "feature": "new_rx_or_refill",
+        "kind": "categorical",
+        "mean_abs_shift": 0.4025,
+        "max_abs_shift": 8,
+        "tier_flip_pct": 1.0
+      },
+      {
+        "feature": "prior_auth_required",
+        "kind": "boolean",
+        "mean_abs_shift": 0.21,
+        "max_abs_shift": 3,
+        "tier_flip_pct": 0.25
+      },
+      {
+        "feature": "drug_class",
+        "kind": "categorical",
+        "mean_abs_shift": 0.08,
+        "max_abs_shift": 3,
+        "tier_flip_pct": 0.0
+      }
+    ],
+    "fragile_features": [
+      "monthly_copay",
+      "medication_name"
+    ],
+    "guarded_fields": [
+      "monthly_copay",
+      "medication_name"
+    ],
+    "fragile_and_unguarded": []
+  },
+  "verdict": {
+    "overall_pass": true,
+    "checks": [
+      {
+        "name": "Test set is genuinely held out",
+        "passed": true,
+        "detail": "reconstructed bit-for-bit"
+      },
+      {
+        "name": "AUC-ROC >= 0.80 on held-out data",
+        "passed": true,
+        "detail": "0.9020"
+      },
+      {
+        "name": "PR-AUC well above base rate",
+        "passed": true,
+        "detail": "0.7932 vs 0.2100 base"
+      },
+      {
+        "name": "No serious overfitting (AUC gap < 0.15)",
+        "passed": true,
+        "detail": "gap +0.0840"
+      },
+      {
+        "name": "CV stable (sd < 0.05)",
+        "passed": true,
+        "detail": "sd 0.0193"
+      },
+      {
+        "name": "Single split not a fluke (within 2 sd of CV mean)",
+        "passed": true,
+        "detail": "0.9020 vs CV 0.8777"
+      },
+      {
+        "name": "High-tier precision >= 0.60",
+        "passed": true,
+        "detail": "0.7910"
+      },
+      {
+        "name": "No crash on missing fields",
+        "passed": true,
+        "detail": "0 crashes"
+      },
+      {
+        "name": "Every fragile feature is guarded",
+        "passed": true,
+        "detail": "2 fragile, 0 unguarded"
+      }
+    ]
+  }
+}
