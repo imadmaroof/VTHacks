@@ -1,1 +1,501 @@
-
+patient_id,age,condition,medication_name,risk_score,risk_tier,reason,top_factor_1,top_factor_1_impact,top_factor_2,top_factor_2_impact,top_factor_3,top_factor_3_impact
+SYN-NEW-00001,86,Hypertension,Presolol,24,low,,monthly_copay,-0.7595,deductible_met,0.6706,medication_name,-0.5011
+SYN-NEW-00002,54,Asthma,Airoflex,84,high,,monthly_copay,0.9301,deductible_met,0.4995,insurance_type,0.482
+SYN-NEW-00003,72,Type 2 Diabetes,Metforal,24,low,,medication_name,-0.6723,monthly_copay,-0.6597,deductible_met,0.4699
+SYN-NEW-00004,58,Major Depressive Disorder,Moodrex,6,low,,monthly_copay,-0.7952,deductible_met,-0.7778,copay_assistance_enrolled,-0.557
+SYN-NEW-00005,30,Asthma,Bronchara,4,low,,deductible_met,-1.2535,medication_name,-0.962,monthly_copay,-0.7293
+SYN-NEW-00006,54,Post-Surgical Pain,Analgex,7,low,,monthly_copay,-1.9233,medication_name,-0.5003,prior_abandoned_rx_count,-0.4005
+SYN-NEW-00007,85,Hyperlipidemia,Cholestara,24,low,,monthly_copay,-0.643,deductible_met,0.5443,distance_to_pharmacy_miles,-0.4189
+SYN-NEW-00008,87,Post-Surgical Pain,Analgex,6,low,,monthly_copay,-1.0545,medication_name,-0.8227,deductible_met,-0.715
+SYN-NEW-00009,87,Acute Bacterial Infection,Amoxinol,12,low,,monthly_copay,-1.5269,deductible_met,0.4761,medication_name,-0.3381
+SYN-NEW-00010,62,Post-Surgical Pain,Analgex,4,low,,monthly_copay,-1.0004,medication_name,-0.8958,deductible_met,-0.7216
+SYN-NEW-00011,40,Psoriasis,Cutinex,4,low,,copay_assistance_enrolled,-0.9094,deductible_met,-0.5738,monthly_copay,-0.3429
+SYN-NEW-00012,58,Rheumatoid Arthritis,Rheumatex,86,high,,monthly_copay,0.7129,medication_name,0.4474,copay_assistance_enrolled,0.406
+SYN-NEW-00013,64,Asthma,Bronchara,7,low,,deductible_met,-1.0277,monthly_copay,-0.9956,medication_name,-0.8847
+SYN-NEW-00014,38,Multiple Sclerosis,Neurovex,94,high,,monthly_copay,1.6599,deductible_met,0.4586,medication_name,0.2918
+SYN-NEW-00015,87,Rheumatoid Arthritis,Immunara,36,low,,deductible_met,-0.7988,age,-0.4234,copay_assistance_enrolled,0.3562
+SYN-NEW-00016,57,Hypertension,Vaslorin,1,low,,medication_name,-1.9469,monthly_copay,-1.4087,deductible_met,-0.7185
+SYN-NEW-00017,43,Acute Bacterial Infection,Cephadex,2,low,,monthly_copay,-1.6766,medication_name,-1.2947,deductible_met,0.5591
+SYN-NEW-00018,51,Hypertension,Cardiozem,9,low,,monthly_copay,-1.5098,deductible_met,-0.6171,concurrent_medication_count,0.3586
+SYN-NEW-00019,25,Multiple Sclerosis,Myelara,65,medium,,monthly_copay,2.5471,copay_assistance_enrolled,-0.538,deductible_met,-0.5358
+SYN-NEW-00020,61,Multiple Sclerosis,Neurovex,89,high,,medication_name,0.6719,prior_abandoned_rx_count,0.5765,monthly_copay,-0.3902
+SYN-NEW-00021,42,Asthma,Bronchara,2,low,,deductible_met,-1.055,medication_name,-0.9331,monthly_copay,-0.8021
+SYN-NEW-00022,84,Major Depressive Disorder,Moodrex,21,low,,deductible_met,0.6662,copay_assistance_enrolled,-0.5213,monthly_copay,-0.4711
+SYN-NEW-00023,39,Rheumatoid Arthritis,Rheumatex,100,high,,monthly_copay,3.0898,medication_name,0.3716,pa_turnaround_days,0.3408
+SYN-NEW-00024,35,Psoriasis,Cutinex,79,high,,monthly_copay,0.5536,copay_assistance_enrolled,0.4599,deductible_met,0.3211
+SYN-NEW-00025,61,Asthma,Bronchara,3,low,,medication_name,-1.0107,monthly_copay,-0.8927,deductible_met,-0.8694
+SYN-NEW-00026,40,Major Depressive Disorder,Serenol,10,low,,medication_name,-1.1239,monthly_copay,-1.0476,deductible_met,0.384
+SYN-NEW-00027,42,Hypertension,Vaslorin,4,low,,medication_name,-1.8941,monthly_copay,-0.9281,deductible_met,0.5328
+SYN-NEW-00028,46,Post-Surgical Pain,Analgex,12,low,,monthly_copay,-0.854,deductible_met,-0.6046,medication_name,-0.4386
+SYN-NEW-00029,67,Post-Surgical Pain,Recuparin,2,low,,monthly_copay,-1.8461,medication_name,-1.4326,deductible_met,-0.7779
+SYN-NEW-00030,37,Asthma,Bronchara,30,low,,prior_abandoned_rx_count,0.7151,deductible_met,0.7143,medication_name,-0.7007
+SYN-NEW-00031,83,Major Depressive Disorder,Moodrex,19,low,,monthly_copay,-0.8108,deductible_met,0.595,medication_name,-0.3773
+SYN-NEW-00032,43,Asthma,Airoflex,52,medium,,deductible_met,0.6207,prior_abandoned_rx_count,0.3178,monthly_copay,-0.3122
+SYN-NEW-00033,73,Asthma,Bronchara,11,low,,monthly_copay,-0.7268,deductible_met,0.7088,medication_name,-0.6646
+SYN-NEW-00034,85,Hypertension,Cardiozem,4,low,,monthly_copay,-0.9944,deductible_met,-0.7278,medication_name,-0.5919
+SYN-NEW-00035,67,Asthma,Airoflex,11,low,,monthly_copay,-1.3452,deductible_met,0.5366,prior_abandoned_rx_count,-0.3765
+SYN-NEW-00036,45,Type 2 Diabetes,Glucotrol-X,11,low,,monthly_copay,-0.8286,deductible_met,-0.6965,copay_assistance_enrolled,-0.5315
+SYN-NEW-00037,66,Acute Bacterial Infection,Cephadex,1,low,,monthly_copay,-1.9214,medication_name,-1.4131,deductible_met,-0.7254
+SYN-NEW-00038,73,Major Depressive Disorder,Moodrex,3,low,,deductible_met,-0.742,medication_name,-0.6542,monthly_copay,-0.5462
+SYN-NEW-00039,72,Psoriasis,Cutinex,34,low,,monthly_copay,-0.6027,medication_name,0.5354,deductible_met,-0.4987
+SYN-NEW-00040,20,Major Depressive Disorder,Moodrex,41,medium,,monthly_copay,-1.2879,age,0.6926,deductible_met,0.4958
+SYN-NEW-00041,24,Acute Bacterial Infection,Cephadex,1,low,,monthly_copay,-1.4109,medication_name,-1.0684,deductible_met,-0.8717
+SYN-NEW-00042,39,Acute Bacterial Infection,Amoxinol,5,low,,monthly_copay,-2.0602,medication_name,-0.3271,prior_abandoned_rx_count,-0.3007
+SYN-NEW-00043,43,Multiple Sclerosis,Myelara,47,medium,,monthly_copay,1.2704,copay_assistance_enrolled,-0.5706,deductible_met,-0.5701
+SYN-NEW-00044,68,Hypertension,Vaslorin,2,low,,medication_name,-1.6044,monthly_copay,-1.1024,deductible_met,-0.7016
+SYN-NEW-00045,24,Asthma,Airoflex,28,low,,monthly_copay,-1.6294,deductible_met,0.5856,prior_abandoned_rx_count,-0.3531
+SYN-NEW-00046,50,Acute Bacterial Infection,Cephadex,5,low,,monthly_copay,-1.9344,medication_name,-0.8887,deductible_met,0.4849
+SYN-NEW-00047,75,Major Depressive Disorder,Moodrex,5,low,,deductible_met,-0.9109,monthly_copay,-0.7305,medication_name,-0.4174
+SYN-NEW-00048,82,Rheumatoid Arthritis,Rheumatex,41,medium,,copay_assistance_enrolled,-0.9745,age,-0.4401,deductible_met,0.3971
+SYN-NEW-00049,22,Hypertension,Presolol,1,low,,medication_name,-1.3206,monthly_copay,-1.3093,deductible_met,-0.9486
+SYN-NEW-00050,49,Acute Bacterial Infection,Amoxinol,8,low,,monthly_copay,-1.4688,deductible_met,-0.4136,missed_visits_count,-0.284
+SYN-NEW-00051,39,Hyperlipidemia,Cholestara,14,low,,monthly_copay,-0.9706,deductible_met,0.457,prior_abandoned_rx_count,-0.309
+SYN-NEW-00052,62,Post-Surgical Pain,Recuparin,4,low,,monthly_copay,-1.5901,medication_name,-1.3633,deductible_met,-0.6885
+SYN-NEW-00053,77,Acute Bacterial Infection,Cephadex,5,low,,monthly_copay,-1.402,medication_name,-1.1299,deductible_met,0.5958
+SYN-NEW-00054,60,Asthma,Bronchara,1,low,,medication_name,-1.126,deductible_met,-0.9336,monthly_copay,-0.7698
+SYN-NEW-00055,60,Major Depressive Disorder,Serenol,9,low,,monthly_copay,-1.1352,medication_name,-1.0112,missed_visits_count,0.3829
+SYN-NEW-00056,61,Rheumatoid Arthritis,Immunara,76,high,,medication_name,0.5723,copay_assistance_enrolled,-0.5313,prior_abandoned_rx_count,0.4458
+SYN-NEW-00057,39,Hyperlipidemia,Lipatrex,33,low,,monthly_copay,-0.8498,deductible_met,-0.4785,missed_visits_count,0.4428
+SYN-NEW-00058,65,Type 2 Diabetes,Insunova,59,medium,,monthly_copay,-1.1479,medication_name,0.4897,deductible_met,0.4447
+SYN-NEW-00059,30,Multiple Sclerosis,Neurovex,78,high,,monthly_copay,0.558,copay_assistance_enrolled,0.4103,appointment_length_minutes,-0.4042
+SYN-NEW-00060,54,Type 2 Diabetes,Metforal,33,low,,medication_name,-0.7545,deductible_met,0.4118,prior_abandoned_rx_count,0.255
+SYN-NEW-00061,83,Psoriasis,Dermalis,97,high,,monthly_copay,3.7491,deductible_met,-0.5604,age,-0.3879
+SYN-NEW-00062,31,Rheumatoid Arthritis,Rheumatex,55,medium,,monthly_copay,1.1567,copay_assistance_enrolled,-0.6317,deductible_met,-0.5257
+SYN-NEW-00063,24,Rheumatoid Arthritis,Rheumatex,53,medium,,copay_assistance_enrolled,-0.9053,deductible_met,-0.5621,medication_name,0.5293
+SYN-NEW-00064,22,Major Depressive Disorder,Moodrex,50,medium,,monthly_copay,-0.8683,deductible_met,0.6066,age,0.5078
+SYN-NEW-00065,20,Post-Surgical Pain,Recuparin,33,low,,medication_name,-1.0654,monthly_copay,-0.7707,deductible_met,0.761
+SYN-NEW-00066,36,Acute Bacterial Infection,Cephadex,2,low,,medication_name,-1.42,deductible_met,-0.9609,monthly_copay,-0.9443
+SYN-NEW-00067,38,Psoriasis,Cutinex,99,high,,monthly_copay,2.9049,distance_to_pharmacy_miles,0.3357,copay_assistance_enrolled,0.317
+SYN-NEW-00068,24,Multiple Sclerosis,Neurovex,47,medium,,copay_assistance_enrolled,-0.8106,deductible_met,-0.5008,age,0.3286
+SYN-NEW-00069,78,Acute Bacterial Infection,Amoxinol,18,low,,monthly_copay,-1.4965,deductible_met,-0.5171,missed_visits_count,0.4258
+SYN-NEW-00070,26,Rheumatoid Arthritis,Rheumatex,96,high,,monthly_copay,2.6836,deductible_met,-0.4805,medication_name,0.3876
+SYN-NEW-00071,38,Major Depressive Disorder,Serenol,6,low,,medication_name,-1.3985,monthly_copay,-1.2628,copay_assistance_enrolled,-0.6293
+SYN-NEW-00072,38,Hypertension,Presolol,18,low,,monthly_copay,-1.0528,medication_name,-0.7738,deductible_met,0.514
+SYN-NEW-00073,58,Hypertension,Cardiozem,13,low,,monthly_copay,-1.4551,deductible_met,0.484,prior_abandoned_rx_count,-0.3217
+SYN-NEW-00074,60,Type 2 Diabetes,Glucotrol-X,53,medium,,monthly_copay,-0.8224,prior_abandoned_rx_count,0.6458,deductible_met,0.4453
+SYN-NEW-00075,49,Asthma,Bronchara,20,low,,monthly_copay,-0.9624,deductible_met,0.6969,medication_name,-0.5915
+SYN-NEW-00076,42,Hyperlipidemia,Cholestara,7,low,,monthly_copay,-1.0211,deductible_met,-0.6844,appointment_length_minutes,-0.3499
+SYN-NEW-00077,65,Type 2 Diabetes,Glucotrol-X,13,low,,monthly_copay,-1.9716,copay_assistance_enrolled,-0.4438,deductible_met,0.4059
+SYN-NEW-00078,74,Acute Bacterial Infection,Cephadex,14,low,,monthly_copay,-1.619,medication_name,-1.0202,deductible_met,0.6394
+SYN-NEW-00079,51,Acute Bacterial Infection,Cephadex,1,low,,monthly_copay,-2.019,medication_name,-1.2574,deductible_met,-0.5711
+SYN-NEW-00080,87,Hyperlipidemia,Lipatrex,2,low,,monthly_copay,-1.427,deductible_met,-0.7781,medication_name,-0.5585
+SYN-NEW-00081,73,Asthma,Airoflex,48,medium,,monthly_copay,-0.8715,distance_to_pharmacy_miles,0.7887,deductible_met,0.5228
+SYN-NEW-00082,41,Hyperlipidemia,Lipatrex,2,low,,monthly_copay,-1.7882,deductible_met,-0.797,medication_name,-0.768
+SYN-NEW-00083,87,Psoriasis,Cutinex,93,high,,monthly_copay,3.0301,copay_assistance_enrolled,-0.7642,age,-0.5016
+SYN-NEW-00084,35,Multiple Sclerosis,Myelara,10,low,,copay_assistance_enrolled,-0.61,deductible_met,-0.5275,pa_turnaround_days,0.4621
+SYN-NEW-00085,67,Acute Bacterial Infection,Amoxinol,2,low,,monthly_copay,-1.6332,deductible_met,-0.581,copay_assistance_enrolled,-0.4236
+SYN-NEW-00086,67,Psoriasis,Dermalis,28,low,,copay_assistance_enrolled,-1.0289,deductible_met,0.3467,appointment_length_minutes,-0.2942
+SYN-NEW-00087,40,Hypertension,Cardiozem,24,low,,copay_assistance_enrolled,-0.7525,monthly_copay,-0.6577,medication_name,-0.4834
+SYN-NEW-00088,59,Psoriasis,Cutinex,78,high,,prior_abandoned_rx_count,0.6587,medication_name,0.4637,copay_assistance_enrolled,0.376
+SYN-NEW-00089,42,Psoriasis,Dermalis,97,high,,monthly_copay,3.4739,deductible_met,-0.4962,medication_name,0.3969
+SYN-NEW-00090,73,Acute Bacterial Infection,Amoxinol,5,low,,monthly_copay,-1.4658,deductible_met,-0.5683,prior_abandoned_rx_count,-0.2751
+SYN-NEW-00091,39,Asthma,Airoflex,21,low,,deductible_met,-0.7313,concurrent_medication_count,-0.2743,prior_abandoned_rx_count,-0.2065
+SYN-NEW-00092,62,Asthma,Bronchara,24,low,,medication_name,-1.2568,deductible_met,-0.968,insurance_type,0.4846
+SYN-NEW-00093,54,Asthma,Bronchara,3,low,,deductible_met,-1.1687,medication_name,-0.816,monthly_copay,-0.699
+SYN-NEW-00094,38,Psoriasis,Cutinex,91,high,,monthly_copay,2.4767,copay_assistance_enrolled,-0.8486,appointment_length_minutes,0.3063
+SYN-NEW-00095,82,Hyperlipidemia,Lipatrex,5,low,,monthly_copay,-1.2633,deductible_met,-0.7614,medication_name,-0.5003
+SYN-NEW-00096,83,Multiple Sclerosis,Myelara,34,low,,copay_assistance_enrolled,-0.9663,deductible_met,-0.5633,pa_turnaround_days,0.5511
+SYN-NEW-00097,54,Rheumatoid Arthritis,Immunara,50,medium,,monthly_copay,-0.9156,distance_to_pharmacy_miles,0.5476,pa_turnaround_days,0.4513
+SYN-NEW-00098,59,Psoriasis,Cutinex,86,high,,copay_assistance_enrolled,0.5144,monthly_copay,0.3708,deductible_met,0.2815
+SYN-NEW-00099,37,Multiple Sclerosis,Myelara,10,low,,copay_assistance_enrolled,-1.028,deductible_met,-0.5606,missed_visits_count,-0.2631
+SYN-NEW-00100,69,Post-Surgical Pain,Analgex,6,low,,monthly_copay,-1.2788,deductible_met,-0.7783,medication_name,-0.4825
+SYN-NEW-00101,78,Multiple Sclerosis,Neurovex,50,medium,,deductible_met,-0.6984,medication_name,0.5593,copay_assistance_enrolled,0.4335
+SYN-NEW-00102,66,Rheumatoid Arthritis,Immunara,89,high,,monthly_copay,2.7288,copay_assistance_enrolled,-0.5628,deductible_met,-0.5323
+SYN-NEW-00103,49,Asthma,Airoflex,58,medium,,deductible_met,-0.6011,monthly_copay,0.5862,concurrent_medication_count,0.3739
+SYN-NEW-00104,73,Rheumatoid Arthritis,Immunara,95,high,,monthly_copay,3.0831,deductible_met,-0.5442,pa_turnaround_days,0.3789
+SYN-NEW-00105,42,Asthma,Airoflex,5,low,,monthly_copay,-1.8053,deductible_met,-0.5795,copay_assistance_enrolled,-0.492
+SYN-NEW-00106,72,Hyperlipidemia,Lipatrex,6,low,,monthly_copay,-1.2083,medication_name,-1.1677,copay_assistance_enrolled,-0.6199
+SYN-NEW-00107,30,Hyperlipidemia,Cholestara,59,medium,,distance_to_pharmacy_miles,0.7109,deductible_met,0.491,concurrent_medication_count,-0.2837
+SYN-NEW-00108,47,Major Depressive Disorder,Moodrex,6,low,,monthly_copay,-1.5114,deductible_met,-0.7768,copay_assistance_enrolled,-0.3734
+SYN-NEW-00109,63,Rheumatoid Arthritis,Rheumatex,97,high,,monthly_copay,3.5798,copay_assistance_enrolled,-0.6754,deductible_met,-0.4232
+SYN-NEW-00110,20,Type 2 Diabetes,Glucotrol-X,7,low,,monthly_copay,-2.2377,medication_name,-0.3781,deductible_met,0.3633
+SYN-NEW-00111,71,Rheumatoid Arthritis,Immunara,91,high,,monthly_copay,1.6418,deductible_met,0.5268,copay_assistance_enrolled,0.2999
+SYN-NEW-00112,52,Asthma,Bronchara,9,low,,medication_name,-1.2196,deductible_met,-0.9332,monthly_copay,-0.6476
+SYN-NEW-00113,54,Type 2 Diabetes,Metforal,13,low,,monthly_copay,-0.6464,deductible_met,-0.5409,copay_assistance_enrolled,-0.513
+SYN-NEW-00114,82,Rheumatoid Arthritis,Immunara,49,medium,,monthly_copay,0.9703,copay_assistance_enrolled,-0.6874,deductible_met,0.4751
+SYN-NEW-00115,40,Multiple Sclerosis,Neurovex,92,high,,monthly_copay,2.3878,deductible_met,-0.5205,medication_name,0.3471
+SYN-NEW-00116,28,Acute Bacterial Infection,Amoxinol,4,low,,monthly_copay,-1.4869,deductible_met,-0.6675,missed_visits_count,-0.44
+SYN-NEW-00117,27,Hyperlipidemia,Lipatrex,24,low,,monthly_copay,-2.0334,medication_name,-0.5109,deductible_met,0.4575
+SYN-NEW-00118,74,Post-Surgical Pain,Analgex,12,low,,monthly_copay,-1.5182,deductible_met,-0.5987,missed_visits_count,0.3649
+SYN-NEW-00119,44,Acute Bacterial Infection,Cephadex,2,low,,monthly_copay,-1.8233,medication_name,-1.429,deductible_met,-0.7052
+SYN-NEW-00120,65,Asthma,Airoflex,48,medium,,distance_to_pharmacy_miles,0.6847,monthly_copay,-0.482,deductible_met,0.4284
+SYN-NEW-00121,22,Asthma,Bronchara,1,low,,monthly_copay,-1.7219,medication_name,-1.0461,deductible_met,-1.0422
+SYN-NEW-00122,68,Psoriasis,Dermalis,32,low,,monthly_copay,-1.2493,medication_name,0.4347,prior_abandoned_rx_count,-0.2904
+SYN-NEW-00123,80,Hypertension,Cardiozem,7,low,,monthly_copay,-1.9469,deductible_met,0.4332,prior_abandoned_rx_count,-0.2932
+SYN-NEW-00124,33,Hypertension,Vaslorin,1,low,,medication_name,-2.0216,monthly_copay,-1.7051,deductible_met,-0.7252
+SYN-NEW-00125,82,Post-Surgical Pain,Recuparin,9,low,,monthly_copay,-1.0402,medication_name,-0.9732,deductible_met,0.6265
+SYN-NEW-00126,23,Psoriasis,Cutinex,84,high,,copay_assistance_enrolled,0.486,deductible_met,0.4358,monthly_copay,0.399
+SYN-NEW-00127,43,Multiple Sclerosis,Neurovex,95,high,,monthly_copay,3.6443,deductible_met,-0.5156,medication_name,0.3432
+SYN-NEW-00128,37,Asthma,Airoflex,8,low,,monthly_copay,-1.0082,deductible_met,-0.7731,prior_abandoned_rx_count,-0.2522
+SYN-NEW-00129,38,Post-Surgical Pain,Recuparin,2,low,,monthly_copay,-1.9374,medication_name,-1.3103,deductible_met,-0.8659
+SYN-NEW-00130,62,Hyperlipidemia,Cholestara,29,low,,monthly_copay,-0.6844,deductible_met,0.5593,concurrent_medication_count,-0.3123
+SYN-NEW-00131,72,Asthma,Bronchara,31,low,,monthly_copay,-0.76,deductible_met,0.7044,copay_assistance_enrolled,-0.4857
+SYN-NEW-00132,45,Rheumatoid Arthritis,Rheumatex,97,high,,monthly_copay,3.215,medication_name,0.454,deductible_met,-0.4074
+SYN-NEW-00133,34,Post-Surgical Pain,Analgex,4,low,,monthly_copay,-2.0227,medication_name,-0.7553,prior_abandoned_rx_count,-0.3897
+SYN-NEW-00134,36,Rheumatoid Arthritis,Immunara,91,high,,monthly_copay,3.3052,deductible_met,-0.5175,insurance_type,0.2879
+SYN-NEW-00135,44,Post-Surgical Pain,Analgex,9,low,,monthly_copay,-1.0338,medication_name,-0.952,deductible_met,0.4376
+SYN-NEW-00136,46,Psoriasis,Cutinex,68,medium,,copay_assistance_enrolled,0.4023,deductible_met,0.3202,medication_name,0.2118
+SYN-NEW-00137,88,Psoriasis,Dermalis,98,high,,monthly_copay,2.2715,distance_to_pharmacy_miles,0.5305,deductible_met,0.3833
+SYN-NEW-00138,70,Rheumatoid Arthritis,Rheumatex,66,medium,,deductible_met,0.4015,prior_abandoned_rx_count,0.3043,distance_to_pharmacy_miles,-0.2247
+SYN-NEW-00139,49,Multiple Sclerosis,Neurovex,12,low,,copay_assistance_enrolled,-1.0912,deductible_met,-0.4942,pa_turnaround_days,0.4543
+SYN-NEW-00140,36,Asthma,Bronchara,2,low,,monthly_copay,-1.5326,deductible_met,-1.1272,medication_name,-0.8942
+SYN-NEW-00141,18,Hypertension,Vaslorin,6,low,,monthly_copay,-2.2076,medication_name,-1.5119,deductible_met,0.5802
+SYN-NEW-00142,57,Major Depressive Disorder,Serenol,19,low,,monthly_copay,-1.0184,medication_name,-0.9652,prior_abandoned_rx_count,-0.319
+SYN-NEW-00143,19,Type 2 Diabetes,Metforal,33,low,,monthly_copay,-0.9086,deductible_met,-0.5731,medication_name,-0.5454
+SYN-NEW-00144,47,Hypertension,Cardiozem,5,low,,monthly_copay,-1.4405,copay_assistance_enrolled,-0.5652,deductible_met,0.4141
+SYN-NEW-00145,35,Major Depressive Disorder,Serenol,2,low,,monthly_copay,-1.7514,medication_name,-1.1567,deductible_met,-0.4726
+SYN-NEW-00146,89,Asthma,Bronchara,49,medium,,monthly_copay,-1.1683,deductible_met,0.7827,distance_to_pharmacy_miles,0.6626
+SYN-NEW-00147,89,Rheumatoid Arthritis,Rheumatex,94,high,,monthly_copay,3.326,copay_assistance_enrolled,-0.6336,age,-0.3695
+SYN-NEW-00148,79,Hyperlipidemia,Cholestara,48,medium,,deductible_met,-0.6749,distance_to_pharmacy_miles,0.4998,age,-0.3639
+SYN-NEW-00149,54,Post-Surgical Pain,Analgex,2,low,,monthly_copay,-1.5665,deductible_met,-0.6682,medication_name,-0.5915
+SYN-NEW-00150,70,Post-Surgical Pain,Recuparin,7,low,,monthly_copay,-1.5034,medication_name,-1.3188,deductible_met,0.597
+SYN-NEW-00151,48,Hypertension,Cardiozem,58,medium,,monthly_copay,-0.8507,deductible_met,0.5752,prior_abandoned_rx_count,0.359
+SYN-NEW-00152,57,Multiple Sclerosis,Neurovex,97,high,,monthly_copay,3.1347,deductible_met,-0.494,pa_turnaround_days,0.423
+SYN-NEW-00153,25,Hypertension,Cardiozem,19,low,,copay_assistance_enrolled,-0.6922,deductible_met,0.6482,monthly_copay,-0.59
+SYN-NEW-00154,46,Multiple Sclerosis,Myelara,40,medium,,copay_assistance_enrolled,-0.731,deductible_met,0.3697,missed_visits_count,-0.3032
+SYN-NEW-00155,54,Post-Surgical Pain,Recuparin,5,low,,monthly_copay,-1.7629,medication_name,-0.9784,deductible_met,0.5361
+SYN-NEW-00156,66,Hyperlipidemia,Lipatrex,20,low,,monthly_copay,-2.1848,medication_name,-0.3925,deductible_met,0.362
+SYN-NEW-00157,43,Major Depressive Disorder,Serenol,2,low,,monthly_copay,-1.7534,medication_name,-0.9418,deductible_met,-0.6082
+SYN-NEW-00158,78,Hypertension,Presolol,5,low,,medication_name,-1.041,deductible_met,-0.8998,insurance_type,0.4505
+SYN-NEW-00159,40,Hypertension,Cardiozem,35,low,,monthly_copay,-0.8638,deductible_met,0.6187,medication_name,-0.31
+SYN-NEW-00160,28,Type 2 Diabetes,Metforal,18,low,,monthly_copay,-0.8948,medication_name,-0.5119,deductible_met,0.3222
+SYN-NEW-00161,80,Asthma,Airoflex,11,low,,monthly_copay,-1.0898,deductible_met,-0.9034,age,-0.3189
+SYN-NEW-00162,20,Multiple Sclerosis,Neurovex,98,high,,monthly_copay,3.3545,deductible_met,-0.4955,pa_turnaround_days,0.4228
+SYN-NEW-00163,46,Major Depressive Disorder,Moodrex,3,low,,monthly_copay,-1.8029,deductible_met,-0.7598,medication_name,-0.5388
+SYN-NEW-00164,51,Major Depressive Disorder,Moodrex,6,low,,monthly_copay,-1.0479,medication_name,-0.7161,deductible_met,-0.6271
+SYN-NEW-00165,18,Acute Bacterial Infection,Cephadex,32,low,,monthly_copay,-1.1552,medication_name,-0.8154,deductible_met,0.7007
+SYN-NEW-00166,37,Major Depressive Disorder,Moodrex,55,medium,,prior_abandoned_rx_count,0.7691,deductible_met,0.6298,monthly_copay,-0.5907
+SYN-NEW-00167,77,Rheumatoid Arthritis,Immunara,86,high,,monthly_copay,2.5053,deductible_met,-0.5309,pa_turnaround_days,0.4282
+SYN-NEW-00168,81,Rheumatoid Arthritis,Immunara,90,high,,monthly_copay,1.0076,deductible_met,0.5303,age,-0.328
+SYN-NEW-00169,47,Post-Surgical Pain,Recuparin,13,low,,monthly_copay,-1.9086,medication_name,-1.0889,deductible_met,0.4958
+SYN-NEW-00170,36,Rheumatoid Arthritis,Rheumatex,84,high,,monthly_copay,3.4947,copay_assistance_enrolled,-0.7645,deductible_met,-0.465
+SYN-NEW-00171,37,Hyperlipidemia,Cholestara,39,low,,monthly_copay,-0.85,distance_to_pharmacy_miles,0.5364,deductible_met,0.5207
+SYN-NEW-00172,83,Post-Surgical Pain,Recuparin,29,low,,monthly_copay,-1.1359,medication_name,-0.9524,distance_to_pharmacy_miles,0.8293
+SYN-NEW-00173,86,Rheumatoid Arthritis,Immunara,87,high,,monthly_copay,1.8809,deductible_met,-0.6482,pa_turnaround_days,0.4279
+SYN-NEW-00174,54,Post-Surgical Pain,Analgex,3,low,,monthly_copay,-0.9074,medication_name,-0.8617,deductible_met,-0.4702
+SYN-NEW-00175,50,Asthma,Bronchara,19,low,,monthly_copay,-1.6134,deductible_met,0.7646,medication_name,-0.4382
+SYN-NEW-00176,78,Hyperlipidemia,Lipatrex,11,low,,monthly_copay,-0.7256,deductible_met,-0.6156,medication_name,-0.3589
+SYN-NEW-00177,38,Hyperlipidemia,Lipatrex,11,low,,monthly_copay,-2.341,medication_name,-0.3533,deductible_met,0.3328
+SYN-NEW-00178,50,Rheumatoid Arthritis,Rheumatex,70,high,,monthly_copay,0.6467,medication_name,0.6255,deductible_met,-0.533
+SYN-NEW-00179,50,Type 2 Diabetes,Insunova,18,low,,monthly_copay,-1.2583,deductible_met,0.4696,distance_to_pharmacy_miles,-0.387
+SYN-NEW-00180,69,Hypertension,Vaslorin,3,low,,medication_name,-1.6335,deductible_met,-0.8781,concurrent_medication_count,-0.2789
+SYN-NEW-00181,21,Rheumatoid Arthritis,Immunara,32,low,,deductible_met,-0.6229,pa_turnaround_days,0.4316,age,0.426
+SYN-NEW-00182,88,Acute Bacterial Infection,Cephadex,1,low,,monthly_copay,-1.8245,medication_name,-1.2423,deductible_met,-0.9074
+SYN-NEW-00183,72,Post-Surgical Pain,Analgex,7,low,,monthly_copay,-1.4461,deductible_met,-0.829,prior_abandoned_rx_count,0.7897
+SYN-NEW-00184,29,Acute Bacterial Infection,Cephadex,7,low,,monthly_copay,-2.0744,medication_name,-0.9646,deductible_met,0.6487
+SYN-NEW-00185,70,Acute Bacterial Infection,Cephadex,3,low,,monthly_copay,-1.9982,medication_name,-1.3153,deductible_met,0.5194
+SYN-NEW-00186,36,Post-Surgical Pain,Recuparin,1,low,,monthly_copay,-2.1035,medication_name,-1.3589,deductible_met,-0.7109
+SYN-NEW-00187,47,Rheumatoid Arthritis,Rheumatex,86,high,,monthly_copay,1.9398,copay_assistance_enrolled,-0.5925,deductible_met,-0.5724
+SYN-NEW-00188,55,Acute Bacterial Infection,Amoxinol,9,low,,monthly_copay,-1.9412,medication_name,-0.3024,prior_abandoned_rx_count,-0.3016
+SYN-NEW-00189,67,Major Depressive Disorder,Serenol,3,low,,monthly_copay,-2.093,medication_name,-1.1215,deductible_met,0.3838
+SYN-NEW-00190,45,Hypertension,Presolol,2,low,,medication_name,-1.3743,monthly_copay,-0.9596,deductible_met,-0.9209
+SYN-NEW-00191,33,Acute Bacterial Infection,Amoxinol,5,low,,monthly_copay,-0.9948,deductible_met,-0.5783,concurrent_medication_count,-0.3146
+SYN-NEW-00192,75,Psoriasis,Dermalis,31,low,,deductible_met,-0.5395,medication_name,0.3893,age,-0.3695
+SYN-NEW-00193,24,Psoriasis,Dermalis,55,medium,,copay_assistance_enrolled,-0.7778,pa_turnaround_days,0.4352,deductible_met,0.3497
+SYN-NEW-00194,84,Psoriasis,Cutinex,18,low,,copay_assistance_enrolled,-0.874,age,-0.4983,monthly_copay,-0.4533
+SYN-NEW-00195,79,Psoriasis,Cutinex,86,high,,monthly_copay,3.2531,copay_assistance_enrolled,-0.8723,age,-0.4401
+SYN-NEW-00196,59,Post-Surgical Pain,Analgex,2,low,,monthly_copay,-1.6073,medication_name,-0.9392,deductible_met,-0.5562
+SYN-NEW-00197,49,Rheumatoid Arthritis,Immunara,51,medium,,deductible_met,-0.7133,medication_name,0.4757,prior_abandoned_rx_count,0.3018
+SYN-NEW-00198,27,Hyperlipidemia,Cholestara,4,low,,deductible_met,-0.8455,copay_assistance_enrolled,-0.8338,medication_name,-0.5042
+SYN-NEW-00199,76,Multiple Sclerosis,Neurovex,58,medium,,monthly_copay,2.3145,copay_assistance_enrolled,-0.7276,deductible_met,-0.566
+SYN-NEW-00200,45,Post-Surgical Pain,Analgex,38,low,,monthly_copay,-1.1877,prior_abandoned_rx_count,0.4972,medication_name,-0.4304
+SYN-NEW-00201,59,Major Depressive Disorder,Serenol,6,low,,medication_name,-1.1698,monthly_copay,-0.9888,deductible_met,0.4326
+SYN-NEW-00202,39,Hyperlipidemia,Lipatrex,37,low,,monthly_copay,-0.943,deductible_met,0.3454,concurrent_medication_count,0.2759
+SYN-NEW-00203,63,Rheumatoid Arthritis,Rheumatex,83,high,,pa_turnaround_days,0.4695,monthly_copay,0.4389,deductible_met,-0.3906
+SYN-NEW-00204,64,Hyperlipidemia,Cholestara,5,low,,monthly_copay,-1.7528,deductible_met,-0.8628,distance_to_pharmacy_miles,0.5131
+SYN-NEW-00205,19,Type 2 Diabetes,Glucotrol-X,45,medium,,monthly_copay,-1.677,medication_name,-0.5255,prior_abandoned_rx_count,0.4807
+SYN-NEW-00206,36,Rheumatoid Arthritis,Immunara,92,high,,monthly_copay,0.7548,deductible_met,0.4684,pa_turnaround_days,0.4537
+SYN-NEW-00207,56,Hyperlipidemia,Cholestara,59,medium,,monthly_copay,-0.6345,deductible_met,0.4871,prior_abandoned_rx_count,0.3422
+SYN-NEW-00208,24,Major Depressive Disorder,Moodrex,7,low,,deductible_met,-1.0474,monthly_copay,-0.9425,medication_name,-0.5181
+SYN-NEW-00209,29,Hyperlipidemia,Cholestara,23,low,,insurance_type,0.7687,deductible_met,-0.6309,concurrent_medication_count,-0.3475
+SYN-NEW-00210,54,Asthma,Airoflex,11,low,,monthly_copay,-1.1413,deductible_met,-0.8891,prior_abandoned_rx_count,0.7312
+SYN-NEW-00211,44,Type 2 Diabetes,Insunova,3,low,,monthly_copay,-1.9206,deductible_met,-0.7749,concurrent_medication_count,-0.2638
+SYN-NEW-00212,38,Type 2 Diabetes,Glucotrol-X,27,low,,monthly_copay,-0.9998,deductible_met,-0.5664,concurrent_medication_count,0.4104
+SYN-NEW-00213,85,Post-Surgical Pain,Analgex,5,low,,monthly_copay,-1.4665,medication_name,-0.9302,deductible_met,0.436
+SYN-NEW-00214,53,Hyperlipidemia,Cholestara,20,low,,monthly_copay,-1.4225,deductible_met,0.5146,prior_abandoned_rx_count,-0.2991
+SYN-NEW-00215,56,Hypertension,Cardiozem,57,medium,,deductible_met,-0.6927,monthly_copay,0.4905,medication_name,-0.4218
+SYN-NEW-00216,42,Asthma,Bronchara,2,low,,monthly_copay,-1.0419,deductible_met,-1.0247,medication_name,-1.0139
+SYN-NEW-00217,42,Asthma,Bronchara,2,low,,monthly_copay,-1.2479,deductible_met,-1.205,medication_name,-0.9663
+SYN-NEW-00218,73,Rheumatoid Arthritis,Immunara,98,high,,monthly_copay,3.4183,deductible_met,0.3805,insurance_type,0.3373
+SYN-NEW-00219,53,Psoriasis,Dermalis,35,low,,copay_assistance_enrolled,-0.7446,medication_name,0.3954,deductible_met,-0.3776
+SYN-NEW-00220,36,Hypertension,Cardiozem,37,low,,medication_name,-0.509,monthly_copay,-0.4884,deductible_met,0.4864
+SYN-NEW-00221,18,Acute Bacterial Infection,Amoxinol,27,low,,monthly_copay,-1.403,medication_name,-0.5314,distance_to_pharmacy_miles,0.4509
+SYN-NEW-00222,70,Asthma,Airoflex,14,low,,monthly_copay,-0.8123,deductible_met,0.5273,distance_to_pharmacy_miles,-0.3615
+SYN-NEW-00223,55,Type 2 Diabetes,Metforal,6,low,,monthly_copay,-0.8234,medication_name,-0.569,deductible_met,-0.4487
+SYN-NEW-00224,26,Type 2 Diabetes,Insunova,4,low,,monthly_copay,-1.5994,deductible_met,-0.8133,prior_abandoned_rx_count,-0.255
+SYN-NEW-00225,67,Type 2 Diabetes,Insunova,6,low,,monthly_copay,-1.2206,copay_assistance_enrolled,-0.7911,deductible_met,-0.6552
+SYN-NEW-00226,74,Acute Bacterial Infection,Amoxinol,7,low,,monthly_copay,-1.7651,medication_name,-0.4905,deductible_met,0.433
+SYN-NEW-00227,66,Rheumatoid Arthritis,Rheumatex,63,medium,,monthly_copay,0.6816,deductible_met,-0.6031,medication_name,0.4611
+SYN-NEW-00228,89,Asthma,Bronchara,19,low,,monthly_copay,-0.8481,deductible_met,0.7104,medication_name,-0.4503
+SYN-NEW-00229,41,Asthma,Airoflex,5,low,,monthly_copay,-1.7399,deductible_met,-0.7699,concurrent_medication_count,-0.2869
+SYN-NEW-00230,38,Hypertension,Cardiozem,18,low,,monthly_copay,-1.7472,deductible_met,0.5256,prior_abandoned_rx_count,0.4214
+SYN-NEW-00231,77,Asthma,Airoflex,9,low,,monthly_copay,-1.0976,deductible_met,-0.6465,age,-0.4103
+SYN-NEW-00232,89,Asthma,Bronchara,2,low,,medication_name,-0.9687,deductible_met,-0.9313,monthly_copay,-0.8391
+SYN-NEW-00233,71,Psoriasis,Cutinex,22,low,,copay_assistance_enrolled,-1.3375,prior_abandoned_rx_count,0.5022,deductible_met,0.4258
+SYN-NEW-00234,62,Acute Bacterial Infection,Cephadex,9,low,,monthly_copay,-1.4588,medication_name,-0.8162,deductible_met,0.5265
+SYN-NEW-00235,36,Multiple Sclerosis,Myelara,15,low,,monthly_copay,-0.921,deductible_met,0.404,prior_abandoned_rx_count,-0.3914
+SYN-NEW-00236,59,Multiple Sclerosis,Myelara,6,low,,copay_assistance_enrolled,-0.7751,deductible_met,-0.589,monthly_copay,-0.5105
+SYN-NEW-00237,44,Hypertension,Vaslorin,5,low,,medication_name,-1.6696,monthly_copay,-1.0757,deductible_met,0.5583
+SYN-NEW-00238,36,Major Depressive Disorder,Moodrex,9,low,,monthly_copay,-1.3242,medication_name,-0.5969,deductible_met,-0.5829
+SYN-NEW-00239,49,Type 2 Diabetes,Insunova,37,low,,monthly_copay,-0.8811,medication_name,0.5268,deductible_met,0.4867
+SYN-NEW-00240,66,Major Depressive Disorder,Moodrex,30,low,,monthly_copay,-1.3042,deductible_met,0.5996,prior_abandoned_rx_count,0.3852
+SYN-NEW-00241,64,Type 2 Diabetes,Insunova,83,high,,monthly_copay,0.6354,deductible_met,0.5432,copay_assistance_enrolled,0.436
+SYN-NEW-00242,50,Post-Surgical Pain,Recuparin,1,low,,medication_name,-1.6967,monthly_copay,-1.5573,deductible_met,-0.8674
+SYN-NEW-00243,60,Major Depressive Disorder,Moodrex,31,low,,monthly_copay,-0.5644,deductible_met,-0.5626,medication_name,-0.5342
+SYN-NEW-00244,60,Asthma,Airoflex,46,medium,,prior_abandoned_rx_count,0.608,deductible_met,0.5612,monthly_copay,-0.3594
+SYN-NEW-00245,40,Acute Bacterial Infection,Cephadex,1,low,,medication_name,-1.4825,monthly_copay,-1.175,deductible_met,-0.8713
+SYN-NEW-00246,52,Hypertension,Vaslorin,6,low,,monthly_copay,-1.7534,medication_name,-1.6498,distance_to_pharmacy_miles,0.555
+SYN-NEW-00247,51,Psoriasis,Dermalis,35,low,,monthly_copay,-0.9795,medication_name,0.4858,deductible_met,-0.4847
+SYN-NEW-00248,74,Rheumatoid Arthritis,Immunara,72,high,,pa_turnaround_days,0.5031,deductible_met,0.478,prior_abandoned_rx_count,0.3905
+SYN-NEW-00249,38,Asthma,Airoflex,5,low,,monthly_copay,-1.8104,deductible_met,-0.7378,prior_abandoned_rx_count,-0.3325
+SYN-NEW-00250,55,Type 2 Diabetes,Metforal,16,low,,monthly_copay,-0.8376,copay_assistance_enrolled,-0.5214,concurrent_medication_count,0.4358
+SYN-NEW-00251,55,Multiple Sclerosis,Neurovex,38,low,,monthly_copay,1.2352,copay_assistance_enrolled,-0.8605,deductible_met,-0.6354
+SYN-NEW-00252,41,Hyperlipidemia,Cholestara,8,low,,copay_assistance_enrolled,-0.7966,deductible_met,-0.5719,monthly_copay,-0.4554
+SYN-NEW-00253,73,Hyperlipidemia,Lipatrex,7,low,,monthly_copay,-1.4851,medication_name,-0.6176,deductible_met,0.5108
+SYN-NEW-00254,40,Hypertension,Cardiozem,3,low,,monthly_copay,-1.2633,deductible_met,-0.7483,concurrent_medication_count,-0.383
+SYN-NEW-00255,56,Hypertension,Vaslorin,10,low,,medication_name,-1.5727,deductible_met,0.4505,prior_abandoned_rx_count,-0.316
+SYN-NEW-00256,58,Post-Surgical Pain,Recuparin,2,low,,monthly_copay,-1.8945,medication_name,-1.2768,deductible_met,-0.7958
+SYN-NEW-00257,53,Multiple Sclerosis,Myelara,98,high,,monthly_copay,3.7901,copay_assistance_enrolled,-0.442,deductible_met,0.2458
+SYN-NEW-00258,87,Rheumatoid Arthritis,Immunara,81,high,,monthly_copay,0.8551,deductible_met,0.5651,age,-0.3251
+SYN-NEW-00259,63,Post-Surgical Pain,Analgex,4,low,,monthly_copay,-1.923,deductible_met,-0.4869,medication_name,-0.4069
+SYN-NEW-00260,25,Hyperlipidemia,Lipatrex,52,medium,,monthly_copay,-0.9357,deductible_met,0.3936,concurrent_medication_count,0.2863
+SYN-NEW-00261,19,Multiple Sclerosis,Myelara,54,medium,,monthly_copay,0.8565,deductible_met,-0.4419,age,0.3658
+SYN-NEW-00262,19,Acute Bacterial Infection,Cephadex,4,low,,medication_name,-1.348,monthly_copay,-1.074,deductible_met,-0.9842
+SYN-NEW-00263,41,Hypertension,Cardiozem,74,high,,monthly_copay,1.0548,medication_name,-0.6858,deductible_met,0.4378
+SYN-NEW-00264,50,Asthma,Airoflex,9,low,,monthly_copay,-1.3371,deductible_met,-0.7224,prior_abandoned_rx_count,-0.2791
+SYN-NEW-00265,62,Rheumatoid Arthritis,Immunara,20,low,,copay_assistance_enrolled,-0.7183,deductible_met,-0.6492,medication_name,0.4419
+SYN-NEW-00266,31,Hypertension,Cardiozem,11,low,,monthly_copay,-0.9633,deductible_met,-0.6474,concurrent_medication_count,0.3593
+SYN-NEW-00267,34,Hypertension,Cardiozem,59,medium,,monthly_copay,-0.8041,deductible_met,0.5035,prior_abandoned_rx_count,0.3334
+SYN-NEW-00268,83,Multiple Sclerosis,Neurovex,30,low,,copay_assistance_enrolled,-0.83,deductible_met,-0.7322,age,-0.506
+SYN-NEW-00269,23,Post-Surgical Pain,Recuparin,14,low,,monthly_copay,-1.3588,medication_name,-1.0086,deductible_met,0.6532
+SYN-NEW-00270,58,Psoriasis,Cutinex,30,low,,copay_assistance_enrolled,-1.2063,deductible_met,0.2978,pa_turnaround_days,0.2282
+SYN-NEW-00271,52,Hypertension,Cardiozem,12,low,,monthly_copay,-0.8838,copay_assistance_enrolled,-0.6233,deductible_met,0.467
+SYN-NEW-00272,77,Post-Surgical Pain,Analgex,4,low,,monthly_copay,-1.6285,deductible_met,-0.745,medication_name,-0.4827
+SYN-NEW-00273,27,Post-Surgical Pain,Analgex,12,low,,monthly_copay,-1.4054,medication_name,-0.7355,deductible_met,0.4485
+SYN-NEW-00274,76,Multiple Sclerosis,Myelara,36,low,,deductible_met,0.4681,prior_abandoned_rx_count,0.3245,monthly_copay,-0.2749
+SYN-NEW-00275,62,Rheumatoid Arthritis,Rheumatex,97,high,,monthly_copay,2.5952,medication_name,0.4295,deductible_met,-0.4056
+SYN-NEW-00276,18,Post-Surgical Pain,Analgex,5,low,,monthly_copay,-1.5334,deductible_met,-0.8784,age,0.481
+SYN-NEW-00277,61,Hyperlipidemia,Cholestara,9,low,,monthly_copay,-0.8598,copay_assistance_enrolled,-0.8103,deductible_met,-0.7986
+SYN-NEW-00278,81,Hypertension,Presolol,24,low,,monthly_copay,-1.2866,deductible_met,0.6175,medication_name,-0.5311
+SYN-NEW-00279,53,Psoriasis,Dermalis,96,high,,monthly_copay,3.6496,copay_assistance_enrolled,-0.5531,deductible_met,-0.4409
+SYN-NEW-00280,48,Asthma,Airoflex,32,low,,monthly_copay,-1.1971,deductible_met,0.5226,prior_abandoned_rx_count,-0.3705
+SYN-NEW-00281,45,Hyperlipidemia,Lipatrex,62,medium,,medication_name,-0.6728,prior_abandoned_rx_count,0.4164,insurance_type,0.399
+SYN-NEW-00282,34,Hypertension,Cardiozem,43,medium,,monthly_copay,-1.1653,deductible_met,0.6004,prior_abandoned_rx_count,0.3942
+SYN-NEW-00283,37,Hypertension,Cardiozem,11,low,,monthly_copay,-1.2601,deductible_met,0.5016,distance_to_pharmacy_miles,-0.3033
+SYN-NEW-00284,80,Major Depressive Disorder,Moodrex,13,low,,monthly_copay,-1.1673,deductible_met,-0.6647,medication_name,-0.532
+SYN-NEW-00285,46,Multiple Sclerosis,Neurovex,77,high,,monthly_copay,0.8323,deductible_met,-0.59,pa_turnaround_days,0.3969
+SYN-NEW-00286,78,Major Depressive Disorder,Moodrex,19,low,,medication_name,-0.8756,deductible_met,-0.7893,monthly_copay,0.4798
+SYN-NEW-00287,54,Post-Surgical Pain,Analgex,8,low,,monthly_copay,-1.4611,deductible_met,-0.5218,medication_name,-0.4387
+SYN-NEW-00288,80,Psoriasis,Dermalis,97,high,,monthly_copay,3.607,age,-0.3839,deductible_met,0.3545
+SYN-NEW-00289,80,Post-Surgical Pain,Recuparin,1,low,,monthly_copay,-1.5853,medication_name,-1.3787,deductible_met,-0.8693
+SYN-NEW-00290,81,Post-Surgical Pain,Recuparin,4,low,,monthly_copay,-1.7427,medication_name,-1.1645,deductible_met,0.5455
+SYN-NEW-00291,34,Major Depressive Disorder,Serenol,3,low,,medication_name,-1.1229,monthly_copay,-0.8662,deductible_met,-0.6185
+SYN-NEW-00292,87,Multiple Sclerosis,Myelara,49,medium,,deductible_met,0.4436,monthly_copay,0.433,copay_assistance_enrolled,0.3729
+SYN-NEW-00293,31,Major Depressive Disorder,Moodrex,71,high,,medication_name,-0.7025,monthly_copay,0.6387,deductible_met,0.4972
+SYN-NEW-00294,36,Multiple Sclerosis,Neurovex,98,high,,monthly_copay,3.6322,copay_assistance_enrolled,-0.6097,deductible_met,-0.3944
+SYN-NEW-00295,77,Rheumatoid Arthritis,Rheumatex,7,low,,monthly_copay,-1.7509,deductible_met,-0.5123,pa_turnaround_days,0.4105
+SYN-NEW-00296,35,Major Depressive Disorder,Moodrex,4,low,,monthly_copay,-1.047,deductible_met,-0.6656,medication_name,-0.606
+SYN-NEW-00297,82,Hyperlipidemia,Cholestara,3,low,,monthly_copay,-1.5056,deductible_met,-0.8006,concurrent_medication_count,-0.3364
+SYN-NEW-00298,22,Type 2 Diabetes,Glucotrol-X,32,low,,monthly_copay,-1.5214,deductible_met,0.5393,prior_abandoned_rx_count,0.3948
+SYN-NEW-00299,22,Psoriasis,Cutinex,87,high,,deductible_met,-0.4919,age,0.4063,copay_assistance_enrolled,0.3958
+SYN-NEW-00300,71,Multiple Sclerosis,Neurovex,41,medium,,monthly_copay,-0.9513,medication_name,0.8018,deductible_met,-0.6214
+SYN-NEW-00301,72,Hypertension,Presolol,4,low,,deductible_met,-0.9428,medication_name,-0.9051,monthly_copay,-0.4715
+SYN-NEW-00302,44,Major Depressive Disorder,Moodrex,2,low,,monthly_copay,-1.0093,deductible_met,-0.755,medication_name,-0.7399
+SYN-NEW-00303,25,Rheumatoid Arthritis,Rheumatex,11,low,,monthly_copay,-1.6093,deductible_met,-0.508,prior_abandoned_rx_count,-0.3381
+SYN-NEW-00304,66,Rheumatoid Arthritis,Immunara,94,high,,monthly_copay,2.6561,deductible_met,-0.5676,copay_assistance_enrolled,0.2688
+SYN-NEW-00305,75,Asthma,Airoflex,7,low,,monthly_copay,-0.95,deductible_met,-0.8313,age,-0.3473
+SYN-NEW-00306,75,Hypertension,Presolol,11,low,,monthly_copay,-1.2922,medication_name,-0.8087,deductible_met,0.7042
+SYN-NEW-00307,81,Hyperlipidemia,Lipatrex,21,low,,monthly_copay,-1.4942,deductible_met,0.4658,medication_name,-0.4047
+SYN-NEW-00308,36,Rheumatoid Arthritis,Rheumatex,18,low,,monthly_copay,-1.1287,deductible_met,-0.4519,prior_abandoned_rx_count,-0.3333
+SYN-NEW-00309,84,Major Depressive Disorder,Serenol,2,low,,monthly_copay,-1.5471,medication_name,-1.031,deductible_met,-0.5643
+SYN-NEW-00310,89,Post-Surgical Pain,Recuparin,9,low,,medication_name,-0.9922,monthly_copay,-0.985,deductible_met,0.5565
+SYN-NEW-00311,31,Major Depressive Disorder,Moodrex,7,low,,deductible_met,-0.9765,medication_name,-0.5486,monthly_copay,-0.519
+SYN-NEW-00312,61,Psoriasis,Dermalis,35,low,,copay_assistance_enrolled,-1.0085,deductible_met,0.336,medication_name,0.2658
+SYN-NEW-00313,51,Post-Surgical Pain,Analgex,29,low,,monthly_copay,-1.3779,deductible_met,0.5242,medication_name,-0.4994
+SYN-NEW-00314,82,Psoriasis,Dermalis,89,high,,monthly_copay,2.5406,deductible_met,-0.5705,age,-0.4319
+SYN-NEW-00315,29,Hyperlipidemia,Cholestara,73,high,,distance_to_pharmacy_miles,0.5568,deductible_met,0.5564,prior_abandoned_rx_count,0.3451
+SYN-NEW-00316,55,Hypertension,Presolol,8,low,,medication_name,-1.0652,deductible_met,-1.0223,monthly_copay,-0.2524
+SYN-NEW-00317,47,Asthma,Bronchara,36,low,,deductible_met,0.6804,medication_name,-0.5754,monthly_copay,-0.5544
+SYN-NEW-00318,83,Acute Bacterial Infection,Amoxinol,3,low,,monthly_copay,-1.7629,medication_name,-0.6436,deductible_met,0.4309
+SYN-NEW-00319,79,Rheumatoid Arthritis,Immunara,94,high,,monthly_copay,2.1928,deductible_met,-0.6295,distance_to_pharmacy_miles,0.4769
+SYN-NEW-00320,53,Hypertension,Cardiozem,6,low,,monthly_copay,-1.3817,deductible_met,-0.8274,medication_name,-0.7189
+SYN-NEW-00321,80,Post-Surgical Pain,Recuparin,1,low,,monthly_copay,-1.9444,medication_name,-1.2245,deductible_met,-0.8705
+SYN-NEW-00322,76,Hyperlipidemia,Cholestara,86,high,,monthly_copay,2.7048,copay_assistance_enrolled,-0.7164,insurance_type,0.5718
+SYN-NEW-00323,21,Acute Bacterial Infection,Amoxinol,15,low,,monthly_copay,-1.4372,prior_abandoned_rx_count,0.6879,deductible_met,-0.6181
+SYN-NEW-00324,45,Multiple Sclerosis,Myelara,33,low,,copay_assistance_enrolled,-0.9495,deductible_met,0.3704,distance_to_pharmacy_miles,-0.3017
+SYN-NEW-00325,73,Asthma,Bronchara,48,medium,,monthly_copay,-0.9911,deductible_met,0.756,prior_abandoned_rx_count,0.7335
+SYN-NEW-00326,18,Major Depressive Disorder,Moodrex,44,medium,,monthly_copay,-1.3842,deductible_met,0.6882,age,0.6001
+SYN-NEW-00327,39,Asthma,Bronchara,18,low,,monthly_copay,-1.5857,deductible_met,0.7205,medication_name,-0.5839
+SYN-NEW-00328,70,Multiple Sclerosis,Myelara,94,high,,monthly_copay,2.9075,copay_assistance_enrolled,-0.49,deductible_met,0.2894
+SYN-NEW-00329,65,Acute Bacterial Infection,Cephadex,3,low,,monthly_copay,-1.4743,medication_name,-1.075,deductible_met,-0.9203
+SYN-NEW-00330,26,Hypertension,Presolol,10,low,,medication_name,-0.925,deductible_met,-0.825,concurrent_medication_count,0.423
+SYN-NEW-00331,34,Acute Bacterial Infection,Amoxinol,9,low,,monthly_copay,-1.555,deductible_met,-0.379,prior_abandoned_rx_count,-0.3109
+SYN-NEW-00332,86,Major Depressive Disorder,Serenol,6,low,,monthly_copay,-1.2919,medication_name,-0.7649,deductible_met,-0.646
+SYN-NEW-00333,51,Type 2 Diabetes,Metforal,37,low,,monthly_copay,-0.655,medication_name,-0.6211,deductible_met,0.3305
+SYN-NEW-00334,58,Acute Bacterial Infection,Cephadex,2,low,,monthly_copay,-1.4378,deductible_met,-0.9968,medication_name,-0.9447
+SYN-NEW-00335,60,Acute Bacterial Infection,Cephadex,1,low,,monthly_copay,-1.8555,medication_name,-1.2436,deductible_met,-0.7939
+SYN-NEW-00336,43,Major Depressive Disorder,Serenol,3,low,,medication_name,-1.4038,monthly_copay,-1.4008,copay_assistance_enrolled,-0.5711
+SYN-NEW-00337,59,Major Depressive Disorder,Moodrex,8,low,,monthly_copay,-1.5049,medication_name,-0.5439,deductible_met,0.4475
+SYN-NEW-00338,73,Multiple Sclerosis,Neurovex,23,low,,copay_assistance_enrolled,-1.0734,deductible_met,-0.666,pa_turnaround_days,0.3044
+SYN-NEW-00339,88,Rheumatoid Arthritis,Immunara,51,medium,,deductible_met,-0.4571,age,-0.3842,prior_abandoned_rx_count,-0.2953
+SYN-NEW-00340,86,Multiple Sclerosis,Neurovex,11,low,,copay_assistance_enrolled,-1.2537,deductible_met,-0.6913,prior_abandoned_rx_count,0.6289
+SYN-NEW-00341,71,Post-Surgical Pain,Analgex,16,low,,monthly_copay,-1.6374,deductible_met,0.5452,medication_name,-0.4607
+SYN-NEW-00342,47,Multiple Sclerosis,Neurovex,60,medium,,copay_assistance_enrolled,-0.7109,medication_name,0.4211,pa_turnaround_days,0.42
+SYN-NEW-00343,84,Major Depressive Disorder,Moodrex,36,low,,monthly_copay,-0.8509,deductible_met,0.4875,age,-0.3739
+SYN-NEW-00344,68,Rheumatoid Arthritis,Rheumatex,99,high,,monthly_copay,3.2451,copay_assistance_enrolled,-0.6391,prior_abandoned_rx_count,0.3355
+SYN-NEW-00345,43,Post-Surgical Pain,Analgex,7,low,,monthly_copay,-1.6441,deductible_met,-0.6124,prior_abandoned_rx_count,0.343
+SYN-NEW-00346,48,Psoriasis,Dermalis,98,high,,monthly_copay,3.6886,deductible_met,-0.4778,pa_turnaround_days,0.3815
+SYN-NEW-00347,64,Rheumatoid Arthritis,Immunara,97,high,,monthly_copay,2.2846,deductible_met,0.4614,distance_to_pharmacy_miles,0.3776
+SYN-NEW-00348,26,Multiple Sclerosis,Neurovex,76,high,,medication_name,0.8752,monthly_copay,-0.6362,deductible_met,-0.5949
+SYN-NEW-00349,53,Major Depressive Disorder,Serenol,61,medium,,missed_visits_count,0.4511,deductible_met,-0.4243,concurrent_medication_count,0.3146
+SYN-NEW-00350,30,Post-Surgical Pain,Recuparin,17,low,,medication_name,-1.2161,monthly_copay,-0.8885,deductible_met,0.5608
+SYN-NEW-00351,49,Multiple Sclerosis,Myelara,28,low,,copay_assistance_enrolled,-0.6451,deductible_met,-0.5817,distance_to_pharmacy_miles,0.5646
+SYN-NEW-00352,79,Acute Bacterial Infection,Amoxinol,15,low,,monthly_copay,-1.6961,medication_name,-0.5859,distance_to_pharmacy_miles,0.429
+SYN-NEW-00353,66,Type 2 Diabetes,Metforal,8,low,,monthly_copay,-0.7715,deductible_met,-0.4283,medication_name,-0.3802
+SYN-NEW-00354,50,Major Depressive Disorder,Moodrex,6,low,,deductible_met,-0.8069,monthly_copay,-0.7897,medication_name,-0.7019
+SYN-NEW-00355,46,Asthma,Airoflex,16,low,,monthly_copay,-0.5987,deductible_met,-0.5711,prior_abandoned_rx_count,-0.2984
+SYN-NEW-00356,43,Major Depressive Disorder,Serenol,18,low,,medication_name,-0.9097,monthly_copay,-0.7226,copay_assistance_enrolled,-0.7099
+SYN-NEW-00357,30,Asthma,Bronchara,6,low,,deductible_met,-1.2121,medication_name,-0.9855,monthly_copay,-0.3428
+SYN-NEW-00358,41,Hyperlipidemia,Cholestara,8,low,,monthly_copay,-0.9349,deductible_met,-0.8546,distance_to_pharmacy_miles,-0.2902
+SYN-NEW-00359,32,Multiple Sclerosis,Myelara,97,high,,monthly_copay,3.0983,pa_turnaround_days,0.3791,deductible_met,-0.3077
+SYN-NEW-00360,43,Multiple Sclerosis,Neurovex,43,medium,,copay_assistance_enrolled,-1.0476,pa_turnaround_days,0.4354,deductible_met,0.3798
+SYN-NEW-00361,23,Post-Surgical Pain,Analgex,8,low,,monthly_copay,-1.6362,medication_name,-0.7993,deductible_met,0.4059
+SYN-NEW-00362,39,Asthma,Bronchara,11,low,,monthly_copay,-1.0994,deductible_met,0.6399,medication_name,-0.5519
+SYN-NEW-00363,76,Multiple Sclerosis,Myelara,31,low,,monthly_copay,-1.0275,prior_abandoned_rx_count,-0.4145,deductible_met,0.2697
+SYN-NEW-00364,74,Hyperlipidemia,Cholestara,64,medium,,monthly_copay,-1.1756,deductible_met,0.5542,prior_abandoned_rx_count,0.4202
+SYN-NEW-00365,63,Asthma,Airoflex,27,low,,monthly_copay,-0.9164,deductible_met,0.4384,distance_to_pharmacy_miles,-0.3586
+SYN-NEW-00366,68,Rheumatoid Arthritis,Rheumatex,74,high,,monthly_copay,1.0343,copay_assistance_enrolled,-0.8029,medication_name,0.4832
+SYN-NEW-00367,19,Acute Bacterial Infection,Amoxinol,54,medium,,monthly_copay,-0.8055,prior_abandoned_rx_count,0.402,age,0.3653
+SYN-NEW-00368,60,Acute Bacterial Infection,Amoxinol,26,low,,monthly_copay,-1.8231,missed_visits_count,0.4028,prior_abandoned_rx_count,0.3589
+SYN-NEW-00369,72,Hypertension,Presolol,16,low,,monthly_copay,-1.4554,medication_name,-0.6329,deductible_met,0.6097
+SYN-NEW-00370,75,Asthma,Bronchara,9,low,,deductible_met,-0.9946,medication_name,-0.8034,age,-0.2796
+SYN-NEW-00371,87,Rheumatoid Arthritis,Rheumatex,28,low,,monthly_copay,-0.8837,copay_assistance_enrolled,-0.5473,deductible_met,0.4194
+SYN-NEW-00372,26,Psoriasis,Dermalis,63,medium,,deductible_met,-0.5073,pa_turnaround_days,0.4362,medication_name,0.3529
+SYN-NEW-00373,55,Type 2 Diabetes,Insunova,3,low,,monthly_copay,-1.4433,copay_assistance_enrolled,-0.7517,deductible_met,-0.7102
+SYN-NEW-00374,78,Type 2 Diabetes,Metforal,7,low,,monthly_copay,-1.6782,medication_name,-0.4802,deductible_met,0.3806
+SYN-NEW-00375,20,Rheumatoid Arthritis,Rheumatex,61,medium,,deductible_met,-0.6547,copay_assistance_enrolled,-0.6037,age,0.5414
+SYN-NEW-00376,35,Asthma,Airoflex,11,low,,monthly_copay,-1.7322,deductible_met,-0.684,concurrent_medication_count,0.3467
+SYN-NEW-00377,23,Asthma,Airoflex,56,medium,,monthly_copay,-0.9002,deductible_met,0.5974,insurance_type,0.4978
+SYN-NEW-00378,26,Psoriasis,Dermalis,66,medium,,deductible_met,0.4168,monthly_copay,0.4092,copay_assistance_enrolled,0.3478
+SYN-NEW-00379,21,Asthma,Bronchara,42,medium,,monthly_copay,-1.257,deductible_met,0.8591,age,0.5195
+SYN-NEW-00380,55,Acute Bacterial Infection,Amoxinol,58,medium,,insurance_type,0.5355,deductible_met,-0.3672,monthly_copay,-0.3421
+SYN-NEW-00381,62,Acute Bacterial Infection,Cephadex,3,low,,monthly_copay,-1.9398,medication_name,-1.0612,deductible_met,-0.8438
+SYN-NEW-00382,44,Rheumatoid Arthritis,Rheumatex,72,high,,medication_name,0.2997,deductible_met,0.2957,prior_abandoned_rx_count,-0.2938
+SYN-NEW-00383,27,Asthma,Airoflex,3,low,,monthly_copay,-1.6995,deductible_met,-0.762,prior_abandoned_rx_count,-0.2683
+SYN-NEW-00384,69,Hypertension,Presolol,1,low,,monthly_copay,-1.5434,medication_name,-1.3148,deductible_met,-1.0341
+SYN-NEW-00385,37,Hyperlipidemia,Lipatrex,12,low,,monthly_copay,-2.1103,concurrent_medication_count,0.4332,missed_visits_count,0.3556
+SYN-NEW-00386,72,Psoriasis,Dermalis,12,low,,copay_assistance_enrolled,-0.8141,deductible_met,-0.7106,age,-0.393
+SYN-NEW-00387,40,Hyperlipidemia,Lipatrex,12,low,,monthly_copay,-1.4935,medication_name,-0.7253,deductible_met,0.5609
+SYN-NEW-00388,78,Psoriasis,Cutinex,29,low,,monthly_copay,-0.9467,deductible_met,0.3415,prior_abandoned_rx_count,-0.3297
+SYN-NEW-00389,52,Hypertension,Presolol,32,low,,medication_name,-0.7354,deductible_met,0.6849,prior_abandoned_rx_count,0.5448
+SYN-NEW-00390,30,Hyperlipidemia,Lipatrex,29,low,,deductible_met,-0.8728,medication_name,-0.8509,monthly_copay,0.5709
+SYN-NEW-00391,29,Psoriasis,Cutinex,99,high,,monthly_copay,3.5067,insurance_type,0.4046,copay_assistance_enrolled,0.3065
+SYN-NEW-00392,65,Psoriasis,Dermalis,94,high,,monthly_copay,1.973,deductible_met,-0.5592,medication_name,0.494
+SYN-NEW-00393,83,Multiple Sclerosis,Myelara,91,high,,monthly_copay,2.7615,copay_assistance_enrolled,-0.6038,deductible_met,0.3205
+SYN-NEW-00394,42,Post-Surgical Pain,Analgex,29,low,,monthly_copay,-1.1201,deductible_met,-0.6308,medication_name,-0.5809
+SYN-NEW-00395,74,Psoriasis,Cutinex,53,medium,,monthly_copay,1.2123,copay_assistance_enrolled,-0.8306,deductible_met,-0.4689
+SYN-NEW-00396,66,Major Depressive Disorder,Serenol,10,low,,monthly_copay,-1.124,medication_name,-1.035,deductible_met,-0.5263
+SYN-NEW-00397,48,Rheumatoid Arthritis,Rheumatex,90,high,,monthly_copay,2.5488,deductible_met,-0.5899,medication_name,0.5328
+SYN-NEW-00398,70,Post-Surgical Pain,Analgex,4,low,,monthly_copay,-0.8992,medication_name,-0.8331,deductible_met,-0.6145
+SYN-NEW-00399,64,Rheumatoid Arthritis,Immunara,36,low,,deductible_met,-0.6806,distance_to_pharmacy_miles,0.4967,prior_abandoned_rx_count,-0.3105
+SYN-NEW-00400,77,Multiple Sclerosis,Myelara,83,high,,monthly_copay,3.0224,deductible_met,-0.532,age,-0.321
+SYN-NEW-00401,77,Rheumatoid Arthritis,Rheumatex,82,high,,monthly_copay,2.7575,copay_assistance_enrolled,-0.7777,age,-0.4532
+SYN-NEW-00402,49,Asthma,Airoflex,39,low,,monthly_copay,-1.077,prior_abandoned_rx_count,0.7451,copay_assistance_enrolled,-0.564
+SYN-NEW-00403,34,Type 2 Diabetes,Metforal,42,medium,,monthly_copay,-0.76,distance_to_pharmacy_miles,0.6704,medication_name,-0.4494
+SYN-NEW-00404,54,Rheumatoid Arthritis,Rheumatex,39,low,,copay_assistance_enrolled,-0.9878,medication_name,0.4131,deductible_met,0.3053
+SYN-NEW-00405,25,Psoriasis,Dermalis,32,low,,copay_assistance_enrolled,-0.8791,deductible_met,-0.6079,medication_name,0.4695
+SYN-NEW-00406,58,Post-Surgical Pain,Analgex,22,low,,monthly_copay,-1.4993,deductible_met,-0.5869,insurance_type,0.43
+SYN-NEW-00407,70,Major Depressive Disorder,Moodrex,12,low,,medication_name,-0.7106,deductible_met,-0.6019,monthly_copay,-0.3127
+SYN-NEW-00408,56,Asthma,Airoflex,24,low,,monthly_copay,-1.1332,deductible_met,0.4818,prior_abandoned_rx_count,-0.3664
+SYN-NEW-00409,67,Multiple Sclerosis,Myelara,97,high,,monthly_copay,2.6865,deductible_met,-0.3927,missed_visits_count,0.3874
+SYN-NEW-00410,76,Psoriasis,Cutinex,77,high,,copay_assistance_enrolled,0.4858,deductible_met,0.4679,monthly_copay,0.4565
+SYN-NEW-00411,60,Asthma,Bronchara,33,low,,medication_name,-0.6652,deductible_met,0.6179,distance_to_pharmacy_miles,0.5149
+SYN-NEW-00412,42,Acute Bacterial Infection,Cephadex,30,low,,prior_abandoned_rx_count,0.9704,monthly_copay,-0.8918,medication_name,-0.8805
+SYN-NEW-00413,64,Hyperlipidemia,Lipatrex,4,low,,monthly_copay,-1.5154,medication_name,-0.5375,deductible_met,-0.537
+SYN-NEW-00414,79,Asthma,Airoflex,39,low,,monthly_copay,-1.0451,deductible_met,0.669,age,-0.3991
+SYN-NEW-00415,48,Rheumatoid Arthritis,Immunara,86,high,,monthly_copay,1.0147,copay_assistance_enrolled,-0.5533,deductible_met,0.4619
+SYN-NEW-00416,29,Psoriasis,Dermalis,47,medium,,deductible_met,-0.6721,distance_to_pharmacy_miles,0.6635,medication_name,0.6499
+SYN-NEW-00417,46,Major Depressive Disorder,Moodrex,2,low,,monthly_copay,-1.5215,deductible_met,-0.7985,medication_name,-0.4458
+SYN-NEW-00418,69,Hypertension,Cardiozem,8,low,,monthly_copay,-1.8103,deductible_met,0.4462,distance_to_pharmacy_miles,-0.2985
+SYN-NEW-00419,72,Asthma,Airoflex,4,low,,monthly_copay,-1.0838,deductible_met,-0.9167,distance_to_pharmacy_miles,0.7478
+SYN-NEW-00420,70,Acute Bacterial Infection,Amoxinol,14,low,,monthly_copay,-0.8389,deductible_met,0.3849,prior_abandoned_rx_count,-0.3308
+SYN-NEW-00421,80,Post-Surgical Pain,Analgex,6,low,,monthly_copay,-1.8336,medication_name,-0.461,deductible_met,0.4042
+SYN-NEW-00422,60,Post-Surgical Pain,Recuparin,1,low,,monthly_copay,-1.8925,medication_name,-1.6926,deductible_met,-0.8428
+SYN-NEW-00423,59,Multiple Sclerosis,Neurovex,85,high,,monthly_copay,0.7089,medication_name,0.5228,copay_assistance_enrolled,0.4649
+SYN-NEW-00424,36,Major Depressive Disorder,Moodrex,9,low,,monthly_copay,-1.4208,deductible_met,0.4733,prior_abandoned_rx_count,-0.3789
+SYN-NEW-00425,65,Asthma,Bronchara,12,low,,deductible_met,-0.9674,medication_name,-0.9394,concurrent_medication_count,0.3291
+SYN-NEW-00426,61,Major Depressive Disorder,Serenol,12,low,,medication_name,-1.0907,deductible_met,-0.5569,monthly_copay,-0.2849
+SYN-NEW-00427,33,Acute Bacterial Infection,Cephadex,10,low,,monthly_copay,-1.458,medication_name,-0.8942,deductible_met,0.476
+SYN-NEW-00428,33,Type 2 Diabetes,Glucotrol-X,18,low,,monthly_copay,-0.9269,copay_assistance_enrolled,-0.5819,deductible_met,0.3502
+SYN-NEW-00429,39,Psoriasis,Cutinex,76,high,,monthly_copay,2.5607,copay_assistance_enrolled,-0.889,appointment_length_minutes,-0.3637
+SYN-NEW-00430,21,Psoriasis,Cutinex,88,high,,distance_to_pharmacy_miles,0.5976,deductible_met,-0.5904,copay_assistance_enrolled,0.4498
+SYN-NEW-00431,84,Rheumatoid Arthritis,Immunara,26,low,,copay_assistance_enrolled,-0.6229,deductible_met,-0.5998,age,-0.5225
+SYN-NEW-00432,73,Post-Surgical Pain,Analgex,19,low,,monthly_copay,-1.0513,prior_abandoned_rx_count,0.8669,deductible_met,-0.6091
+SYN-NEW-00433,40,Hyperlipidemia,Cholestara,13,low,,monthly_copay,-0.7697,copay_assistance_enrolled,-0.7243,deductible_met,0.6174
+SYN-NEW-00434,47,Multiple Sclerosis,Neurovex,75,high,,deductible_met,-0.6511,medication_name,0.482,monthly_copay,0.4373
+SYN-NEW-00435,83,Major Depressive Disorder,Moodrex,29,low,,monthly_copay,-0.7811,deductible_met,0.6713,prior_abandoned_rx_count,0.3718
+SYN-NEW-00436,35,Acute Bacterial Infection,Amoxinol,7,low,,monthly_copay,-1.473,deductible_met,-0.6122,missed_visits_count,-0.371
+SYN-NEW-00437,28,Post-Surgical Pain,Recuparin,9,low,,monthly_copay,-2.109,medication_name,-1.3038,deductible_met,0.5776
+SYN-NEW-00438,69,Psoriasis,Cutinex,97,high,,monthly_copay,2.5285,deductible_met,-0.4314,prior_abandoned_rx_count,0.4203
+SYN-NEW-00439,59,Hypertension,Vaslorin,8,low,,medication_name,-1.717,monthly_copay,-1.0488,deductible_met,0.5537
+SYN-NEW-00440,44,Post-Surgical Pain,Analgex,4,low,,monthly_copay,-1.5279,medication_name,-0.5384,deductible_met,-0.43
+SYN-NEW-00441,25,Post-Surgical Pain,Recuparin,2,low,,monthly_copay,-1.9802,medication_name,-1.1741,deductible_met,-0.7592
+SYN-NEW-00442,59,Asthma,Bronchara,1,low,,medication_name,-1.0667,deductible_met,-0.894,monthly_copay,-0.8089
+SYN-NEW-00443,33,Multiple Sclerosis,Myelara,49,medium,,copay_assistance_enrolled,-0.9321,prior_abandoned_rx_count,0.6576,deductible_met,-0.5686
+SYN-NEW-00444,40,Psoriasis,Cutinex,52,medium,,medication_name,0.5046,monthly_copay,-0.4859,pa_turnaround_days,0.3713
+SYN-NEW-00445,63,Asthma,Airoflex,4,low,,monthly_copay,-1.4726,deductible_met,-0.7184,prior_abandoned_rx_count,-0.2889
+SYN-NEW-00446,28,Major Depressive Disorder,Serenol,4,low,,monthly_copay,-1.5344,medication_name,-0.8591,deductible_met,-0.6026
+SYN-NEW-00447,39,Rheumatoid Arthritis,Rheumatex,82,high,,monthly_copay,0.6509,copay_assistance_enrolled,0.3847,distance_to_pharmacy_miles,-0.3646
+SYN-NEW-00448,33,Major Depressive Disorder,Serenol,9,low,,monthly_copay,-1.4343,medication_name,-0.8757,deductible_met,-0.396
+SYN-NEW-00449,53,Hypertension,Presolol,14,low,,monthly_copay,-1.9871,deductible_met,0.4909,prior_abandoned_rx_count,-0.2687
+SYN-NEW-00450,38,Multiple Sclerosis,Myelara,63,medium,,monthly_copay,0.5889,deductible_met,-0.5571,pa_turnaround_days,0.5229
+SYN-NEW-00451,86,Hypertension,Cardiozem,2,low,,monthly_copay,-1.3116,deductible_met,-0.8007,medication_name,-0.3755
+SYN-NEW-00452,54,Hyperlipidemia,Lipatrex,9,low,,monthly_copay,-1.4961,medication_name,-0.7483,deductible_met,-0.6124
+SYN-NEW-00453,20,Hypertension,Cardiozem,76,high,,deductible_met,0.6003,monthly_copay,-0.5798,age,0.5756
+SYN-NEW-00454,64,Multiple Sclerosis,Myelara,98,high,,monthly_copay,3.783,deductible_met,-0.4825,copay_assistance_enrolled,0.2678
+SYN-NEW-00455,83,Multiple Sclerosis,Myelara,25,low,,monthly_copay,-0.8428,copay_assistance_enrolled,-0.463,deductible_met,0.4135
+SYN-NEW-00456,87,Asthma,Airoflex,8,low,,monthly_copay,-0.9656,deductible_met,-0.8065,age,-0.2795
+SYN-NEW-00457,69,Hyperlipidemia,Lipatrex,24,low,,monthly_copay,-0.9194,deductible_met,0.5447,medication_name,-0.4435
+SYN-NEW-00458,60,Post-Surgical Pain,Recuparin,2,low,,medication_name,-1.5732,monthly_copay,-1.5295,deductible_met,-0.7602
+SYN-NEW-00459,31,Major Depressive Disorder,Serenol,34,low,,medication_name,-1.066,deductible_met,0.4834,prior_abandoned_rx_count,0.3329
+SYN-NEW-00460,87,Major Depressive Disorder,Moodrex,7,low,,monthly_copay,-1.2882,deductible_met,0.5225,medication_name,-0.4933
+SYN-NEW-00461,33,Type 2 Diabetes,Glucotrol-X,25,low,,monthly_copay,-0.5653,copay_assistance_enrolled,-0.495,deductible_met,0.4433
+SYN-NEW-00462,30,Hypertension,Vaslorin,1,low,,medication_name,-1.667,monthly_copay,-1.1399,deductible_met,-0.951
+SYN-NEW-00463,36,Rheumatoid Arthritis,Rheumatex,85,high,,monthly_copay,2.6035,copay_assistance_enrolled,-0.5559,deductible_met,-0.5077
+SYN-NEW-00464,24,Multiple Sclerosis,Neurovex,72,high,,monthly_copay,1.0454,copay_assistance_enrolled,-0.6725,deductible_met,0.3604
+SYN-NEW-00465,61,Rheumatoid Arthritis,Immunara,67,medium,,monthly_copay,0.6606,deductible_met,0.547,appointment_length_minutes,-0.3489
+SYN-NEW-00466,25,Asthma,Bronchara,2,low,,monthly_copay,-1.603,medication_name,-1.12,deductible_met,-1.033
+SYN-NEW-00467,58,Acute Bacterial Infection,Cephadex,3,low,,monthly_copay,-1.8685,medication_name,-1.2538,deductible_met,-0.8783
+SYN-NEW-00468,46,Hyperlipidemia,Lipatrex,7,low,,monthly_copay,-0.7895,deductible_met,-0.6864,medication_name,-0.5564
+SYN-NEW-00469,81,Asthma,Airoflex,53,medium,,monthly_copay,-0.8478,deductible_met,0.5495,prior_abandoned_rx_count,0.3724
+SYN-NEW-00470,44,Major Depressive Disorder,Serenol,15,low,,medication_name,-1.1737,monthly_copay,-0.7422,copay_assistance_enrolled,-0.6759
+SYN-NEW-00471,21,Post-Surgical Pain,Recuparin,2,low,,monthly_copay,-1.5725,medication_name,-1.2667,deductible_met,-0.9869
+SYN-NEW-00472,75,Rheumatoid Arthritis,Immunara,38,low,,copay_assistance_enrolled,-0.8255,medication_name,0.5203,deductible_met,0.5048
+SYN-NEW-00473,25,Asthma,Bronchara,4,low,,medication_name,-1.2313,deductible_met,-0.973,age,0.3262
+SYN-NEW-00474,20,Post-Surgical Pain,Recuparin,1,low,,monthly_copay,-2.0116,medication_name,-1.4805,deductible_met,-0.8806
+SYN-NEW-00475,38,Type 2 Diabetes,Metforal,19,low,,monthly_copay,-0.8171,deductible_met,-0.4881,copay_assistance_enrolled,-0.4592
+SYN-NEW-00476,60,Post-Surgical Pain,Recuparin,15,low,,medication_name,-1.6343,monthly_copay,-0.9894,deductible_met,0.6014
+SYN-NEW-00477,77,Asthma,Airoflex,2,low,,monthly_copay,-1.5262,deductible_met,-0.7621,age,-0.3711
+SYN-NEW-00478,88,Post-Surgical Pain,Recuparin,8,low,,monthly_copay,-1.5827,medication_name,-0.7934,deductible_met,0.6344
+SYN-NEW-00479,55,Multiple Sclerosis,Myelara,98,high,,monthly_copay,2.7134,prior_abandoned_rx_count,0.4872,deductible_met,0.3284
+SYN-NEW-00480,42,Asthma,Bronchara,1,low,,deductible_met,-1.1583,medication_name,-1.1014,monthly_copay,-0.9798
+SYN-NEW-00481,72,Psoriasis,Cutinex,95,high,,monthly_copay,3.5305,copay_assistance_enrolled,-0.705,deductible_met,-0.3824
+SYN-NEW-00482,55,Acute Bacterial Infection,Cephadex,1,low,,monthly_copay,-1.8154,medication_name,-1.3282,deductible_met,-0.7382
+SYN-NEW-00483,84,Asthma,Bronchara,2,low,,monthly_copay,-1.3062,deductible_met,-1.0635,medication_name,-0.889
+SYN-NEW-00484,62,Rheumatoid Arthritis,Rheumatex,99,high,,monthly_copay,3.1443,medication_name,0.4485,distance_to_pharmacy_miles,0.3163
+SYN-NEW-00485,30,Asthma,Airoflex,5,low,,deductible_met,-0.8957,monthly_copay,-0.7865,copay_assistance_enrolled,-0.5868
+SYN-NEW-00486,62,Rheumatoid Arthritis,Rheumatex,99,high,,monthly_copay,3.3077,copay_assistance_enrolled,-0.6294,medication_name,0.2815
+SYN-NEW-00487,25,Acute Bacterial Infection,Cephadex,6,low,,monthly_copay,-1.84,medication_name,-1.2173,deductible_met,0.4906
+SYN-NEW-00488,57,Post-Surgical Pain,Analgex,4,low,,monthly_copay,-1.7766,deductible_met,-0.3882,prior_abandoned_rx_count,-0.3734
+SYN-NEW-00489,59,Acute Bacterial Infection,Amoxinol,15,low,,monthly_copay,-1.399,medication_name,-0.4764,prior_abandoned_rx_count,-0.3554
+SYN-NEW-00490,47,Acute Bacterial Infection,Cephadex,5,low,,monthly_copay,-2.1376,medication_name,-0.928,deductible_met,0.4503
+SYN-NEW-00491,79,Rheumatoid Arthritis,Rheumatex,60,medium,,copay_assistance_enrolled,-0.969,medication_name,0.4536,age,-0.4383
+SYN-NEW-00492,46,Psoriasis,Cutinex,50,medium,,monthly_copay,-0.7126,medication_name,0.6864,deductible_met,-0.2913
+SYN-NEW-00493,23,Major Depressive Disorder,Serenol,6,low,,monthly_copay,-1.5429,medication_name,-1.2847,deductible_met,0.5235
+SYN-NEW-00494,27,Asthma,Airoflex,20,low,,monthly_copay,-0.6781,deductible_met,0.6667,copay_assistance_enrolled,-0.5036
+SYN-NEW-00495,73,Type 2 Diabetes,Glucotrol-X,24,low,,monthly_copay,-0.7111,deductible_met,0.3973,prior_abandoned_rx_count,-0.2932
+SYN-NEW-00496,75,Multiple Sclerosis,Myelara,75,high,,monthly_copay,2.0058,deductible_met,-0.5815,pa_turnaround_days,0.4507
+SYN-NEW-00497,64,Hyperlipidemia,Lipatrex,5,low,,monthly_copay,-1.0068,medication_name,-0.7513,deductible_met,-0.7263
+SYN-NEW-00498,84,Acute Bacterial Infection,Cephadex,1,low,,monthly_copay,-1.9409,medication_name,-1.3564,deductible_met,-0.6464
+SYN-NEW-00499,62,Hyperlipidemia,Cholestara,25,low,,monthly_copay,-0.868,deductible_met,0.5107,prior_abandoned_rx_count,-0.3372
+SYN-NEW-00500,29,Type 2 Diabetes,Insunova,39,low,,deductible_met,-0.8284,monthly_copay,-0.5909,prior_abandoned_rx_count,0.5457
