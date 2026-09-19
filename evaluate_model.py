@@ -27,13 +27,15 @@ from sklearn.metrics import (
 from sklearn.model_selection import StratifiedKFold, train_test_split
 
 import train_adherence_model as tam
-from scoring import REQUIRED_FIELDS
+from scoring import REQUIRED_FIELDS, TIER_HIGH, TIER_MEDIUM
 
 warnings.filterwarnings("ignore")
 
 HERE = Path(__file__).resolve().parent
 RESULTS_PATH = HERE / "test_results.json"
-TIER_HIGH, TIER_MEDIUM = 70, 40
+# TIER_HIGH / TIER_MEDIUM are imported from scoring.py, the single source
+# of truth for the cutoffs shared by training, upload scoring and this
+# evaluation.
 
 
 def banner(t):

@@ -46,6 +46,8 @@ from sklearn.model_selection import train_test_split
 # monthly_copay and medication_name are treated as required.
 from scoring import (
     REQUIRED_FIELDS,
+    TIER_HIGH,
+    TIER_MEDIUM,
     filter_high_risk,
     insufficient_data_record,
     missing_required_fields,
@@ -130,9 +132,9 @@ CATEGORICAL_COLUMNS = [
     "day_of_week_prescribed",
 ]
 
-# Risk tier cutoffs on the 0-100 risk score.
-TIER_HIGH = 70
-TIER_MEDIUM = 40
+# Risk tier cutoffs live in scoring.py and are imported above, so the training
+# export, the upload scorer and any future API can never disagree about what
+# counts as "high risk".
 
 
 def banner(title: str) -> None:
