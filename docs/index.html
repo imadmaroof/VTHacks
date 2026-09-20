@@ -6,7 +6,7 @@
   <title>Patient Risk Predictor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     /*
       Dark operator console for the adherence model. Colour is reserved for
@@ -35,10 +35,14 @@
       --cyan: #4bc9d1;
       --cyan-press: #85e5ec;
       --cyan-wash: rgba(75, 201, 209, .14);
+      --pink: #ff7bc5;
 
-      --text: #f2f6f9;
-      --text-2: #b4c4d1;
-      --text-3: #90a3b3;
+      --text: #f4f6f8;
+      /* Neutral grays rather than blue-tinted, and both still clear AA on
+         the near-black ground: muted is a tone choice, not a licence to
+         drop below contrast. */
+      --text-2: #a9b2ba;
+      --text-3: #929ba4;
 
       --high: #ff8189;
       --high-wash: rgba(255, 129, 137, .16);
@@ -55,7 +59,7 @@
       min-height: 100vh;
       color: var(--text);
       background: var(--bg);
-      font: 400 16px/1.6 'IBM Plex Sans', system-ui, sans-serif;
+      font: 400 16px/1.6 'Plus Jakarta Sans', system-ui, sans-serif;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
@@ -79,6 +83,21 @@
       background: linear-gradient(180deg, transparent, rgba(75, 201, 209, .055) 50%, transparent);
       animation: sweep 11s linear infinite;
     }
+    /* Ambient hero media sits above the CSS backdrop and starts fully
+       transparent, so if the file is absent, blocked, or the connection is
+       slow, the grid underneath simply remains the background. Nothing
+       needs to know whether the asset shipped. */
+    .bg-fx .hero-media {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; opacity: 0; transition: opacity 1.2s ease;
+    }
+    .bg-fx .hero-media.ready { opacity: .55; }
+    /* Keeps the copy legible over whatever lands in the video. */
+    .bg-fx .scrim {
+      position: absolute; inset: 0;
+      background: radial-gradient(120% 90% at 20% 0%, transparent 30%, rgba(7, 12, 19, .82) 78%),
+                  linear-gradient(180deg, rgba(7, 12, 19, .35), rgba(7, 12, 19, .9));
+    }
     @keyframes gridDrift { to { transform: translate(72px, 72px); } }
     @keyframes sweep { 0% { top: -240px; } 100% { top: 100%; } }
 
@@ -90,11 +109,20 @@
     /* Official lockup, mark and wordmark together, so the spacing between
        them stays theirs rather than something approximated in CSS. */
     .brand .brand-lockup { height: 28px; width: auto; display: block; }
-    .brand .wordmark { font: 600 1rem/1 'IBM Plex Sans', sans-serif; letter-spacing: .24em; color: var(--text); }
-    h1, h2, h3 { margin: 0; font-weight: 300; letter-spacing: -.015em; }
-    h1 { font-size: clamp(2rem, 4.4vw, 3.1rem); line-height: 1.06; }
-    h2 { font-size: 1.25rem; font-weight: 400; }
-    h3 { font-size: 1rem; font-weight: 500; }
+    .brand .wordmark { font: 600 1rem/1 'Plus Jakarta Sans', sans-serif; letter-spacing: .24em; color: var(--text); }
+    h1, h2, h3 { margin: 0; letter-spacing: -.03em; }
+    h1 { font-size: clamp(2.3rem, 5.2vw, 3.9rem); font-weight: 800; line-height: 1.02; }
+    h2 { font-size: 1.25rem; font-weight: 600; letter-spacing: -.02em; }
+    h3 { font-size: 1rem; font-weight: 600; letter-spacing: -.01em; }
+    /* Solid cyan first so the word is never invisible if background-clip
+       is unsupported; the gradient only applies where it actually works. */
+    h1 .grad { color: var(--cyan); }
+    @supports (-webkit-background-clip: text) or (background-clip: text) {
+      h1 .grad {
+        background: linear-gradient(104deg, var(--cyan) 12%, var(--pink) 88%);
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+      }
+    }
     /* min-height holds the line count steady so swapping the copy between
        tabs doesn't shunt the controls below it up and down. */
     .intro { max-width: 580px; min-height: 3.2em; margin: var(--s4) 0 0; color: var(--text-2); font-size: 1rem; transition: opacity .16s ease; }
@@ -112,7 +140,7 @@
     /* ---------- mode tabs ---------- */
     .tabs { position: relative; display: inline-flex; padding: var(--s1); margin-bottom: var(--s6); border: 1px solid var(--border); border-radius: 6px; background: var(--surface); }
     .tabs .pill { position: absolute; top: var(--s1); bottom: var(--s1); border-radius: 4px; background: var(--cyan-wash); transition: transform .38s cubic-bezier(.3, .8, .3, 1), width .38s cubic-bezier(.3, .8, .3, 1); }
-    .tabs button { position: relative; z-index: 1; padding: var(--s2) var(--s5); border: 0; border-radius: 4px; background: none; color: var(--text-3); font: 500 .9rem/1.4 'IBM Plex Sans', sans-serif; transition: color .2s ease; }
+    .tabs button { position: relative; z-index: 1; padding: var(--s2) var(--s5); border: 0; border-radius: 4px; background: none; color: var(--text-3); font: 500 .9rem/1.4 'Plus Jakarta Sans', sans-serif; transition: color .2s ease; }
     .tabs button[aria-selected="true"] { color: var(--cyan); }
     .tabs button:hover { color: var(--text); }
 
@@ -121,7 +149,7 @@
     .view { animation: viewIn .34s cubic-bezier(.2, .7, .3, 1); }
     @keyframes viewIn { from { opacity: 0; transform: translateY(8px); } }
 
-    label { display: block; color: var(--text-3); font: 400 .82rem/1.4 'IBM Plex Sans', sans-serif; }
+    label { display: block; color: var(--text-3); font: 400 .82rem/1.4 'Plus Jakarta Sans', sans-serif; }
     input[type="text"], input[type="search"], select {
       display: block; width: 100%; margin-top: var(--s2); padding: var(--s3) var(--s4); color: var(--text); background: var(--bg);
       border: 1px solid var(--border); border-radius: 6px; transition: border-color .18s ease, box-shadow .18s ease;
@@ -133,9 +161,9 @@
     .hint { margin: var(--s2) 0 0; color: var(--text-3); font-size: .86rem; }
     .actions { display: flex; flex-wrap: wrap; gap: var(--s3); align-items: center; margin-top: var(--s5); }
 
-    button.primary { padding: var(--s3) var(--s6); color: #052227; background: var(--cyan); border: 1px solid var(--cyan); border-radius: 6px; font: 500 .94rem/1.4 'IBM Plex Sans', sans-serif; transition: background .16s ease, border-color .16s ease; }
+    button.primary { padding: var(--s3) var(--s7); color: #04191d; background: var(--cyan); border: 1px solid var(--cyan); border-radius: 999px; font: 700 .94rem/1.4 'Plus Jakarta Sans', sans-serif; letter-spacing: -.01em; transition: background .16s ease, border-color .16s ease; }
     button.primary:hover:not(:disabled) { background: var(--cyan-press); border-color: var(--cyan-press); }
-    button.secondary { padding: var(--s3) var(--s5); color: var(--text); background: var(--surface-2); border: 1px solid var(--border-strong); border-radius: 6px; font: 400 .92rem/1.4 'IBM Plex Sans', sans-serif; transition: background .16s ease, border-color .16s ease; }
+    button.secondary { padding: var(--s3) var(--s6); color: var(--text); background: var(--surface-2); border: 1px solid var(--border-strong); border-radius: 999px; font: 500 .92rem/1.4 'Plus Jakarta Sans', sans-serif; transition: background .16s ease, border-color .16s ease; }
     button.secondary:hover:not(:disabled) { background: #1c2836; border-color: var(--text-3); }
     button:disabled { cursor: not-allowed; color: var(--text-3); background: var(--surface-2); border-color: var(--border); }
 
@@ -165,7 +193,7 @@
     .stat-strip { display: flex; flex-wrap: wrap; margin: var(--s5) 0; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
     .stat { flex: 1 1 130px; padding: var(--s4); border-right: 1px solid var(--border); }
     .stat:last-child { border-right: 0; }
-    .stat .k { display: block; color: var(--text-3); font: 400 .78rem/1.4 'IBM Plex Sans', sans-serif; }
+    .stat .k { display: block; color: var(--text-3); font: 400 .78rem/1.4 'Plus Jakarta Sans', sans-serif; }
     .stat .v { display: block; margin-top: var(--s1); font: 500 1.6rem/1.2 'IBM Plex Mono', monospace; }
     .stat.is-high .v { color: var(--high); }
     .stat.is-cyan .v { color: var(--cyan); }
@@ -175,7 +203,7 @@
     .table-wrap { max-height: 520px; overflow: auto; border: 1px solid var(--border); border-radius: 6px; }
     table { width: 100%; border-collapse: collapse; font-size: .89rem; }
     th, td { padding: var(--s3) var(--s4); text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
-    th { position: sticky; top: 0; z-index: 1; background: var(--surface-2); color: var(--text-2); font: 500 .8rem/1.4 'IBM Plex Sans', sans-serif; }
+    th { position: sticky; top: 0; z-index: 1; background: var(--surface-2); color: var(--text-2); font: 500 .8rem/1.4 'Plus Jakarta Sans', sans-serif; }
     th button { width: 100%; padding: 0; color: inherit; background: none; border: 0; text-align: left; font: inherit; transition: color .16s ease; }
     th button:hover { color: var(--cyan); }
     tbody tr { transition: background .16s ease; }
@@ -193,7 +221,7 @@
     .form-panel { padding: var(--s6); }
     .group { margin-bottom: var(--s7); }
     .group:last-of-type { margin-bottom: 0; }
-    .group h3 { display: flex; align-items: center; gap: var(--s3); margin-bottom: var(--s4); color: var(--text); font: 500 .95rem/1.4 'IBM Plex Sans', sans-serif; }
+    .group h3 { display: flex; align-items: center; gap: var(--s3); margin-bottom: var(--s4); color: var(--text); font: 500 .95rem/1.4 'Plus Jakarta Sans', sans-serif; }
     .group h3::after { content: ''; flex: 1; height: 1px; background: var(--border); }
     .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s4) var(--s5); }
     .field { min-width: 0; }
@@ -223,17 +251,17 @@
     .score-number.medium { color: var(--med); }
     .score-number.high { color: var(--high); }
     .score-number.insufficient_data { color: var(--none); font-size: 1.7rem; }
-    .score-unit { margin-top: var(--s2); color: var(--text-3); font: 400 .78rem/1.4 'IBM Plex Sans', sans-serif; }
-    .tier-badge { display: block; width: fit-content; margin: 0 auto var(--s5); padding: var(--s2) var(--s4); border-radius: 4px; font: 500 .82rem/1.2 'IBM Plex Sans', sans-serif; transition: background .3s ease, color .3s ease; }
+    .score-unit { margin-top: var(--s2); color: var(--text-3); font: 400 .78rem/1.4 'Plus Jakarta Sans', sans-serif; }
+    .tier-badge { display: block; width: fit-content; margin: 0 auto var(--s5); padding: var(--s2) var(--s4); border-radius: 4px; font: 500 .82rem/1.2 'Plus Jakarta Sans', sans-serif; transition: background .3s ease, color .3s ease; }
     .tier-badge.low { color: var(--low); background: var(--low-wash); }
     .tier-badge.medium { color: var(--med); background: var(--med-wash); }
     .tier-badge.high { color: var(--high); background: var(--high-wash); }
     .tier-badge.insufficient_data { color: var(--none); background: var(--none-wash); }
     .explanation { margin: 0 0 var(--s5); padding-top: var(--s5); border-top: 1px solid var(--border); color: var(--text); font-size: .98rem; line-height: 1.6; }
     .recommendation { margin-bottom: var(--s5); padding: var(--s4); background: var(--surface-2); border-radius: 6px; }
-    .recommendation .rec-label { display: block; margin-bottom: var(--s2); color: var(--text-3); font: 400 .78rem/1.4 'IBM Plex Sans', sans-serif; }
+    .recommendation .rec-label { display: block; margin-bottom: var(--s2); color: var(--text-3); font: 400 .78rem/1.4 'Plus Jakarta Sans', sans-serif; }
     .recommendation .rec-body { color: var(--text); font-size: .9rem; line-height: 1.55; }
-    .drivers h3 { margin-bottom: var(--s3); color: var(--text-3); font: 400 .82rem/1.4 'IBM Plex Sans', sans-serif; }
+    .drivers h3 { margin-bottom: var(--s3); color: var(--text-3); font: 400 .82rem/1.4 'Plus Jakarta Sans', sans-serif; }
     .driver-chip { display: flex; justify-content: space-between; align-items: center; gap: var(--s3); padding: var(--s3) 0; border-bottom: 1px solid var(--border); font-size: .88rem; }
     .driver-chip:last-child { border-bottom: 0; }
     .driver-chip .dval { color: var(--text-3); }
@@ -266,6 +294,9 @@
   <div class="bg-fx" aria-hidden="true">
     <div class="grid"></div>
     <div class="sweep"></div>
+    <video id="heroVideo" class="hero-media" muted loop playsinline preload="none"
+           poster="assets/hero-bg.jpg"></video>
+    <div class="scrim"></div>
   </div>
 
   <main class="shell">
@@ -276,7 +307,7 @@
                onerror="this.remove(); document.getElementById('brandFallback').hidden = false;">
           <span class="wordmark" id="brandFallback" hidden>IMPIRICUS</span>
         </div>
-        <h1>Patient Risk Predictor</h1>
+        <h1>Patient Risk <span class="grad">Predictor</span></h1>
         <p class="intro" id="intro">Upload a roster and score every patient in one pass. Highest risk is listed first, each with the reason behind it.</p>
       </div>
       <div class="conn" id="conn">
@@ -521,6 +552,40 @@
     // The backend always runs here. Change this one line if that ever moves;
     // there is deliberately no in-page setting for it.
     const API_BASE = 'http://localhost:8000';
+
+    // ======================================================================
+    // Ambient hero video
+    // ======================================================================
+    // Decorative only, so it is never worth a slow or metered connection.
+    // The poster carries the same frame at a fraction of the weight, and
+    // below that sits the CSS grid, so there are two fallbacks before
+    // anyone sees a blank area. Nothing here is required for the page to
+    // work: if the files are missing the catch path just leaves the
+    // backdrop alone.
+    function initHeroVideo() {
+      const video = $('heroVideo');
+      if (!video) return;
+
+      if (REDUCED) return;                       // respect reduced motion
+      const net = navigator.connection;
+      if (net && (net.saveData || /(^|-)2g$/.test(net.effectiveType || ''))) return;
+
+      // preload="none" until here, so the bytes are only requested once we
+      // have decided the connection can afford them.
+      const src = document.createElement('source');
+      src.src = 'assets/hero-bg.mp4';
+      src.type = 'video/mp4';
+      video.appendChild(src);
+
+      video.addEventListener('canplay', () => {
+        video.classList.add('ready');
+        video.play().catch(() => { /* autoplay refused; poster stands in */ });
+      }, { once: true });
+      video.addEventListener('error', () => video.classList.remove('ready'), { once: true });
+
+      video.preload = 'auto';
+      video.load();
+    }
 
     async function apiFetch(url, options, context) {
       let response;
@@ -1036,6 +1101,7 @@
 
     setMode('batch');
     checkHealth();
+    initHeroVideo();
   </script>
 </body>
 </html>
