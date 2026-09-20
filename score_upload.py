@@ -14,6 +14,15 @@ Manual test without a backend:
 
     python score_upload.py test_upload_sample.csv
 
+For the interactive "customizable patient" demo form (one hypothetical
+patient, no file), use score_single_patient() instead -- it shares the exact
+same encode -> two-stage guard -> predict -> SHAP pipeline via
+_build_records(), scoped to a single row, so the live-form path can never
+score a patient differently than a CSV upload would:
+
+    from score_upload import score_single_patient
+    result = score_single_patient({"age": 54, "condition": "Hypertension", ...})
+
 
 WHY THIS DOES NOT CALL prepare_features()
 -----------------------------------------
@@ -214,6 +223,96 @@ def _encode(df: pd.DataFrame, feature_names: list[str],
     return X
 
 
+def _build_records(df: pd.DataFrame, bundle: dict[str, Any]) -> list[dict[str, Any]]:
+    """
+    Shared scoring core: encode -> two-stage guard -> predict -> SHAP ->
+    assemble one record per row.
+
+    `df` must already contain the identity + raw feature columns for every
+    row (any outcome columns must be dropped by the caller first -- see
+    score_patient_upload). Used by BOTH score_patient_upload (many rows, from
+    a file) and score_single_patient (exactly one row, from a live form) so
+    neither path can silently diverge from the other: a patient scored
+    through the form and the same patient scored via CSV upload always get
+    the identical number.
+
+    Raises on a genuine scoring failure (e.g. a corrupt model); callers
+    translate that into their own error shape.
+    """
+    model = bundle["model"]
+    feature_names = bundle["feature_names"]
+    category_levels = bundle["category_levels"]
+
+    X = _encode(df, feature_names, category_levels)
+
+    raw_rows = df.to_dict(orient="records")
+    guards: list[tuple[list[str], list[str]]] = []
+    for i, raw in enumerate(raw_rows):
+        stage1 = missing_required_fields(raw)               # blank / absent
+        stage2 = [                                          # unrecognized / unparseable
+            f for f in REQUIRED_FIELDS
+            if f not in stage1 and f in X.columns and pd.isna(X.iloc[i][f])
+        ]
+        guards.append((stage1, stage2))
+
+    eligible = np.array([not (s1 or s2) for s1, s2 in guards])
+    X_ok = X[eligible]
+    pos_of = {orig: k for k, orig in enumerate(np.flatnonzero(eligible))}
+
+    if len(X_ok):
+        proba = model.predict_proba(X_ok)[:, 1]
+        shap_values = shap.TreeExplainer(model)(X_ok).values
+        scores = np.round(proba * 100).astype(int)
+    else:
+        scores = np.array([], dtype=int)
+        shap_values = np.empty((0, len(feature_names)))
+
+    records: list[dict[str, Any]] = []
+    for i, raw in enumerate(raw_rows):
+        stage1, stage2 = guards[i]
+
+        if stage1 or stage2:
+            # Sanitize identity fields first: insufficient_data_record casts
+            # age to int, which would raise on junk like "unknown".
+            clean = dict(raw)
+            clean["age"] = _safe_int(raw.get("age"))
+            rec = insufficient_data_record(clean, stage1 + stage2)
+
+            # Name the real cause. A blank field and an unrecognized value are
+            # different problems for whoever has to fix the upload.
+            reasons = []
+            if stage1:
+                reasons.append(guard_reason(stage1))
+            if stage2:
+                shown = ", ".join(f"{f}={raw.get(f)!r}" for f in stage2)
+                reasons.append(
+                    f"Unrecognized value for required field(s): {shown} "
+                    "(not present in the training data, so the model cannot use it)"
+                )
+            rec["reason"] = " | ".join(reasons)
+            records.append(rec)
+            continue
+
+        k = pos_of[i]
+        row_shap = shap_values[k]
+        top_idx = np.argsort(np.abs(row_shap))[::-1][:3]
+        score = int(scores[k])
+        records.append({
+            "patient_id": _safe_str(raw.get("patient_id")),
+            "age": _safe_int(raw.get("age")),
+            "condition": _safe_str(raw.get("condition")),
+            "medication_name": _safe_str(raw.get("medication_name")),
+            "risk_score": score,
+            "risk_tier": tier_for(score),
+            "reason": None,
+            "top_factors": [
+                {"factor": feature_names[j], "impact": round(float(row_shap[j]), 4)}
+                for j in top_idx
+            ],
+        })
+    return records
+
+
 def score_patient_upload(csv_path: str) -> dict:
     """
     Score a new, uploaded patient CSV using the trained model.
@@ -247,9 +346,7 @@ def score_patient_upload(csv_path: str) -> dict:
                                       "Run train_adherence_model.py first.")
     try:
         bundle = _load_model_bundle()
-        model = bundle["model"]
         feature_names = bundle["feature_names"]
-        category_levels = bundle["category_levels"]
     except Exception as exc:
         return _empty_result("error", f"Could not load model.pkl: {exc}")
 
@@ -303,79 +400,11 @@ def score_patient_upload(csv_path: str) -> dict:
 
     total = len(df)
 
-    # ---- ENCODE, then apply the guard in two stages ----------------------
-    X = _encode(df, feature_names, category_levels)
-
-    raw_rows = df.to_dict(orient="records")
-    guards: list[tuple[list[str], list[str]]] = []
-    for i, raw in enumerate(raw_rows):
-        stage1 = missing_required_fields(raw)               # blank / absent
-        stage2 = [                                          # unrecognized / unparseable
-            f for f in REQUIRED_FIELDS
-            if f not in stage1 and f in X.columns and pd.isna(X.iloc[i][f])
-        ]
-        guards.append((stage1, stage2))
-
-    eligible = np.array([not (s1 or s2) for s1, s2 in guards])
-    X_ok = X[eligible]
-    pos_of = {orig: k for k, orig in enumerate(np.flatnonzero(eligible))}
-
-    # ---- score + explain, eligible rows only -----------------------------
-    if len(X_ok):
-        try:
-            proba = model.predict_proba(X_ok)[:, 1]
-            shap_values = shap.TreeExplainer(model)(X_ok).values
-        except Exception as exc:
-            return _empty_result("error", f"Scoring failed: {exc}")
-        scores = np.round(proba * 100).astype(int)
-    else:
-        scores = np.array([], dtype=int)
-        shap_values = np.empty((0, len(feature_names)))
-
-    # ---- assemble records ------------------------------------------------
-    records: list[dict[str, Any]] = []
-    for i, raw in enumerate(raw_rows):
-        stage1, stage2 = guards[i]
-
-        if stage1 or stage2:
-            # Sanitize identity fields first: insufficient_data_record casts
-            # age to int, which would raise on junk like "unknown".
-            clean = dict(raw)
-            clean["age"] = _safe_int(raw.get("age"))
-            rec = insufficient_data_record(clean, stage1 + stage2)
-
-            # Name the real cause. A blank field and an unrecognized value are
-            # different problems for whoever has to fix the upload.
-            reasons = []
-            if stage1:
-                reasons.append(guard_reason(stage1))
-            if stage2:
-                shown = ", ".join(f"{f}={raw.get(f)!r}" for f in stage2)
-                reasons.append(
-                    f"Unrecognized value for required field(s): {shown} "
-                    "(not present in the training data, so the model cannot use it)"
-                )
-            rec["reason"] = " | ".join(reasons)
-            records.append(rec)
-            continue
-
-        k = pos_of[i]
-        row_shap = shap_values[k]
-        top_idx = np.argsort(np.abs(row_shap))[::-1][:3]
-        score = int(scores[k])
-        records.append({
-            "patient_id": _safe_str(raw.get("patient_id")),
-            "age": _safe_int(raw.get("age")),
-            "condition": _safe_str(raw.get("condition")),
-            "medication_name": _safe_str(raw.get("medication_name")),
-            "risk_score": score,
-            "risk_tier": tier_for(score),
-            "reason": None,
-            "top_factors": [
-                {"factor": feature_names[j], "impact": round(float(row_shap[j]), 4)}
-                for j in top_idx
-            ],
-        })
+    # ---- ENCODE, GUARD, PREDICT, EXPLAIN -- shared with score_single_patient
+    try:
+        records = _build_records(df, bundle)
+    except Exception as exc:
+        return _empty_result("error", f"Scoring failed: {exc}")
 
     high_risk = filter_high_risk(records, min_risk=TIER_HIGH)
     n_insufficient = sum(
@@ -391,6 +420,63 @@ def score_patient_upload(csv_path: str) -> dict:
         "all_patients": records,
         "high_risk_patients": high_risk,
     }
+
+
+def score_single_patient(patient: dict[str, Any]) -> dict[str, Any]:
+    """
+    Score exactly one patient given as a plain dict -- e.g. live values from
+    the "customizable patient" demo form -- with no CSV file involved.
+
+    This is the interactive sibling of score_patient_upload(): same encode ->
+    two-stage guard -> predict -> SHAP pipeline, via the same _build_records()
+    helper, scoped to a single row. That sharing is the point -- a patient
+    scored through the form and the same patient scored via CSV upload always
+    get the identical number, because it is the same code path underneath.
+
+    Unlike score_patient_upload(), a key absent from `patient` is NOT a
+    file-shape error -- a live form always sends every field it renders, but
+    treating a missing key the same as an explicit null (rather than
+    raising) lets a caller omit a field on purpose and let the guard /
+    XGBoost's native missing-handling decide what happens, exactly as a
+    partially-filled form would in real use.
+
+    Args:
+        patient: feature name -> value, e.g.
+            {"age": 54, "condition": "Hypertension", "monthly_copay": 36, ...}.
+            An `patient_id` key is optional; omit it for a purely
+            hypothetical patient.
+
+    Returns:
+        {"status": "ok", "error": None, "patient": {...}} on success, where
+        the inner dict has exactly the per-row schema score_patient_upload()
+        produces: patient_id, age, condition, medication_name, risk_score,
+        risk_tier, reason, top_factors.
+
+        {"status": "error", "error": str, "patient": None} if the model
+        could not be loaded or scoring raised -- mirrors
+        score_patient_upload()'s error shape so callers can check
+        result["status"] the same way for either function.
+    """
+    if not MODEL_PATH.exists():
+        return {
+            "status": "error",
+            "error": f"Trained model not found at {MODEL_PATH}. "
+                     "Run train_adherence_model.py first.",
+            "patient": None,
+        }
+    try:
+        bundle = _load_model_bundle()
+    except Exception as exc:
+        return {"status": "error", "error": f"Could not load model.pkl: {exc}",
+                "patient": None}
+
+    df = pd.DataFrame([patient])
+    try:
+        records = _build_records(df, bundle)
+    except Exception as exc:
+        return {"status": "error", "error": f"Scoring failed: {exc}", "patient": None}
+
+    return {"status": "ok", "error": None, "patient": records[0]}
 
 
 # ===========================================================================

@@ -104,6 +104,74 @@ Errors: a malformed/empty/wrong-shaped CSV returns `422` with a `detail`
 message naming the problem (missing columns, unreadable file, etc.), not a
 crash. An upload endpoint hit with a non-CSV file returns `400`.
 
+### `GET /patient-options`
+
+Form spec for `docs/patient-simulator.html` (the "customizable patient" demo
+page): exact dropdown values, condition-filtered medication lists, numeric
+slider ranges, and a pre-filled default patient. See `patient_options.py` at
+the repo root for what decides a field's category. `categorical` values come
+straight from `model.pkl`'s saved vocabulary, so a retrain with different
+categories is picked up automatically; the condition/medication pairings and
+numeric ranges are policy constants derived once from the training CSV.
+
+```json
+{
+  "categorical": {
+    "condition": ["Acute Bacterial Infection", "...", "Type 2 Diabetes"],
+    "medication_name": ["Airoflex", "...", "Vaslorin"],
+    "...": "..."
+  },
+  "condition_to_drug_class": {"Type 2 Diabetes": "chronic", "...": "..."},
+  "condition_to_medications": {"Type 2 Diabetes": ["Glucotrol-X", "Insunova", "Metforal"], "...": "..."},
+  "boolean_fields": ["deductible_met", "..."],
+  "discrete_numeric_options": {"days_supply": [30, 60, 90], "appointment_length_minutes": [10, 15, 20, 30, 45]},
+  "numeric_ranges": {"age": [18, 89], "monthly_copay": [0, 500], "...": "..."},
+  "default_patient": {"age": 54, "condition": "Hypertension", "...": "..."}
+}
+```
+
+### `POST /predict-single`
+
+The interactive sibling of `/predict`: score exactly one hypothetical
+patient built live from form fields, instead of uploading a CSV. Same model,
+same two-stage guard, same SHAP explanation -- `score_single_patient()` in
+`score_upload.py` shares the same `_build_records()` core that
+`score_patient_upload()` uses, so a patient scored through the form and the
+same patient scored via CSV upload always get the identical number.
+
+Body: JSON, one field per feature (all optional -- see `SinglePatientRequest`
+in `schemas.py`; a key you omit is treated as null, same as a blank form
+field). Values must come from `/patient-options`' vocabulary for categorical
+fields -- an unrecognized value (e.g. a medication never in the training
+data) is not rejected at the HTTP layer, it comes back as
+`risk_tier: "insufficient_data"`, exactly like the batch guard.
+
+```
+curl -X POST http://localhost:8000/predict-single \
+  -H "Content-Type: application/json" \
+  -d '{"patient_id":"DEMO-1","age":54,"condition":"Hypertension","drug_class":"chronic","medication_name":"Vaslorin","new_rx_or_refill":"Refill","insurance_type":"Commercial","monthly_copay":36,"deductible_met":true,"copay_assistance_available":false,"copay_assistance_enrolled":false,"prior_auth_required":false,"pa_turnaround_days":0,"days_supply":30,"distance_to_pharmacy_miles":6,"delivery_option_available":true,"concurrent_medication_count":2,"appointment_length_minutes":10,"day_of_week_prescribed":"Wed","prior_abandoned_rx_count":0,"scheduled_visits_count":3,"missed_visits_count":0}'
+```
+
+Response:
+```json
+{
+  "status": "ok",
+  "error": null,
+  "patient": {
+    "patient_id": "DEMO-1", "age": 54, "condition": "Hypertension",
+    "medication_name": "Vaslorin", "risk_score": 1, "risk_tier": "low",
+    "reason": null, "top_factors": [ "..." ], "risk_drivers": [ "..." ],
+    "explanation_category": "low_risk",
+    "explanation": "This patient has a low 1% risk of not filling this prescription.",
+    "recommendations": ["No action needed."], "talking_points": []
+  }
+}
+```
+
+Raising `monthly_copay` to `500` on that same patient moves this to
+`risk_score: 83, risk_tier: "high"` -- this is the live "drag the copay
+slider" demo moment `docs/patient-simulator.html` is built around.
+
 ## CORS
 
 `main.py` allows `http://localhost:5500`, `http://127.0.0.1:5500`, and `null`

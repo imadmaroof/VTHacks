@@ -1,6 +1,20 @@
+# Model / scoring stack (used by train_adherence_model.py, score_upload.py,
+# predict.py and the GitHub Action).
 pandas
 numpy
 scikit-learn
 xgboost
 shap
 joblib
+
+# Web layer. Vercel installs THIS file (repo root) for the serverless build,
+# so the FastAPI app's own dependencies have to be listed here too -- not only
+# in backend/requirements.txt, which Vercel never reads.
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Optional: enables explanation_layer.py's Gemini-backed explanations and
+# doctor talking points. Safe to omit -- without it, or without GEMINI_API_KEY
+# set, explanations fall back to the rule-based template with no error.
+google-genai
