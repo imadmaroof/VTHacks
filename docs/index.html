@@ -29,27 +29,28 @@
       background: linear-gradient(135deg, #eaf3f6 0, #f7fafb 48%, #e9f0f6 100%);
       font: 16px/1.5 Georgia, "Times New Roman", serif;
     }
-    button, input { font: inherit; }
+    button, input, select { font: inherit; }
     button { cursor: pointer; }
-    .shell { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 36px 0 56px; }
-    header { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 24px; }
+    .shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 36px 0 56px; }
+    header { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 20px; }
     h1, h2, h3, p { margin-top: 0; }
     h1 { margin-bottom: 6px; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1; letter-spacing: -.03em; }
     h2 { margin-bottom: 8px; font-size: 1.45rem; }
     h3 { margin-bottom: 4px; font-size: 1.05rem; }
     .tag { color: var(--blue-dark); font: 700 .78rem/1.2 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
-    .intro { max-width: 650px; color: var(--muted); font-size: 1.08rem; }
+    .intro { max-width: 700px; color: var(--muted); font-size: 1.08rem; }
     .panel { background: var(--paper); border: 1px solid var(--line); box-shadow: var(--shadow); }
     details > summary { padding: 18px 22px; color: var(--blue-dark); font-weight: bold; cursor: pointer; }
     details[open] > summary { border-bottom: 1px solid var(--line); }
     .settings-body { padding: 20px 22px 24px; }
     .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
     label { display: block; color: var(--muted); font: 700 .78rem/1.2 system-ui, sans-serif; letter-spacing: .04em; text-transform: uppercase; }
-    input[type="text"], input[type="password"], input[type="number"], input[type="search"] {
+    input[type="text"], input[type="password"], input[type="number"], input[type="search"], select {
       display: block; width: 100%; margin-top: 7px; padding: 10px 11px; color: var(--ink); background: #fcfdfd;
       border: 1px solid #b9c7d1; border-radius: 3px;
     }
-    input:focus, button:focus-visible, summary:focus-visible { outline: 3px solid #9dcaed; outline-offset: 2px; }
+    select:disabled { color: var(--muted); background: var(--wash); }
+    input:focus, select:focus, button:focus-visible, summary:focus-visible { outline: 3px solid #9dcaed; outline-offset: 2px; }
     .wide { grid-column: 1 / -1; }
     .hint { margin: 6px 0 0; color: var(--muted); font: .83rem/1.4 system-ui, sans-serif; }
     .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 18px; }
@@ -58,6 +59,9 @@
     button.secondary { color: var(--blue-dark); background: white; }
     button.danger { color: var(--red); background: white; border-color: #dcaaa5; }
     button:disabled { cursor: not-allowed; opacity: .5; }
+
+    .mode-switch { max-width: 320px; margin-bottom: 20px; }
+
     .drop-zone { margin-top: 24px; padding: 30px 22px; text-align: center; background: var(--paper); border: 2px dashed #9db3c1; }
     .drop-zone.dragging { background: var(--blue-soft); border-color: var(--blue); }
     .drop-zone strong { display: block; margin-bottom: 5px; font-size: 1.2rem; }
@@ -89,23 +93,73 @@
     .notice { margin: 14px 0 0; padding: 11px 13px; color: var(--amber); background: var(--amber-soft); border-left: 3px solid #d7a634; font: .9rem/1.4 system-ui, sans-serif; }
     .hidden { display: none !important; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+    /* --- Patient simulator view ------------------------------------------ */
+    .simulator { display: grid; grid-template-columns: minmax(340px, 1.15fr) minmax(320px, .85fr); gap: 22px; align-items: start; margin-top: 22px; }
+    .form-panel { padding: 20px 22px 24px; }
+    .group { margin-bottom: 22px; }
+    .group:last-child { margin-bottom: 0; }
+    .group h3 { color: var(--blue-dark); font: 700 .8rem/1.2 system-ui, sans-serif; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+    .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 16px; }
+    .field { min-width: 0; }
+    .field.wide { grid-column: 1 / -1; }
+    .slider-row { display: flex; align-items: center; gap: 10px; margin-top: 6px; }
+    .slider-row input[type="range"] { flex: 1; accent-color: var(--blue); }
+    .slider-row input[type="range"]:disabled { accent-color: var(--muted); }
+    .slider-readout { min-width: 52px; text-align: right; font: 700 .92rem/1.2 system-ui, sans-serif; color: var(--ink); }
+    .field-note { margin: 4px 0 0; color: var(--muted); font: .76rem/1.3 system-ui, sans-serif; }
+
+    .result-panel { position: sticky; top: 18px; padding: 22px; }
+    .score-block { text-align: center; padding: 6px 0 18px; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
+    .score-number { font-size: 4.2rem; line-height: 1; font-weight: bold; letter-spacing: -.03em; }
+    .score-number.low { color: var(--green); }
+    .score-number.medium { color: var(--amber); }
+    .score-number.high { color: var(--red); }
+    .score-number.insufficient_data { color: var(--muted); }
+    .score-unit { color: var(--muted); font: 700 .85rem/1.2 system-ui, sans-serif; letter-spacing: .04em; text-transform: uppercase; }
+    .tier-badge { display: inline-block; margin-top: 8px; padding: 4px 12px; border-radius: 999px; font: 700 .8rem/1.2 system-ui, sans-serif; letter-spacing: .04em; text-transform: uppercase; }
+    .tier-badge.low { color: var(--green); background: var(--green-soft); }
+    .tier-badge.medium { color: var(--amber); background: var(--amber-soft); }
+    .tier-badge.high { color: var(--red); background: var(--red-soft); }
+    .tier-badge.insufficient_data { color: var(--muted); background: var(--wash); }
+    .explanation { font-size: 1rem; line-height: 1.5; margin-bottom: 14px; }
+    .recommendation { padding: 12px 14px; margin-bottom: 14px; background: var(--blue-soft); border-left: 3px solid var(--blue); font: .92rem/1.45 system-ui, sans-serif; }
+    .drivers h3 { color: var(--blue-dark); font: 700 .78rem/1.2 system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 8px; }
+    .driver-chip { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px dashed var(--line); font: .88rem/1.3 system-ui, sans-serif; }
+    .driver-chip:last-child { border-bottom: 0; }
+    .driver-chip .impact-high { color: var(--red); font-weight: 700; }
+    .driver-chip .impact-medium { color: var(--amber); font-weight: 700; }
+    .driver-chip .impact-low { color: var(--muted); font-weight: 700; }
+    .no-drivers { color: var(--muted); font: italic .88rem/1.4 system-ui, sans-serif; }
+    .result-status { min-height: 20px; margin-top: 12px; color: var(--muted); font: .82rem/1.4 system-ui, sans-serif; }
+    .result-status.error { color: var(--red); }
+
+    @media (max-width: 860px) {
+      .simulator { grid-template-columns: 1fr; }
+      .result-panel { position: static; }
+      .field-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 680px) { .shell { width: min(100% - 20px, 1120px); padding-top: 24px; } header { display: block; } .grid { grid-template-columns: 1fr; } .wide { grid-column: auto; } }
   </style>
 </head>
 <body>
   <main class="shell">
-    <nav style="font: 700 .78rem/1.2 system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px;" aria-label="Demo pages">
-      <span style="color: var(--muted);">Batch CSV upload</span>
-      <span style="color: var(--muted); margin: 0 8px;">/</span>
-      <a href="patient-simulator.html" style="color: var(--blue-dark);">Patient simulator</a>
-    </nav>
     <header>
       <div>
         <div class="tag">Local front end / FastAPI backend</div>
         <h1>Patient Risk Predictor</h1>
-        <p class="intro">Drop in a patient CSV and get real-time medication-adherence risk scores, explanations, and recommendations back from the model.</p>
+        <p class="intro">Score patients from a CSV upload, or build one hypothetical patient live, and get medication-adherence risk, explanations, and recommendations back from the model.</p>
       </div>
     </header>
+
+    <div class="mode-switch">
+      <label for="modeSelect">View
+        <select id="modeSelect">
+          <option value="batch">Batch CSV upload</option>
+          <option value="simulator">Patient simulator</option>
+        </select>
+      </label>
+    </div>
 
     <details class="panel" id="settings-panel" open>
       <summary>Backend connection</summary>
@@ -113,7 +167,7 @@
         <div class="grid">
           <label class="wide">FastAPI backend URL
             <input id="apiBase" type="text" placeholder="http://localhost:8000">
-            <span class="hint">Where the backend's /health and /predict endpoints are running. See backend/README.md to start it.</span>
+            <span class="hint">Where the backend's /health, /predict, /patient-options and /predict-single endpoints are served. Shared by both views below. See backend/README.md to start it.</span>
           </label>
         </div>
         <div class="actions">
@@ -123,35 +177,207 @@
       </div>
     </details>
 
-    <section class="panel drop-zone" id="dropZone" aria-label="CSV upload area">
-      <strong>Choose the patient CSV to score</strong>
-      <p>Drag a file here, or browse for one on your computer.</p>
-      <input id="fileInput" class="sr-only" type="file" accept=".csv,text/csv">
-      <button id="chooseFile" type="button" class="secondary">Browse for CSV</button>
-      <div id="fileName" class="file-name" aria-live="polite"></div>
-      <div class="actions" style="justify-content:center"><button id="sendButton" type="button" disabled>Get predictions</button></div>
+    <!-- ==================== Batch CSV upload view ==================== -->
+    <section id="batchView">
+      <section class="panel drop-zone" id="dropZone" aria-label="CSV upload area">
+        <strong>Choose the patient CSV to score</strong>
+        <p>Drag a file here, or browse for one on your computer.</p>
+        <input id="fileInput" class="sr-only" type="file" accept=".csv,text/csv">
+        <button id="chooseFile" type="button" class="secondary">Browse for CSV</button>
+        <div id="fileName" class="file-name" aria-live="polite"></div>
+        <div class="actions" style="justify-content:center"><button id="sendButton" type="button" disabled>Get predictions</button></div>
+      </section>
+
+      <section class="panel status-panel" aria-labelledby="status-heading">
+        <h2 id="status-heading">Run status</h2>
+        <div class="status-line"><span id="statusDot" class="status-dot"></span><strong id="statusText" aria-live="polite">Ready for a CSV.</strong></div>
+        <div id="statusLog" class="log" aria-live="polite">No activity yet.</div>
+        <div class="actions">
+          <button id="newRun" type="button" class="secondary">Start new run</button>
+        </div>
+      </section>
+
+      <section id="resultPanel" class="panel result hidden" aria-labelledby="result-heading">
+        <h2 id="result-heading">Prediction results</h2>
+        <div class="summary-line" id="summaryLine"></div>
+        <div class="result-toolbar">
+          <label class="search-label">Filter rows
+            <input id="searchInput" type="search" placeholder="Search any column...">
+          </label>
+          <div id="rowCount" class="hint"></div>
+          <button id="downloadButton" type="button" class="secondary">Download CSV</button>
+        </div>
+        <div class="table-wrap"><table><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table></div>
+      </section>
     </section>
 
-    <section class="panel status-panel" aria-labelledby="status-heading">
-      <h2 id="status-heading">Run status</h2>
-      <div class="status-line"><span id="statusDot" class="status-dot"></span><strong id="statusText" aria-live="polite">Ready for a CSV.</strong></div>
-      <div id="statusLog" class="log" aria-live="polite">No activity yet.</div>
-      <div class="actions">
-        <button id="newRun" type="button" class="secondary">Start new run</button>
-      </div>
-    </section>
+    <!-- ==================== Patient simulator view ==================== -->
+    <section id="simulatorView" class="hidden">
+      <div id="loadState" class="hint" style="margin-top:4px;">Loading form options from the backend...</div>
 
-    <section id="resultPanel" class="panel result hidden" aria-labelledby="result-heading">
-      <h2 id="result-heading">Prediction results</h2>
-      <div class="summary-line" id="summaryLine"></div>
-      <div class="result-toolbar">
-        <label class="search-label">Filter rows
-          <input id="searchInput" type="search" placeholder="Search any column...">
-        </label>
-        <div id="rowCount" class="hint"></div>
-        <button id="downloadButton" type="button" class="secondary">Download CSV</button>
-      </div>
-      <div class="table-wrap"><table><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table></div>
+      <form id="simulatorForm" class="simulator hidden">
+        <div class="form-panel panel">
+          <div class="group">
+            <h3>Condition &amp; medication</h3>
+            <div class="field-grid">
+              <div class="field">
+                <label for="f_condition">Condition</label>
+                <select id="f_condition" data-field="condition"></select>
+              </div>
+              <div class="field">
+                <label for="f_drug_class">Drug class (set by condition)</label>
+                <select id="f_drug_class" data-field="drug_class" disabled></select>
+              </div>
+              <div class="field wide">
+                <label for="f_medication_name">Medication (only drugs prescribed for this condition)</label>
+                <select id="f_medication_name" data-field="medication_name"></select>
+              </div>
+            </div>
+          </div>
+
+          <div class="group">
+            <h3>Prescription</h3>
+            <div class="field-grid">
+              <div class="field">
+                <label for="f_new_rx_or_refill">New Rx or refill</label>
+                <select id="f_new_rx_or_refill" data-field="new_rx_or_refill"></select>
+              </div>
+              <div class="field">
+                <label for="f_day_of_week_prescribed">Day prescribed</label>
+                <select id="f_day_of_week_prescribed" data-field="day_of_week_prescribed"></select>
+              </div>
+              <div class="field">
+                <label for="f_days_supply">Days supply</label>
+                <select id="f_days_supply" data-field="days_supply"></select>
+              </div>
+              <div class="field">
+                <label for="f_insurance_type">Insurance type</label>
+                <select id="f_insurance_type" data-field="insurance_type"></select>
+              </div>
+              <div class="field wide">
+                <label for="f_age">Age</label>
+                <div class="slider-row">
+                  <input id="f_age" type="range" data-field="age" step="1">
+                  <span class="slider-readout" data-readout="age"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="group">
+            <h3>Cost &amp; coverage</h3>
+            <div class="field-grid">
+              <div class="field wide">
+                <label for="f_monthly_copay">Monthly copay ($)</label>
+                <div class="slider-row">
+                  <input id="f_monthly_copay" type="range" data-field="monthly_copay" step="1">
+                  <span class="slider-readout" data-readout="monthly_copay"></span>
+                </div>
+                <p class="field-note">This is usually the single biggest driver of risk in this model &mdash; try dragging it to the top.</p>
+              </div>
+              <div class="field">
+                <label for="f_deductible_met">Deductible met</label>
+                <select id="f_deductible_met" data-field="deductible_met" data-type="boolean"></select>
+              </div>
+              <div class="field">
+                <label for="f_copay_assistance_available">Copay assistance available</label>
+                <select id="f_copay_assistance_available" data-field="copay_assistance_available" data-type="boolean"></select>
+              </div>
+              <div class="field">
+                <label for="f_copay_assistance_enrolled">Copay assistance enrolled</label>
+                <select id="f_copay_assistance_enrolled" data-field="copay_assistance_enrolled" data-type="boolean"></select>
+              </div>
+            </div>
+          </div>
+
+          <div class="group">
+            <h3>Access &amp; logistics</h3>
+            <div class="field-grid">
+              <div class="field">
+                <label for="f_prior_auth_required">Prior authorization required</label>
+                <select id="f_prior_auth_required" data-field="prior_auth_required" data-type="boolean"></select>
+              </div>
+              <div class="field">
+                <label for="f_delivery_option_available">Delivery option available</label>
+                <select id="f_delivery_option_available" data-field="delivery_option_available" data-type="boolean"></select>
+              </div>
+              <div class="field wide">
+                <label for="f_pa_turnaround_days">Prior-auth turnaround (days)</label>
+                <div class="slider-row">
+                  <input id="f_pa_turnaround_days" type="range" data-field="pa_turnaround_days" step="1">
+                  <span class="slider-readout" data-readout="pa_turnaround_days"></span>
+                </div>
+                <p class="field-note" id="pa_turnaround_note">Locked to 0 while prior authorization is not required.</p>
+              </div>
+              <div class="field wide">
+                <label for="f_distance_to_pharmacy_miles">Distance to pharmacy (miles)</label>
+                <div class="slider-row">
+                  <input id="f_distance_to_pharmacy_miles" type="range" data-field="distance_to_pharmacy_miles" step="0.5">
+                  <span class="slider-readout" data-readout="distance_to_pharmacy_miles"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="group">
+            <h3>Clinical history</h3>
+            <div class="field-grid">
+              <div class="field">
+                <label for="f_concurrent_medication_count">Concurrent medications</label>
+                <div class="slider-row">
+                  <input id="f_concurrent_medication_count" type="range" data-field="concurrent_medication_count" step="1">
+                  <span class="slider-readout" data-readout="concurrent_medication_count"></span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="f_appointment_length_minutes">Appointment length (min)</label>
+                <select id="f_appointment_length_minutes" data-field="appointment_length_minutes"></select>
+              </div>
+              <div class="field">
+                <label for="f_prior_abandoned_rx_count">Prior abandoned prescriptions</label>
+                <div class="slider-row">
+                  <input id="f_prior_abandoned_rx_count" type="range" data-field="prior_abandoned_rx_count" step="1">
+                  <span class="slider-readout" data-readout="prior_abandoned_rx_count"></span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="f_scheduled_visits_count">Scheduled visits</label>
+                <div class="slider-row">
+                  <input id="f_scheduled_visits_count" type="range" data-field="scheduled_visits_count" step="1">
+                  <span class="slider-readout" data-readout="scheduled_visits_count"></span>
+                </div>
+              </div>
+              <div class="field wide">
+                <label for="f_missed_visits_count">Missed visits</label>
+                <div class="slider-row">
+                  <input id="f_missed_visits_count" type="range" data-field="missed_visits_count" step="1">
+                  <span class="slider-readout" data-readout="missed_visits_count"></span>
+                </div>
+                <p class="field-note">Capped at however many visits are scheduled &mdash; you can't miss more than were scheduled.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="scoreButton" type="button">Score this patient</button>
+            <button id="resetButton" type="button" class="secondary">Reset to default patient</button>
+          </div>
+        </div>
+
+        <div class="result-panel panel">
+          <div class="score-block">
+            <div><span id="scoreNumber" class="score-number low">&mdash;</span> <span class="score-unit">/ 100</span></div>
+            <div id="tierBadge" class="tier-badge low">Awaiting input</div>
+          </div>
+          <p id="explanationText" class="explanation">Adjust any field to score this patient.</p>
+          <div id="recommendationBox" class="recommendation hidden"></div>
+          <div class="drivers">
+            <h3>Risk drivers</h3>
+            <div id="driversList"></div>
+          </div>
+          <div id="resultStatus" class="result-status" aria-live="polite"></div>
+        </div>
+      </form>
     </section>
   </main>
 
@@ -159,33 +385,9 @@
     'use strict';
     const $ = (id) => document.getElementById(id);
 
-    // Columns shown in the results table, in order. `get` pulls a displayable
-    // value out of one enriched patient record from POST /predict's response.
-    const COLUMNS = [
-      { key: 'patient_id', label: 'Patient ID', get: (r) => r.patient_id ?? '' },
-      { key: 'age', label: 'Age', get: (r) => r.age ?? '' },
-      { key: 'condition', label: 'Condition', get: (r) => r.condition ?? '' },
-      { key: 'medication_name', label: 'Medication', get: (r) => r.medication_name ?? '' },
-      { key: 'risk_score', label: 'Risk score', get: (r) => r.risk_score ?? '' },
-      { key: 'risk_tier', label: 'Risk tier', get: (r) => r.risk_tier ?? '' },
-      { key: 'explanation', label: 'Explanation', get: (r) => r.explanation ?? '' },
-      { key: 'recommendations', label: 'Recommendation', get: (r) => (r.recommendations || []).join(' ') },
-      { key: 'reason', label: 'Reason', get: (r) => r.reason ?? '' },
-    ];
-
-    const state = { file: null, rows: [], summary: null, sortColumn: -1, sortDirection: 1 };
-
-    // High risk first, then medium, ordered by risk_score descending within
-    // each; low-risk patients are left off the list entirely. Rows with no
-    // score (insufficient_data) sort last, since they aren't "low risk" --
-    // they just couldn't be scored.
-    function orderForDisplay(results) {
-      return (results || [])
-        .filter((r) => r.risk_tier !== 'low')
-        .slice()
-        .sort((a, b) => (b.risk_score ?? -1) - (a.risk_score ?? -1));
-    }
-
+    // ======================================================================
+    // Shared: backend URL settings + fetch helper (both views use these)
+    // ======================================================================
     function loadSettings() {
       let saved = {};
       try { saved = JSON.parse(localStorage.getItem('patientRiskPredictorSettings') || '{}'); } catch (_) { saved = {}; }
@@ -198,16 +400,7 @@
       return settings;
     }
     function settings() { return saveSettings(); }
-
-    function setStatus(message, kind = 'working', addLog = true) {
-      $('statusText').textContent = message;
-      $('statusDot').className = 'status-dot ' + kind;
-      if (addLog) {
-        const line = new Date().toLocaleTimeString() + '  ' + message;
-        $('statusLog').textContent = $('statusLog').textContent === 'No activity yet.' ? line : $('statusLog').textContent + '\n' + line;
-        $('statusLog').scrollTop = $('statusLog').scrollHeight;
-      }
-    }
+    function apiBase() { return $('apiBase').value.trim().replace(/\/+$/, ''); }
 
     async function apiFetch(url, options, context) {
       let response;
@@ -224,6 +417,74 @@
       return response;
     }
 
+    async function testConnection() {
+      const base = apiBase();
+      if (!base) { $('settingsSaved').textContent = 'Enter the FastAPI backend URL first.'; return; }
+      saveSettings();
+      $('testConnection').disabled = true;
+      $('settingsSaved').textContent = 'Testing the backend connection...';
+      try {
+        const response = await apiFetch(base + '/health', {}, 'testing the connection');
+        const data = await response.json();
+        $('settingsSaved').textContent = 'Connection successful (status: ' + data.status + ').';
+      } catch (error) {
+        $('settingsSaved').textContent = error.message;
+      } finally {
+        $('testConnection').disabled = false;
+      }
+    }
+
+    // ======================================================================
+    // View switching
+    // ======================================================================
+    let simulatorInitialized = false;
+    function setMode(mode) {
+      $('batchView').classList.toggle('hidden', mode !== 'batch');
+      $('simulatorView').classList.toggle('hidden', mode !== 'simulator');
+      if (mode === 'simulator' && !simulatorInitialized) {
+        simulatorInitialized = true;
+        initSimulator();
+      }
+    }
+
+    // ======================================================================
+    // Batch CSV upload view
+    // ======================================================================
+    const COLUMNS = [
+      { key: 'patient_id', label: 'Patient ID', get: (r) => r.patient_id ?? '' },
+      { key: 'age', label: 'Age', get: (r) => r.age ?? '' },
+      { key: 'condition', label: 'Condition', get: (r) => r.condition ?? '' },
+      { key: 'medication_name', label: 'Medication', get: (r) => r.medication_name ?? '' },
+      { key: 'risk_score', label: 'Risk score', get: (r) => r.risk_score ?? '' },
+      { key: 'risk_tier', label: 'Risk tier', get: (r) => r.risk_tier ?? '' },
+      { key: 'explanation', label: 'Explanation', get: (r) => r.explanation ?? '' },
+      { key: 'recommendations', label: 'Recommendation', get: (r) => (r.recommendations || []).join(' ') },
+      { key: 'reason', label: 'Reason', get: (r) => r.reason ?? '' },
+    ];
+
+    const batchState = { file: null, rows: [], summary: null, sortColumn: -1, sortDirection: 1 };
+
+    // High risk first, then medium, ordered by risk_score descending within
+    // each; low-risk patients are left off the list entirely. Rows with no
+    // score (insufficient_data) sort last, since they aren't "low risk" --
+    // they just couldn't be scored.
+    function orderForDisplay(results) {
+      return (results || [])
+        .filter((r) => r.risk_tier !== 'low')
+        .slice()
+        .sort((a, b) => (b.risk_score ?? -1) - (a.risk_score ?? -1));
+    }
+
+    function setStatus(message, kind = 'working', addLog = true) {
+      $('statusText').textContent = message;
+      $('statusDot').className = 'status-dot ' + kind;
+      if (addLog) {
+        const line = new Date().toLocaleTimeString() + '  ' + message;
+        $('statusLog').textContent = $('statusLog').textContent === 'No activity yet.' ? line : $('statusLog').textContent + '\n' + line;
+        $('statusLog').scrollTop = $('statusLog').scrollHeight;
+      }
+    }
+
     function csvCell(value) {
       const text = String(value ?? '');
       return /[",\r\n]/.test(text) ? '"' + text.replace(/"/g, '""') + '"' : text;
@@ -233,7 +494,7 @@
     }
 
     function renderSummary() {
-      const s = state.summary;
+      const s = batchState.summary;
       if (!s) { $('summaryLine').innerHTML = ''; return; }
       $('summaryLine').innerHTML = [
         ['Total patients', s.total_patients],
@@ -245,19 +506,19 @@
 
     function renderTable() {
       const query = $('searchInput').value.toLowerCase();
-      let rows = state.rows.filter((row) =>
+      let rows = batchState.rows.filter((row) =>
         COLUMNS.some((col) => String(col.get(row)).toLowerCase().includes(query))
       );
-      if (state.sortColumn >= 0) {
-        const col = COLUMNS[state.sortColumn];
+      if (batchState.sortColumn >= 0) {
+        const col = COLUMNS[batchState.sortColumn];
         rows = rows.slice().sort((a, b) =>
-          String(col.get(a)).localeCompare(String(col.get(b)), undefined, { numeric: true, sensitivity: 'base' }) * state.sortDirection
+          String(col.get(a)).localeCompare(String(col.get(b)), undefined, { numeric: true, sensitivity: 'base' }) * batchState.sortDirection
         );
       }
-      $('rowCount').textContent = rows.length + ' of ' + state.rows.length + ' rows';
+      $('rowCount').textContent = rows.length + ' of ' + batchState.rows.length + ' rows';
       $('tableHead').innerHTML = '<tr>' + COLUMNS.map((col, index) =>
         '<th scope="col"><button type="button" data-sort="' + index + '">' + escapeHtml(col.label) +
-        (state.sortColumn === index ? (state.sortDirection === 1 ? ' ↑' : ' ↓') : '') + '</button></th>'
+        (batchState.sortColumn === index ? (batchState.sortDirection === 1 ? ' ↑' : ' ↓') : '') + '</button></th>'
       ).join('') + '</tr>';
       $('tableBody').innerHTML = rows.map((row) =>
         '<tr class="risk-' + escapeHtml(row.risk_tier || '') + '">' +
@@ -267,16 +528,16 @@
       ).join('');
       $('tableHead').querySelectorAll('[data-sort]').forEach((button) => button.addEventListener('click', () => {
         const index = Number(button.dataset.sort);
-        state.sortDirection = state.sortColumn === index ? state.sortDirection * -1 : 1;
-        state.sortColumn = index;
+        batchState.sortDirection = batchState.sortColumn === index ? batchState.sortDirection * -1 : 1;
+        batchState.sortColumn = index;
         renderTable();
       }));
     }
 
     function downloadCsv() {
-      if (!state.rows.length) return;
+      if (!batchState.rows.length) return;
       const lines = [COLUMNS.map((col) => csvCell(col.label)).join(',')];
-      state.rows.forEach((row) => lines.push(COLUMNS.map((col) => csvCell(col.get(row))).join(',')));
+      batchState.rows.forEach((row) => lines.push(COLUMNS.map((col) => csvCell(col.get(row))).join(',')));
       const blob = new Blob([lines.join('\r\n')], { type: 'text/csv;charset=utf-8;' });
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
@@ -289,23 +550,23 @@
     }
 
     async function sendFile() {
-      if (!state.file) return;
+      if (!batchState.file) return;
       const s = settings();
       if (!s.apiBase) { setStatus('Enter the FastAPI backend URL first.', 'error'); $('settings-panel').open = true; return; }
 
       $('sendButton').disabled = true;
       $('resultPanel').classList.add('hidden');
-      setStatus('Sending ' + state.file.name + ' to the backend...', 'working');
+      setStatus('Sending ' + batchState.file.name + ' to the backend...', 'working');
 
       try {
         const formData = new FormData();
-        formData.append('file', state.file);
+        formData.append('file', batchState.file);
         const response = await apiFetch(s.apiBase + '/predict', { method: 'POST', body: formData }, 'scoring the CSV');
         const data = await response.json();
 
-        state.rows = orderForDisplay(data.results);
-        state.summary = data;
-        state.sortColumn = -1;
+        batchState.rows = orderForDisplay(data.results);
+        batchState.summary = data;
+        batchState.sortColumn = -1;
         renderSummary();
         renderTable();
         $('resultPanel').classList.remove('hidden');
@@ -319,35 +580,19 @@
       }
     }
 
-    async function testConnection() {
-      const s = settings();
-      if (!s.apiBase) { setStatus('Enter the FastAPI backend URL first.', 'error'); return; }
-      $('testConnection').disabled = true;
-      setStatus('Testing the backend connection...');
-      try {
-        const response = await apiFetch(s.apiBase + '/health', {}, 'testing the connection');
-        const data = await response.json();
-        setStatus('Connection successful (status: ' + data.status + ').', 'success');
-      } catch (error) {
-        setStatus(error.message, 'error');
-      } finally {
-        $('testConnection').disabled = false;
-      }
-    }
-
     function chooseFile(file) {
       if (!file) return;
       if (!file.name.toLowerCase().endsWith('.csv')) { setStatus('Please choose a file ending in .csv.', 'error'); return; }
-      state.file = file;
+      batchState.file = file;
       $('fileName').textContent = file.name + ' (' + Math.ceil(file.size / 1024) + ' KB)';
       $('sendButton').disabled = false;
       setStatus('CSV selected and ready to send.', 'working');
     }
 
     function startNewRun() {
-      state.file = null;
-      state.rows = [];
-      state.summary = null;
+      batchState.file = null;
+      batchState.rows = [];
+      batchState.summary = null;
       $('fileInput').value = '';
       $('fileName').textContent = '';
       $('sendButton').disabled = true;
@@ -356,18 +601,249 @@
       setStatus('Ready for a new CSV.', 'working', false);
     }
 
+    // ======================================================================
+    // Patient simulator view
+    // ======================================================================
+    let OPTIONS = null;   // response of GET /patient-options
+    let debounceTimer = null;
+
+    function fillSelect(select, values, current) {
+      select.innerHTML = values.map((v) =>
+        '<option value="' + String(v).replace(/"/g, '&quot;') + '">' + v + '</option>'
+      ).join('');
+      if (current !== undefined && values.includes(current)) select.value = current;
+    }
+
+    function fillBooleanSelect(select, current) {
+      select.innerHTML = '<option value="true">Yes</option><option value="false">No</option>';
+      select.value = current ? 'true' : 'false';
+    }
+
+    function setupSlider(field, current) {
+      const [min, max] = OPTIONS.numeric_ranges[field];
+      const input = $('f_' + field);
+      input.min = min;
+      input.max = max;
+      input.value = current;
+      updateReadout(field);
+    }
+
+    function updateReadout(field) {
+      const input = $('f_' + field);
+      const readout = document.querySelector('[data-readout="' + field + '"]');
+      if (!readout) return;
+      const val = input.value;
+      readout.textContent = field === 'monthly_copay' ? ('$' + Number(val).toFixed(0)) : val;
+    }
+
+    function medicationsForCondition(condition) {
+      return OPTIONS.condition_to_medications[condition] || [];
+    }
+
+    function onConditionChange(preferredMedication) {
+      const condition = $('f_condition').value;
+      const drugClass = OPTIONS.condition_to_drug_class[condition];
+      fillSelect($('f_drug_class'), [drugClass], drugClass);
+
+      const meds = medicationsForCondition(condition);
+      const keepMed = preferredMedication && meds.includes(preferredMedication) ? preferredMedication : meds[0];
+      fillSelect($('f_medication_name'), meds, keepMed);
+    }
+
+    function onPriorAuthChange() {
+      const required = $('f_prior_auth_required').value === 'true';
+      const paInput = $('f_pa_turnaround_days');
+      paInput.disabled = !required;
+      $('pa_turnaround_note').classList.toggle('hidden', required);
+      if (!required) {
+        paInput.value = 0;
+        updateReadout('pa_turnaround_days');
+      }
+    }
+
+    function onScheduledVisitsChange() {
+      const scheduled = Number($('f_scheduled_visits_count').value);
+      const missedInput = $('f_missed_visits_count');
+      const cap = Math.min(Number(OPTIONS.numeric_ranges.missed_visits_count[1]), scheduled);
+      missedInput.max = cap;
+      if (Number(missedInput.value) > cap) missedInput.value = cap;
+      updateReadout('missed_visits_count');
+    }
+
+    function populateForm(patient) {
+      fillSelect($('f_condition'), OPTIONS.categorical.condition, patient.condition);
+      onConditionChange(patient.medication_name);
+
+      fillSelect($('f_new_rx_or_refill'), OPTIONS.categorical.new_rx_or_refill, patient.new_rx_or_refill);
+      fillSelect($('f_day_of_week_prescribed'), OPTIONS.categorical.day_of_week_prescribed, patient.day_of_week_prescribed);
+      fillSelect($('f_insurance_type'), OPTIONS.categorical.insurance_type, patient.insurance_type);
+      fillSelect($('f_days_supply'), OPTIONS.discrete_numeric_options.days_supply, patient.days_supply);
+      fillSelect($('f_appointment_length_minutes'), OPTIONS.discrete_numeric_options.appointment_length_minutes, patient.appointment_length_minutes);
+
+      fillBooleanSelect($('f_deductible_met'), patient.deductible_met);
+      fillBooleanSelect($('f_copay_assistance_available'), patient.copay_assistance_available);
+      fillBooleanSelect($('f_copay_assistance_enrolled'), patient.copay_assistance_enrolled);
+      fillBooleanSelect($('f_prior_auth_required'), patient.prior_auth_required);
+      fillBooleanSelect($('f_delivery_option_available'), patient.delivery_option_available);
+
+      ['age', 'monthly_copay', 'pa_turnaround_days', 'distance_to_pharmacy_miles',
+       'concurrent_medication_count', 'prior_abandoned_rx_count', 'scheduled_visits_count',
+       'missed_visits_count'].forEach((field) => setupSlider(field, patient[field]));
+
+      onPriorAuthChange();
+      onScheduledVisitsChange();
+    }
+
+    function collectPatient() {
+      const boolVal = (id) => $(id).value === 'true';
+      const numVal = (id) => Number($(id).value);
+      return {
+        patient_id: 'DEMO-PATIENT',
+        age: numVal('f_age'),
+        condition: $('f_condition').value,
+        drug_class: $('f_drug_class').value,
+        medication_name: $('f_medication_name').value,
+        new_rx_or_refill: $('f_new_rx_or_refill').value,
+        insurance_type: $('f_insurance_type').value,
+        monthly_copay: numVal('f_monthly_copay'),
+        deductible_met: boolVal('f_deductible_met'),
+        copay_assistance_available: boolVal('f_copay_assistance_available'),
+        copay_assistance_enrolled: boolVal('f_copay_assistance_enrolled'),
+        prior_auth_required: boolVal('f_prior_auth_required'),
+        pa_turnaround_days: numVal('f_pa_turnaround_days'),
+        days_supply: numVal('f_days_supply'),
+        distance_to_pharmacy_miles: numVal('f_distance_to_pharmacy_miles'),
+        delivery_option_available: boolVal('f_delivery_option_available'),
+        concurrent_medication_count: numVal('f_concurrent_medication_count'),
+        appointment_length_minutes: numVal('f_appointment_length_minutes'),
+        day_of_week_prescribed: $('f_day_of_week_prescribed').value,
+        prior_abandoned_rx_count: numVal('f_prior_abandoned_rx_count'),
+        scheduled_visits_count: numVal('f_scheduled_visits_count'),
+        missed_visits_count: numVal('f_missed_visits_count'),
+      };
+    }
+
+    function renderResult(patient) {
+      const tier = patient.risk_tier;
+      const scoreEl = $('scoreNumber');
+      const badgeEl = $('tierBadge');
+
+      scoreEl.className = 'score-number ' + tier;
+      badgeEl.className = 'tier-badge ' + tier;
+
+      if (tier === 'insufficient_data') {
+        scoreEl.textContent = '—';
+        badgeEl.textContent = 'Insufficient data';
+      } else {
+        scoreEl.textContent = patient.risk_score;
+        badgeEl.textContent = tier + ' risk';
+      }
+
+      $('explanationText').textContent = patient.explanation || patient.reason || '';
+
+      const recBox = $('recommendationBox');
+      if (patient.recommendations && patient.recommendations.length) {
+        recBox.textContent = patient.recommendations[0];
+        recBox.classList.remove('hidden');
+      } else {
+        recBox.classList.add('hidden');
+      }
+
+      const driversList = $('driversList');
+      const drivers = patient.risk_drivers || [];
+      if (drivers.length) {
+        driversList.innerHTML = drivers.map((d) =>
+          '<div class="driver-chip"><span>' + d.factor.replace(/_/g, ' ') + (d.value !== null && d.value !== undefined ? ' (' + d.value + ')' : '') + '</span>' +
+          '<span class="impact-' + d.impact + '">' + d.impact + '</span></div>'
+        ).join('');
+      } else {
+        driversList.innerHTML = '<div class="no-drivers">No notable risk-increasing factors for this patient.</div>';
+      }
+    }
+
+    async function scorePatient() {
+      const base = apiBase();
+      if (!base) { $('resultStatus').textContent = 'Enter the backend URL first.'; $('resultStatus').classList.add('error'); return; }
+
+      $('scoreButton').disabled = true;
+      $('resultStatus').textContent = 'Scoring...';
+      $('resultStatus').classList.remove('error');
+      try {
+        const response = await apiFetch(base + '/predict-single', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(collectPatient()),
+        }, 'scoring this patient');
+        const data = await response.json();
+        renderResult(data.patient);
+        $('resultStatus').textContent = 'Updated ' + new Date().toLocaleTimeString() + '.';
+      } catch (error) {
+        $('resultStatus').textContent = error.message;
+        $('resultStatus').classList.add('error');
+      } finally {
+        $('scoreButton').disabled = false;
+      }
+    }
+
+    function scheduleScore() {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(scorePatient, 300);
+    }
+
+    function wireSimulatorEvents() {
+      $('simulatorForm').addEventListener('input', (event) => {
+        const target = event.target;
+        if (target.dataset.field === 'condition') onConditionChange();
+        if (target.dataset.field === 'prior_auth_required') onPriorAuthChange();
+        if (target.dataset.field === 'scheduled_visits_count') onScheduledVisitsChange();
+        if (target.tagName === 'INPUT' && target.type === 'range') updateReadout(target.dataset.field);
+        scheduleScore();
+      });
+      $('scoreButton').addEventListener('click', () => { clearTimeout(debounceTimer); scorePatient(); });
+      $('resetButton').addEventListener('click', () => {
+        populateForm(OPTIONS.default_patient);
+        clearTimeout(debounceTimer);
+        scorePatient();
+      });
+    }
+
+    async function initSimulator() {
+      try {
+        const response = await apiFetch(apiBase() + '/patient-options', {}, 'loading form options');
+        OPTIONS = await response.json();
+      } catch (error) {
+        $('loadState').textContent = error.message + ' Open "Backend connection" above, fix the URL, then switch back to this view.';
+        $('settings-panel').open = true;
+        simulatorInitialized = false; // allow retry next time this view is selected
+        return;
+      }
+
+      populateForm(OPTIONS.default_patient);
+      wireSimulatorEvents();
+      $('loadState').classList.add('hidden');
+      $('simulatorForm').classList.remove('hidden');
+      scorePatient();
+    }
+
+    // ======================================================================
+    // Wiring
+    // ======================================================================
+    $('modeSelect').addEventListener('change', (event) => setMode(event.target.value));
+    $('testConnection').addEventListener('click', testConnection);
+    $('apiBase').addEventListener('change', saveSettings);
+
     $('chooseFile').addEventListener('click', () => $('fileInput').click());
     $('fileInput').addEventListener('change', (event) => chooseFile(event.target.files[0]));
     $('sendButton').addEventListener('click', sendFile);
-    $('testConnection').addEventListener('click', testConnection);
     $('newRun').addEventListener('click', startNewRun);
     $('searchInput').addEventListener('input', renderTable);
     $('downloadButton').addEventListener('click', downloadCsv);
     ['dragenter', 'dragover'].forEach((eventName) => $('dropZone').addEventListener(eventName, (event) => { event.preventDefault(); $('dropZone').classList.add('dragging'); }));
     ['dragleave', 'drop'].forEach((eventName) => $('dropZone').addEventListener(eventName, (event) => { event.preventDefault(); $('dropZone').classList.remove('dragging'); }));
     $('dropZone').addEventListener('drop', (event) => chooseFile(event.dataTransfer.files[0]));
-    $('apiBase').addEventListener('change', saveSettings);
+
     loadSettings();
+    setMode('batch');
   </script>
 </body>
 </html>
