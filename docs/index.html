@@ -123,6 +123,11 @@
         -webkit-background-clip: text; background-clip: text; color: transparent;
       }
     }
+    /* The letters the name is built from, flat in the cyan the gradient
+       starts on. Flat rather than .grad because that gradient runs across
+       each element's own box, so a lone P would render mid-ramp and come
+       out pink. */
+    h1 .key { color: var(--cyan); }
     /* min-height holds the line count steady so swapping the copy between
        tabs doesn't shunt the controls below it up and down. */
     .intro { max-width: 580px; min-height: 3.2em; margin: var(--s4) 0 0; color: var(--text-2); font-size: 1rem; transition: opacity .16s ease; }
@@ -307,7 +312,7 @@
                onerror="this.remove(); document.getElementById('brandFallback').hidden = false;">
           <span class="wordmark" id="brandFallback" hidden>IMPIRICUS</span>
         </div>
-        <h1>Patient Risk <span class="grad">Predictor</span></h1>
+        <h1><span class="grad">PRIDENT</span> - <span class="key">P</span>atient <span class="key">R</span>isk <span class="key">Ident</span>ifier</h1>
         <p class="intro" id="intro">Upload a roster and score every patient in one pass. Highest risk is listed first, each with the reason behind it.</p>
       </div>
       <div class="conn" id="conn">
