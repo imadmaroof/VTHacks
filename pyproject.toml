@@ -1,0 +1,22 @@
+# Vercel Python deployment config.
+#
+# Vercel could not auto-detect an entrypoint because the FastAPI app lives in
+# backend/main.py rather than one of the default locations (api/index.py,
+# main.py at the repo root, etc.). This points it at the real app object.
+#
+# NOTE: with this entrypoint, Vercel imports the app as the module
+# `backend.main`, NOT as a top-level `main`. backend/main.py and
+# backend/model_service.py therefore bootstrap sys.path themselves so their
+# flat imports (`from model_service import ...`, `from score_upload import ...`)
+# resolve under both import styles:
+#     uvicorn main:app          (run from inside backend/, the local workflow)
+#     uvicorn backend.main:app  (run from the repo root, what Vercel does)
+
+[project]
+name = "vthacks-adherence-api"
+version = "1.0.0"
+description = "Medication adherence risk API + patient simulator front end"
+requires-python = ">=3.11"
+
+[tool.vercel]
+entrypoint = "backend.main:app"
