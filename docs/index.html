@@ -87,13 +87,16 @@
     /* ---------- masthead ---------- */
     .masthead { display: flex; flex-wrap: wrap; gap: var(--s5) var(--s7); align-items: flex-start; justify-content: space-between; margin-bottom: var(--s7); }
     .brand { display: flex; align-items: center; gap: var(--s3); margin-bottom: var(--s5); }
-    .brand img { height: 28px; width: auto; display: block; }
+    .brand .brand-mark { height: 30px; width: 30px; display: block; }
     .brand .wordmark { font: 600 1rem/1 'IBM Plex Sans', sans-serif; letter-spacing: .24em; color: var(--text); }
     h1, h2, h3 { margin: 0; font-weight: 300; letter-spacing: -.015em; }
     h1 { font-size: clamp(2rem, 4.4vw, 3.1rem); line-height: 1.06; }
     h2 { font-size: 1.25rem; font-weight: 400; }
     h3 { font-size: 1rem; font-weight: 500; }
-    .intro { max-width: 580px; margin: var(--s4) 0 0; color: var(--text-2); font-size: 1rem; }
+    /* min-height holds the line count steady so swapping the copy between
+       tabs doesn't shunt the controls below it up and down. */
+    .intro { max-width: 580px; min-height: 3.2em; margin: var(--s4) 0 0; color: var(--text-2); font-size: 1rem; transition: opacity .16s ease; }
+    .intro.swapping { opacity: 0; }
 
     /* ---------- backend status ---------- */
     .conn { display: inline-flex; align-items: center; gap: var(--s3); padding: var(--s3) var(--s4); border: 1px solid var(--border); border-radius: 6px; background: var(--surface); font: 500 .82rem/1 'IBM Plex Mono', monospace; color: var(--text-3); }
@@ -267,11 +270,11 @@
     <header class="masthead">
       <div>
         <div class="brand">
-          <img id="brandLogo" src="assets/impiricus-logo.svg" alt="Impiricus" onerror="this.remove(); document.getElementById('brandFallback').hidden = false;">
-          <span class="wordmark" id="brandFallback" hidden>IMPIRICUS</span>
+          <img class="brand-mark" src="assets/impiricus-logo.png" alt="" onerror="this.remove()">
+          <span class="wordmark">IMPIRICUS</span>
         </div>
         <h1>Patient Risk Predictor</h1>
-        <p class="intro">Upload a roster to score every patient at once, or build one patient by hand and watch the score change as you adjust them.</p>
+        <p class="intro" id="intro">Upload a roster and score every patient in one pass. Highest risk is listed first, each with the reason behind it.</p>
       </div>
       <div class="conn" id="conn">
         <span class="dot"></span>
@@ -556,6 +559,25 @@
     // ======================================================================
     let simulatorInitialized = false;
 
+    // Each tab explains what that tab actually does, rather than one line
+    // trying to cover both.
+    const INTRO = {
+      batch: 'Upload a roster and score every patient in one pass. Highest risk is listed first, each with the reason behind it.',
+      simulator: 'Build one patient by hand and watch the score move as you change them. Every field is limited to values the model was trained on.',
+    };
+
+    function setIntro(mode) {
+      const el = $('intro');
+      const next = INTRO[mode];
+      if (!next || el.textContent === next) return;
+      if (REDUCED) { el.textContent = next; return; }
+      el.classList.add('swapping');
+      setTimeout(() => {
+        el.textContent = next;
+        el.classList.remove('swapping');
+      }, 160);
+    }
+
     function movePill(btn) {
       const pill = $('tabPill');
       pill.style.width = btn.offsetWidth + 'px';
@@ -568,6 +590,7 @@
         b.setAttribute('aria-selected', String(on));
         if (on) movePill(b);
       });
+      setIntro(mode);
       $('batchView').classList.toggle('hidden', mode !== 'batch');
       $('simulatorView').classList.toggle('hidden', mode !== 'simulator');
       // Replay the view transition on each switch.
