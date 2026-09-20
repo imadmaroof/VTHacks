@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Everything score_upload.py / model_adapter.py / explanation_layer.py need
+# (same ML stack the repo already depends on).
+-r ../requirements.txt

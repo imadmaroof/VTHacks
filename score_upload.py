@@ -82,6 +82,7 @@ under 10 points of mean score shift -- acceptable degradation.
 
 from __future__ import annotations
 
+import functools
 import sys
 from pathlib import Path
 from typing import Any
@@ -125,6 +126,28 @@ MODEL_PATH = HERE / "model.pkl"
 # dropped before training (it is an identifier) but every returned record is
 # keyed by it, so an upload without it cannot produce actionable results.
 IDENTITY_COLUMNS = ["patient_id"]
+
+
+@functools.lru_cache(maxsize=1)
+def _load_model_bundle() -> dict[str, Any]:
+    """Load model.pkl once per process and reuse it on every call.
+
+    A CLI invocation only ever calls this once anyway, so this changes
+    nothing there. It matters for a long-running server (e.g. FastAPI),
+    where reloading a joblib pickle on every request would be wasteful --
+    lru_cache(maxsize=1) makes repeated calls in the same process free.
+    """
+    return joblib.load(MODEL_PATH)
+
+
+def preload_model() -> None:
+    """Force the model to load now rather than on the first prediction.
+
+    Intended for a server startup hook, so the first real request isn't the
+    one that pays for the load. Safe to call more than once -- the cache
+    means only the first call actually touches disk.
+    """
+    _load_model_bundle()
 
 
 def _empty_result(status: str, error: str | None = None) -> dict[str, Any]:
@@ -223,7 +246,7 @@ def score_patient_upload(csv_path: str) -> dict:
         return _empty_result("error", f"Trained model not found at {MODEL_PATH}. "
                                       "Run train_adherence_model.py first.")
     try:
-        bundle = joblib.load(MODEL_PATH)
+        bundle = _load_model_bundle()
         model = bundle["model"]
         feature_names = bundle["feature_names"]
         category_levels = bundle["category_levels"]
