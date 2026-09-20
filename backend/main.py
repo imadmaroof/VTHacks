@@ -18,8 +18,19 @@ from pathlib import Path
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 
-from model_service import predict_patient_data, warm_up
-from schemas import HealthResponse, PredictResponse
+from model_service import (
+    get_patient_field_options,
+    predict_patient_data,
+    predict_single_patient,
+    warm_up,
+)
+from schemas import (
+    FieldOptionsResponse,
+    HealthResponse,
+    PredictResponse,
+    SinglePatientRequest,
+    SinglePatientResponse,
+)
 
 app = FastAPI(title="Medication Adherence Risk API", version="1.0.0")
 
@@ -83,3 +94,27 @@ async def predict(file: UploadFile = File(...)) -> dict:
         "results": result["all_patients"],
         "high_risk_patients": result["high_risk_patients"],
     }
+
+
+@app.get("/patient-options", response_model=FieldOptionsResponse)
+def patient_options() -> dict:
+    """Form spec for the "customizable patient" demo page: exact dropdown
+    values (from the trained model), condition-filtered medication lists,
+    numeric ranges, and a default patient to pre-fill the form with."""
+    return get_patient_field_options()
+
+
+@app.post("/predict-single", response_model=SinglePatientResponse)
+def predict_single(patient: SinglePatientRequest) -> dict:
+    """Score one hypothetical patient built live from form fields -- the
+    interactive sibling of /predict. Same model, same guard, same SHAP
+    explanation, just one in-memory patient instead of an uploaded CSV."""
+    try:
+        result = predict_single_patient(patient.model_dump())
+    except Exception as exc:  # noqa: BLE001 - never crash the server on bad input
+        raise HTTPException(status_code=500, detail=f"Scoring failed: {exc}") from exc
+
+    if result["status"] == "error":
+        raise HTTPException(status_code=422, detail=result["error"])
+
+    return result

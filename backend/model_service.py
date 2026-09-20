@@ -31,9 +31,10 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from score_upload import preload_model, score_patient_upload  # noqa: E402
+from score_upload import preload_model, score_patient_upload, score_single_patient  # noqa: E402
 from model_adapter import adapt_record  # noqa: E402
 from explanation_layer import explain_scored_record  # noqa: E402
+from patient_options import build_field_options  # noqa: E402
 
 # explain_scored_record's use_llm flag is safe to leave on: explanation_layer
 # checks for GEMINI_API_KEY itself and silently falls back to the rule-based
@@ -94,3 +95,25 @@ def predict_patient_data(csv_path: str) -> dict[str, Any]:
         enriched_by_id.get(r.get("patient_id"), r) for r in result["high_risk_patients"]
     ]
     return result
+
+
+def predict_single_patient(patient: dict[str, Any]) -> dict[str, Any]:
+    """Score one hypothetical patient (from the customizable-patient demo
+    form) and attach the same doctor-facing explanation/recommendation the
+    batch path gets. Delegates all scoring to score_single_patient -- this
+    function only enriches its output, exactly like predict_patient_data does
+    for the batch/upload path."""
+    result = score_single_patient(patient)
+    if result["status"] == "error":
+        return result
+    return {
+        "status": "ok",
+        "error": None,
+        "patient": _enrich(result["patient"], patient),
+    }
+
+
+def get_patient_field_options() -> dict[str, Any]:
+    """Form spec for the customizable-patient demo: dropdown values, ranges,
+    and a default patient. See patient_options.py for the policy itself."""
+    return build_field_options()
