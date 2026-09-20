@@ -170,6 +170,17 @@
 
     const state = { file: null, rows: [], summary: null, sortColumn: -1, sortDirection: 1 };
 
+    // High risk first, then medium, ordered by risk_score descending within
+    // each; low-risk patients are left off the list entirely. Rows with no
+    // score (insufficient_data) sort last, since they aren't "low risk" --
+    // they just couldn't be scored.
+    function orderForDisplay(results) {
+      return (results || [])
+        .filter((r) => r.risk_tier !== 'low')
+        .slice()
+        .sort((a, b) => (b.risk_score ?? -1) - (a.risk_score ?? -1));
+    }
+
     function loadSettings() {
       let saved = {};
       try { saved = JSON.parse(localStorage.getItem('patientRiskPredictorSettings') || '{}'); } catch (_) { saved = {}; }
@@ -287,7 +298,7 @@
         const response = await apiFetch(s.apiBase + '/predict', { method: 'POST', body: formData }, 'scoring the CSV');
         const data = await response.json();
 
-        state.rows = data.results || [];
+        state.rows = orderForDisplay(data.results);
         state.summary = data;
         state.sortColumn = -1;
         renderSummary();
