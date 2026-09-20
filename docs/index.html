@@ -4,193 +4,351 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Patient Risk Predictor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    /*
+      Dark operator console for the adherence model. Colour is reserved for
+      state (risk tier, focus, the active control); surfaces are flat and
+      separated by a single neutral hairline, never by a coloured border or
+      a glass blur. Motion only happens in response to something the
+      operator did: scoring, dragging, switching, uploading.
+    */
     :root {
-      --ink: #17212b;
-      --muted: #63717d;
-      --line: #d8e0e6;
-      --paper: #ffffff;
-      --wash: #f3f7f9;
-      --blue: #1b63a9;
-      --blue-dark: #124878;
-      --blue-soft: #e8f2fb;
-      --green: #16724b;
-      --green-soft: #e9f7ef;
-      --red: #b42318;
-      --red-soft: #fff0ee;
-      --amber: #8a5a00;
-      --amber-soft: #fff7df;
-      --shadow: 0 10px 30px rgba(27, 56, 79, .08);
+      /* spacing scale: every padding, margin and gap comes from here */
+      --s1: 4px;
+      --s2: 8px;
+      --s3: 12px;
+      --s4: 16px;
+      --s5: 20px;
+      --s6: 24px;
+      --s7: 32px;
+      --s8: 48px;
+
+      --bg: #070c13;
+      --surface: #0f1620;
+      --surface-2: #151e2a;
+      --border: #263341;
+      --border-strong: #35485a;
+
+      --cyan: #4bc9d1;
+      --cyan-press: #85e5ec;
+      --cyan-wash: rgba(75, 201, 209, .14);
+      --pink: #ff7bc5;
+
+      --text: #f4f6f8;
+      /* Neutral grays rather than blue-tinted, and both still clear AA on
+         the near-black ground: muted is a tone choice, not a licence to
+         drop below contrast. */
+      --text-2: #a9b2ba;
+      --text-3: #929ba4;
+
+      --high: #ff8189;
+      --high-wash: rgba(255, 129, 137, .16);
+      --med: #f7bc63;
+      --med-wash: rgba(247, 188, 99, .16);
+      --low: #5fdfa6;
+      --low-wash: rgba(95, 223, 166, .16);
+      --none: #90a3b3;
+      --none-wash: rgba(144, 163, 179, .16);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      color: var(--ink);
-      background: linear-gradient(135deg, #eaf3f6 0, #f7fafb 48%, #e9f0f6 100%);
-      font: 16px/1.5 Georgia, "Times New Roman", serif;
+      min-height: 100vh;
+      color: var(--text);
+      background: var(--bg);
+      font: 400 16px/1.6 'Plus Jakarta Sans', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
     button, input, select { font: inherit; }
     button { cursor: pointer; }
-    .shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 36px 0 56px; }
-    header { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 20px; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 { margin-bottom: 6px; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1; letter-spacing: -.03em; }
-    h2 { margin-bottom: 8px; font-size: 1.45rem; }
-    h3 { margin-bottom: 4px; font-size: 1.05rem; }
-    .tag { color: var(--blue-dark); font: 700 .78rem/1.2 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
-    .intro { max-width: 700px; color: var(--muted); font-size: 1.08rem; }
-    .panel { background: var(--paper); border: 1px solid var(--line); box-shadow: var(--shadow); }
-    details > summary { padding: 18px 22px; color: var(--blue-dark); font-weight: bold; cursor: pointer; }
-    details[open] > summary { border-bottom: 1px solid var(--line); }
-    .settings-body { padding: 20px 22px 24px; }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-    label { display: block; color: var(--muted); font: 700 .78rem/1.2 system-ui, sans-serif; letter-spacing: .04em; text-transform: uppercase; }
-    input[type="text"], input[type="password"], input[type="number"], input[type="search"], select {
-      display: block; width: 100%; margin-top: 7px; padding: 10px 11px; color: var(--ink); background: #fcfdfd;
-      border: 1px solid #b9c7d1; border-radius: 3px;
+
+    /* Backdrop: a slow technical grid and one sweep. No blurred colour
+       blobs, no gradient wash. */
+    .bg-fx { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .bg-fx .grid {
+      position: absolute; inset: -60px;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 72px 72px;
+      opacity: .3;
+      animation: gridDrift 34s linear infinite;
     }
-    select:disabled { color: var(--muted); background: var(--wash); }
-    input:focus, select:focus, button:focus-visible, summary:focus-visible { outline: 3px solid #9dcaed; outline-offset: 2px; }
-    .wide { grid-column: 1 / -1; }
-    .hint { margin: 6px 0 0; color: var(--muted); font: .83rem/1.4 system-ui, sans-serif; }
-    .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 18px; }
-    button { padding: 10px 15px; color: white; background: var(--blue); border: 1px solid var(--blue); border-radius: 3px; font-weight: bold; }
-    button:hover:not(:disabled) { background: var(--blue-dark); border-color: var(--blue-dark); }
-    button.secondary { color: var(--blue-dark); background: white; }
-    button.danger { color: var(--red); background: white; border-color: #dcaaa5; }
-    button:disabled { cursor: not-allowed; opacity: .5; }
+    .bg-fx .sweep {
+      position: absolute; left: 0; right: 0; height: 240px;
+      background: linear-gradient(180deg, transparent, rgba(75, 201, 209, .055) 50%, transparent);
+      animation: sweep 11s linear infinite;
+    }
+    /* Ambient hero media sits above the CSS backdrop and starts fully
+       transparent, so if the file is absent, blocked, or the connection is
+       slow, the grid underneath simply remains the background. Nothing
+       needs to know whether the asset shipped. */
+    .bg-fx .hero-media {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; opacity: 0; transition: opacity 1.2s ease;
+    }
+    .bg-fx .hero-media.ready { opacity: .55; }
+    /* Keeps the copy legible over whatever lands in the video. */
+    .bg-fx .scrim {
+      position: absolute; inset: 0;
+      background: radial-gradient(120% 90% at 20% 0%, transparent 30%, rgba(7, 12, 19, .82) 78%),
+                  linear-gradient(180deg, rgba(7, 12, 19, .35), rgba(7, 12, 19, .9));
+    }
+    @keyframes gridDrift { to { transform: translate(72px, 72px); } }
+    @keyframes sweep { 0% { top: -240px; } 100% { top: 100%; } }
 
-    .mode-switch { max-width: 320px; margin-bottom: 20px; }
+    .shell { position: relative; z-index: 1; width: min(1240px, calc(100% - var(--s8))); margin: 0 auto; padding: var(--s7) 0 var(--s8); }
 
-    .drop-zone { margin-top: 24px; padding: 30px 22px; text-align: center; background: var(--paper); border: 2px dashed #9db3c1; }
-    .drop-zone.dragging { background: var(--blue-soft); border-color: var(--blue); }
-    .drop-zone strong { display: block; margin-bottom: 5px; font-size: 1.2rem; }
-    .drop-zone p { margin-bottom: 12px; color: var(--muted); }
-    .file-name { color: var(--blue-dark); font-weight: bold; }
-    .status-panel { margin-top: 24px; padding: 20px 22px; }
-    .status-line { display: flex; gap: 12px; align-items: center; min-height: 32px; }
-    .status-dot { width: 12px; height: 12px; flex: 0 0 12px; background: #9aa7af; border-radius: 50%; }
-    .status-dot.working { background: var(--blue); box-shadow: 0 0 0 5px var(--blue-soft); }
-    .status-dot.success { background: var(--green); }
-    .status-dot.error { background: var(--red); }
-    .status-dot.warning { background: #d28a00; }
-    .log { max-height: 220px; overflow: auto; margin: 14px 0 0; padding: 12px; color: #40515d; background: #f5f8fa; border-left: 3px solid #b4c7d3; font: .86rem/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; white-space: pre-wrap; }
-    .result { margin-top: 24px; padding: 20px 22px; }
-    .result-toolbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; justify-content: space-between; margin: 16px 0; }
-    .search-label { min-width: min(360px, 100%); flex: 1; }
-    .summary-line { display: flex; flex-wrap: wrap; gap: 18px; margin: 0 0 14px; color: var(--muted); font: 700 .8rem/1.3 system-ui, sans-serif; letter-spacing: .02em; }
-    .summary-line strong { color: var(--ink); }
-    .table-wrap { max-height: 550px; overflow: auto; border: 1px solid var(--line); }
-    table { width: 100%; border-collapse: collapse; background: white; font-size: .92rem; }
-    th, td { padding: 9px 11px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
-    th { position: sticky; top: 0; z-index: 1; color: var(--blue-dark); background: #edf4f8; font: 700 .78rem/1.2 system-ui, sans-serif; text-transform: uppercase; }
-    th button { width: 100%; padding: 0; color: inherit; background: none; border: 0; text-align: left; font: inherit; }
-    th button:hover { color: var(--blue); background: none; border: 0; }
-    td { max-width: 330px; white-space: pre-wrap; overflow-wrap: anywhere; }
-    tr.risk-high td.risk-cell { color: var(--red); font-weight: bold; }
-    tr.risk-medium td.risk-cell { color: var(--amber); font-weight: bold; }
-    tr.risk-insufficient_data td.risk-cell { color: var(--muted); font-style: italic; }
-    .notice { margin: 14px 0 0; padding: 11px 13px; color: var(--amber); background: var(--amber-soft); border-left: 3px solid #d7a634; font: .9rem/1.4 system-ui, sans-serif; }
+    /* ---------- masthead ---------- */
+    .masthead { display: flex; flex-wrap: wrap; gap: var(--s5) var(--s7); align-items: flex-start; justify-content: space-between; margin-bottom: var(--s7); }
+    .brand { display: flex; align-items: center; gap: var(--s3); margin-bottom: var(--s5); }
+    /* Official lockup, mark and wordmark together, so the spacing between
+       them stays theirs rather than something approximated in CSS. */
+    .brand .brand-lockup { height: 28px; width: auto; display: block; }
+    .brand .wordmark { font: 600 1rem/1 'Plus Jakarta Sans', sans-serif; letter-spacing: .24em; color: var(--text); }
+    h1, h2, h3 { margin: 0; letter-spacing: -.03em; }
+    h1 { font-size: clamp(2.3rem, 5.2vw, 3.9rem); font-weight: 800; line-height: 1.02; }
+    h2 { font-size: 1.25rem; font-weight: 600; letter-spacing: -.02em; }
+    h3 { font-size: 1rem; font-weight: 600; letter-spacing: -.01em; }
+    /* Solid cyan first so the word is never invisible if background-clip
+       is unsupported; the gradient only applies where it actually works. */
+    h1 .grad { color: var(--cyan); }
+    @supports (-webkit-background-clip: text) or (background-clip: text) {
+      h1 .grad {
+        background: linear-gradient(104deg, var(--cyan) 12%, var(--pink) 88%);
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+      }
+    }
+    /* The letters the name is built from, flat in the cyan the gradient
+       starts on. Flat rather than .grad because that gradient runs across
+       each element's own box, so a lone P would render mid-ramp and come
+       out pink. */
+    h1 .key { color: var(--cyan); }
+    /* min-height holds the line count steady so swapping the copy between
+       tabs doesn't shunt the controls below it up and down. */
+    .intro { max-width: 580px; min-height: 3.2em; margin: var(--s4) 0 0; color: var(--text-2); font-size: 1rem; transition: opacity .16s ease; }
+    .intro.swapping { opacity: 0; }
+
+    /* ---------- backend status ---------- */
+    .conn { display: inline-flex; align-items: center; gap: var(--s3); padding: var(--s3) var(--s4); border: 1px solid var(--border); border-radius: 6px; background: var(--surface); font: 500 .82rem/1 'IBM Plex Mono', monospace; color: var(--text-3); }
+    .conn .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--none); flex: 0 0 7px; }
+    .conn.online { color: var(--text-2); }
+    .conn.online .dot { background: var(--cyan); }
+    .conn.offline { color: var(--high); }
+    .conn.offline .dot { background: var(--high); }
+    .conn .retry { padding: 0; border: 0; background: none; color: var(--cyan); font: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ---------- mode tabs ---------- */
+    .tabs { position: relative; display: inline-flex; padding: var(--s1); margin-bottom: var(--s6); border: 1px solid var(--border); border-radius: 6px; background: var(--surface); }
+    .tabs .pill { position: absolute; top: var(--s1); bottom: var(--s1); border-radius: 4px; background: var(--cyan-wash); transition: transform .38s cubic-bezier(.3, .8, .3, 1), width .38s cubic-bezier(.3, .8, .3, 1); }
+    .tabs button { position: relative; z-index: 1; padding: var(--s2) var(--s5); border: 0; border-radius: 4px; background: none; color: var(--text-3); font: 500 .9rem/1.4 'Plus Jakarta Sans', sans-serif; transition: color .2s ease; }
+    .tabs button[aria-selected="true"] { color: var(--cyan); }
+    .tabs button:hover { color: var(--text); }
+
+    /* ---------- surfaces ---------- */
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+    .view { animation: viewIn .34s cubic-bezier(.2, .7, .3, 1); }
+    @keyframes viewIn { from { opacity: 0; transform: translateY(8px); } }
+
+    label { display: block; color: var(--text-3); font: 400 .82rem/1.4 'Plus Jakarta Sans', sans-serif; }
+    input[type="text"], input[type="search"], select {
+      display: block; width: 100%; margin-top: var(--s2); padding: var(--s3) var(--s4); color: var(--text); background: var(--bg);
+      border: 1px solid var(--border); border-radius: 6px; transition: border-color .18s ease, box-shadow .18s ease;
+    }
+    input:focus, select:focus { outline: none; border-color: var(--cyan); box-shadow: 0 0 0 3px var(--cyan-wash); }
+    button:focus-visible, .tabs button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+    select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--text-3) 50%), linear-gradient(135deg, var(--text-3) 50%, transparent 50%); background-position: calc(100% - 17px) 52%, calc(100% - 12px) 52%; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; padding-right: var(--s7); }
+    select:disabled { color: var(--text-3); }
+    .hint { margin: var(--s2) 0 0; color: var(--text-3); font-size: .86rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: var(--s3); align-items: center; margin-top: var(--s5); }
+
+    button.primary { padding: var(--s3) var(--s7); color: #04191d; background: var(--cyan); border: 1px solid var(--cyan); border-radius: 999px; font: 700 .94rem/1.4 'Plus Jakarta Sans', sans-serif; letter-spacing: -.01em; transition: background .16s ease, border-color .16s ease; }
+    button.primary:hover:not(:disabled) { background: var(--cyan-press); border-color: var(--cyan-press); }
+    button.secondary { padding: var(--s3) var(--s6); color: var(--text); background: var(--surface-2); border: 1px solid var(--border-strong); border-radius: 999px; font: 500 .92rem/1.4 'Plus Jakarta Sans', sans-serif; transition: background .16s ease, border-color .16s ease; }
+    button.secondary:hover:not(:disabled) { background: #1c2836; border-color: var(--text-3); }
+    button:disabled { cursor: not-allowed; color: var(--text-3); background: var(--surface-2); border-color: var(--border); }
+
+    /* ---------- drop zone ---------- */
+    .drop-zone { padding: var(--s8) var(--s6); text-align: center; border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface); transition: border-color .18s ease, background .18s ease; }
+    .drop-zone.dragging { border-color: var(--cyan); background: var(--surface-2); }
+    .drop-icon { display: block; width: 34px; height: 26px; margin: 0 auto var(--s4); color: var(--text-3); }
+    .drop-zone.dragging .drop-icon { color: var(--cyan); }
+    .drop-zone h2 { margin-bottom: var(--s2); }
+    .drop-zone p { margin: 0 0 var(--s5); color: var(--text-2); }
+    .file-name { display: block; margin: var(--s4) 0 0; color: var(--cyan); font: 400 .88rem/1.4 'IBM Plex Mono', monospace; }
+
+    /* ---------- run status ---------- */
+    .status-panel { margin-top: var(--s5); padding: var(--s6); }
+    .status-line { display: flex; gap: var(--s3); align-items: center; margin-top: var(--s3); }
+    .status-dot { width: 9px; height: 9px; flex: 0 0 9px; border-radius: 50%; background: var(--none); }
+    .status-dot.working { background: var(--cyan); animation: blink 1.1s steps(2, start) infinite; }
+    .status-dot.success { background: var(--low); }
+    .status-dot.error { background: var(--high); }
+    .status-dot.warning { background: var(--med); }
+    @keyframes blink { 50% { opacity: .25; } }
+    .status-text { font-size: .96rem; font-weight: 400; }
+    .log { max-height: 170px; overflow: auto; margin: var(--s4) 0 0; padding: var(--s4); color: var(--text-2); background: var(--bg); border: 1px solid var(--border); border-radius: 6px; font: 400 .8rem/1.7 'IBM Plex Mono', monospace; white-space: pre-wrap; }
+
+    /* ---------- results ---------- */
+    .result { margin-top: var(--s5); padding: var(--s6); }
+    .stat-strip { display: flex; flex-wrap: wrap; margin: var(--s5) 0; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+    .stat { flex: 1 1 130px; padding: var(--s4); border-right: 1px solid var(--border); }
+    .stat:last-child { border-right: 0; }
+    .stat .k { display: block; color: var(--text-3); font: 400 .78rem/1.4 'Plus Jakarta Sans', sans-serif; }
+    .stat .v { display: block; margin-top: var(--s1); font: 500 1.6rem/1.2 'IBM Plex Mono', monospace; }
+    .stat.is-high .v { color: var(--high); }
+    .stat.is-cyan .v { color: var(--cyan); }
+    .result-toolbar { display: flex; flex-wrap: wrap; gap: var(--s4); align-items: flex-end; justify-content: space-between; margin-bottom: var(--s4); }
+    .search-label { flex: 1; min-width: min(340px, 100%); }
+    .row-count { color: var(--text-3); font: 400 .82rem/1.4 'IBM Plex Mono', monospace; }
+    .table-wrap { max-height: 520px; overflow: auto; border: 1px solid var(--border); border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; font-size: .89rem; }
+    th, td { padding: var(--s3) var(--s4); text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+    th { position: sticky; top: 0; z-index: 1; background: var(--surface-2); color: var(--text-2); font: 500 .8rem/1.4 'Plus Jakarta Sans', sans-serif; }
+    th button { width: 100%; padding: 0; color: inherit; background: none; border: 0; text-align: left; font: inherit; transition: color .16s ease; }
+    th button:hover { color: var(--cyan); }
+    tbody tr { transition: background .16s ease; }
+    tbody tr:hover { background: var(--surface-2); }
+    td { color: var(--text-2); max-width: 330px; }
+    td.risk-cell { font: 500 .9rem/1.5 'IBM Plex Mono', monospace; }
+    tr.risk-high td.risk-cell { color: var(--high); }
+    tr.risk-medium td.risk-cell { color: var(--med); }
+    tr.risk-insufficient_data td.risk-cell { color: var(--none); }
     .hidden { display: none !important; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
-    /* --- Patient simulator view ------------------------------------------ */
-    .simulator { display: grid; grid-template-columns: minmax(340px, 1.15fr) minmax(320px, .85fr); gap: 22px; align-items: start; margin-top: 22px; }
-    .form-panel { padding: 20px 22px 24px; }
-    .group { margin-bottom: 22px; }
-    .group:last-child { margin-bottom: 0; }
-    .group h3 { color: var(--blue-dark); font: 700 .8rem/1.2 system-ui, sans-serif; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
-    .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 16px; }
+    /* ---------- simulator ---------- */
+    .simulator { display: grid; grid-template-columns: minmax(340px, 1.1fr) minmax(330px, .9fr); gap: var(--s5); align-items: start; }
+    .form-panel { padding: var(--s6); }
+    .group { margin-bottom: var(--s7); }
+    .group:last-of-type { margin-bottom: 0; }
+    .group h3 { display: flex; align-items: center; gap: var(--s3); margin-bottom: var(--s4); color: var(--text); font: 500 .95rem/1.4 'Plus Jakarta Sans', sans-serif; }
+    .group h3::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s4) var(--s5); }
     .field { min-width: 0; }
     .field.wide { grid-column: 1 / -1; }
-    .slider-row { display: flex; align-items: center; gap: 10px; margin-top: 6px; }
-    .slider-row input[type="range"] { flex: 1; accent-color: var(--blue); }
-    .slider-row input[type="range"]:disabled { accent-color: var(--muted); }
-    .slider-readout { min-width: 52px; text-align: right; font: 700 .92rem/1.2 system-ui, sans-serif; color: var(--ink); }
-    .field-note { margin: 4px 0 0; color: var(--muted); font: .76rem/1.3 system-ui, sans-serif; }
+    .slider-row { display: flex; align-items: center; gap: var(--s4); margin-top: var(--s3); }
+    .slider-row input[type="range"] { flex: 1; height: 3px; appearance: none; border-radius: 2px; background: linear-gradient(90deg, var(--cyan) var(--fill, 50%), var(--border-strong) var(--fill, 50%)); }
+    .slider-row input[type="range"]::-webkit-slider-thumb { appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--cyan); border: 3px solid var(--surface); transition: transform .14s ease; cursor: grab; }
+    .slider-row input[type="range"]:hover::-webkit-slider-thumb { transform: scale(1.18); }
+    .slider-row input[type="range"]:active::-webkit-slider-thumb { cursor: grabbing; transform: scale(1.18); }
+    .slider-row input[type="range"]:disabled { opacity: .45; }
+    .slider-readout { min-width: 56px; text-align: right; color: var(--cyan); font: 500 .94rem/1.4 'IBM Plex Mono', monospace; }
+    .field-note { margin: var(--s2) 0 0; color: var(--text-3); font-size: .8rem; }
 
-    .result-panel { position: sticky; top: 18px; padding: 22px; }
-    .score-block { text-align: center; padding: 6px 0 18px; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
-    .score-number { font-size: 4.2rem; line-height: 1; font-weight: bold; letter-spacing: -.03em; }
-    .score-number.low { color: var(--green); }
-    .score-number.medium { color: var(--amber); }
-    .score-number.high { color: var(--red); }
-    .score-number.insufficient_data { color: var(--muted); }
-    .score-unit { color: var(--muted); font: 700 .85rem/1.2 system-ui, sans-serif; letter-spacing: .04em; text-transform: uppercase; }
-    .tier-badge { display: inline-block; margin-top: 8px; padding: 4px 12px; border-radius: 999px; font: 700 .8rem/1.2 system-ui, sans-serif; letter-spacing: .04em; text-transform: uppercase; }
-    .tier-badge.low { color: var(--green); background: var(--green-soft); }
-    .tier-badge.medium { color: var(--amber); background: var(--amber-soft); }
-    .tier-badge.high { color: var(--red); background: var(--red-soft); }
-    .tier-badge.insufficient_data { color: var(--muted); background: var(--wash); }
-    .explanation { font-size: 1rem; line-height: 1.5; margin-bottom: 14px; }
-    .recommendation { padding: 12px 14px; margin-bottom: 14px; background: var(--blue-soft); border-left: 3px solid var(--blue); font: .92rem/1.45 system-ui, sans-serif; }
-    .drivers h3 { color: var(--blue-dark); font: 700 .78rem/1.2 system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 8px; }
-    .driver-chip { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px dashed var(--line); font: .88rem/1.3 system-ui, sans-serif; }
+    /* ---------- score gauge ---------- */
+    .result-panel { position: sticky; top: var(--s5); padding: var(--s6); }
+    .gauge { position: relative; width: 186px; height: 186px; margin: 0 auto var(--s4); }
+    .gauge svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+    .gauge .track { fill: none; stroke: var(--border); stroke-width: 6; }
+    .gauge .arc { fill: none; stroke: var(--cyan); stroke-width: 6; stroke-linecap: butt; transition: stroke-dashoffset .85s cubic-bezier(.2, .8, .3, 1), stroke .3s ease; }
+    .gauge.tier-high .arc { stroke: var(--high); }
+    .gauge.tier-medium .arc { stroke: var(--med); }
+    .gauge.tier-low .arc { stroke: var(--low); }
+    .gauge.tier-insufficient_data .arc { stroke: var(--none); }
+    .gauge-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .score-number { font: 500 3.4rem/1 'IBM Plex Mono', monospace; letter-spacing: -.02em; }
+    .score-number.low { color: var(--low); }
+    .score-number.medium { color: var(--med); }
+    .score-number.high { color: var(--high); }
+    .score-number.insufficient_data { color: var(--none); font-size: 1.7rem; }
+    .score-unit { margin-top: var(--s2); color: var(--text-3); font: 400 .78rem/1.4 'Plus Jakarta Sans', sans-serif; }
+    .tier-badge { display: block; width: fit-content; margin: 0 auto var(--s5); padding: var(--s2) var(--s4); border-radius: 4px; font: 500 .82rem/1.2 'Plus Jakarta Sans', sans-serif; transition: background .3s ease, color .3s ease; }
+    .tier-badge.low { color: var(--low); background: var(--low-wash); }
+    .tier-badge.medium { color: var(--med); background: var(--med-wash); }
+    .tier-badge.high { color: var(--high); background: var(--high-wash); }
+    .tier-badge.insufficient_data { color: var(--none); background: var(--none-wash); }
+    .explanation { margin: 0 0 var(--s5); padding-top: var(--s5); border-top: 1px solid var(--border); color: var(--text); font-size: .98rem; line-height: 1.6; }
+    .recommendation { margin-bottom: var(--s5); padding: var(--s4); background: var(--surface-2); border-radius: 6px; }
+    .recommendation .rec-label { display: block; margin-bottom: var(--s2); color: var(--text-3); font: 400 .78rem/1.4 'Plus Jakarta Sans', sans-serif; }
+    .recommendation .rec-body { color: var(--text); font-size: .9rem; line-height: 1.55; }
+    .drivers h3 { margin-bottom: var(--s3); color: var(--text-3); font: 400 .82rem/1.4 'Plus Jakarta Sans', sans-serif; }
+    .driver-chip { display: flex; justify-content: space-between; align-items: center; gap: var(--s3); padding: var(--s3) 0; border-bottom: 1px solid var(--border); font-size: .88rem; }
     .driver-chip:last-child { border-bottom: 0; }
-    .driver-chip .impact-high { color: var(--red); font-weight: 700; }
-    .driver-chip .impact-medium { color: var(--amber); font-weight: 700; }
-    .driver-chip .impact-low { color: var(--muted); font-weight: 700; }
-    .no-drivers { color: var(--muted); font: italic .88rem/1.4 system-ui, sans-serif; }
-    .result-status { min-height: 20px; margin-top: 12px; color: var(--muted); font: .82rem/1.4 system-ui, sans-serif; }
-    .result-status.error { color: var(--red); }
+    .driver-chip .dval { color: var(--text-3); }
+    .driver-chip .impact-high { color: var(--high); font: 500 .8rem/1.4 'IBM Plex Mono', monospace; }
+    .driver-chip .impact-medium { color: var(--med); font: 500 .8rem/1.4 'IBM Plex Mono', monospace; }
+    .driver-chip .impact-low { color: var(--text-3); font: 500 .8rem/1.4 'IBM Plex Mono', monospace; }
+    .no-drivers { color: var(--text-3); font-size: .88rem; }
+    .result-status { min-height: 18px; margin-top: var(--s4); color: var(--text-3); font: 400 .8rem/1.5 'IBM Plex Mono', monospace; }
+    .result-status.error { color: var(--high); }
 
-    @media (max-width: 860px) {
+    @media (max-width: 900px) {
       .simulator { grid-template-columns: 1fr; }
       .result-panel { position: static; }
       .field-grid { grid-template-columns: 1fr; }
     }
-    @media (max-width: 680px) { .shell { width: min(100% - 20px, 1120px); padding-top: 24px; } header { display: block; } .grid { grid-template-columns: 1fr; } .wide { grid-column: auto; } }
+    @media (max-width: 640px) {
+      .shell { width: calc(100% - var(--s6)); padding-top: var(--s6); }
+      .masthead { flex-direction: column; }
+      .tabs { width: 100%; }
+      .tabs button { flex: 1; padding: var(--s3) var(--s2); font-size: .85rem; }
+      .result, .form-panel, .result-panel, .status-panel { padding: var(--s5); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .bg-fx { display: none; }
+    }
   </style>
 </head>
 <body>
+  <div class="bg-fx" aria-hidden="true">
+    <div class="grid"></div>
+    <div class="sweep"></div>
+    <video id="heroVideo" class="hero-media" muted loop playsinline preload="none"
+           poster="assets/hero-bg.jpg"></video>
+    <div class="scrim"></div>
+  </div>
+
   <main class="shell">
-    <header>
+    <header class="masthead">
       <div>
-        <div class="tag">Local front end / FastAPI backend</div>
-        <h1>Patient Risk Predictor</h1>
-        <p class="intro">Score patients from a CSV upload, or build one hypothetical patient live, and get medication-adherence risk, explanations, and recommendations back from the model.</p>
+        <div class="brand">
+          <img class="brand-lockup" src="assets/impiricus-logo.svg" alt="Impiricus"
+               onerror="this.remove(); document.getElementById('brandFallback').hidden = false;">
+          <span class="wordmark" id="brandFallback" hidden>IMPIRICUS</span>
+        </div>
+        <h1><span class="grad">PRIDENT</span> - <span class="key">P</span>atient <span class="key">R</span>isk <span class="key">Ident</span>ifier</h1>
+        <p class="intro" id="intro">Upload a roster and score every patient in one pass. Highest risk is listed first, each with the reason behind it.</p>
+      </div>
+      <div class="conn" id="conn">
+        <span class="dot"></span>
+        <span id="connText">Checking backend</span>
       </div>
     </header>
 
-    <div class="mode-switch">
-      <label for="modeSelect">View
-        <select id="modeSelect">
-          <option value="batch">Batch CSV upload</option>
-          <option value="simulator">Patient simulator</option>
-        </select>
-      </label>
+    <div class="tabs" role="tablist" aria-label="View">
+      <span class="pill" id="tabPill"></span>
+      <button type="button" role="tab" data-mode="batch" aria-selected="true">Batch CSV</button>
+      <button type="button" role="tab" data-mode="simulator" aria-selected="false">Patient simulator</button>
     </div>
 
-    <details class="panel" id="settings-panel" open>
-      <summary>Backend connection</summary>
-      <div class="settings-body">
-        <div class="grid">
-          <label class="wide">FastAPI backend URL
-            <input id="apiBase" type="text" placeholder="http://localhost:8000">
-            <span class="hint">Where the backend's /health, /predict, /patient-options and /predict-single endpoints are served. Shared by both views below. See backend/README.md to start it.</span>
-          </label>
-        </div>
-        <div class="actions">
-          <button id="testConnection" type="button" class="secondary">Test connection</button>
-          <span id="settingsSaved" class="hint" aria-live="polite"></span>
-        </div>
-      </div>
-    </details>
-
     <!-- ==================== Batch CSV upload view ==================== -->
-    <section id="batchView">
+    <section id="batchView" class="view">
       <section class="panel drop-zone" id="dropZone" aria-label="CSV upload area">
-        <strong>Choose the patient CSV to score</strong>
-        <p>Drag a file here, or browse for one on your computer.</p>
+        <svg class="drop-icon" viewBox="0 0 34 26" fill="none" aria-hidden="true">
+          <rect x="1" y="1" width="32" height="24" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M1 8.5h32M12 8.5V25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M20 19.5h7M23.5 16v7" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <h2>Drop a patient CSV to score</h2>
+        <p>Or browse for one on your computer.</p>
         <input id="fileInput" class="sr-only" type="file" accept=".csv,text/csv">
         <button id="chooseFile" type="button" class="secondary">Browse for CSV</button>
-        <div id="fileName" class="file-name" aria-live="polite"></div>
-        <div class="actions" style="justify-content:center"><button id="sendButton" type="button" disabled>Get predictions</button></div>
+        <span id="fileName" class="file-name" aria-live="polite"></span>
+        <div class="actions" style="justify-content:center"><button id="sendButton" type="button" class="primary" disabled>Run predictions</button></div>
       </section>
 
       <section class="panel status-panel" aria-labelledby="status-heading">
         <h2 id="status-heading">Run status</h2>
-        <div class="status-line"><span id="statusDot" class="status-dot"></span><strong id="statusText" aria-live="polite">Ready for a CSV.</strong></div>
+        <div class="status-line">
+          <span id="statusDot" class="status-dot"></span>
+          <span id="statusText" class="status-text" aria-live="polite">Ready for a CSV.</span>
+        </div>
         <div id="statusLog" class="log" aria-live="polite">No activity yet.</div>
         <div class="actions">
           <button id="newRun" type="button" class="secondary">Start new run</button>
@@ -199,12 +357,12 @@
 
       <section id="resultPanel" class="panel result hidden" aria-labelledby="result-heading">
         <h2 id="result-heading">Prediction results</h2>
-        <div class="summary-line" id="summaryLine"></div>
+        <div class="stat-strip" id="statRow"></div>
         <div class="result-toolbar">
           <label class="search-label">Filter rows
-            <input id="searchInput" type="search" placeholder="Search any column...">
+            <input id="searchInput" type="search" placeholder="Search any column">
           </label>
-          <div id="rowCount" class="hint"></div>
+          <span id="rowCount" class="row-count"></span>
           <button id="downloadButton" type="button" class="secondary">Download CSV</button>
         </div>
         <div class="table-wrap"><table><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table></div>
@@ -212,24 +370,24 @@
     </section>
 
     <!-- ==================== Patient simulator view ==================== -->
-    <section id="simulatorView" class="hidden">
-      <div id="loadState" class="hint" style="margin-top:4px;">Loading form options from the backend...</div>
+    <section id="simulatorView" class="view hidden">
+      <div id="loadState" class="hint">Loading form options from the backend.</div>
 
       <form id="simulatorForm" class="simulator hidden">
         <div class="form-panel panel">
           <div class="group">
-            <h3>Condition &amp; medication</h3>
+            <h3>Condition and medication</h3>
             <div class="field-grid">
               <div class="field">
                 <label for="f_condition">Condition</label>
                 <select id="f_condition" data-field="condition"></select>
               </div>
               <div class="field">
-                <label for="f_drug_class">Drug class (set by condition)</label>
+                <label for="f_drug_class">Drug class</label>
                 <select id="f_drug_class" data-field="drug_class" disabled></select>
               </div>
               <div class="field wide">
-                <label for="f_medication_name">Medication (only drugs prescribed for this condition)</label>
+                <label for="f_medication_name">Medication</label>
                 <select id="f_medication_name" data-field="medication_name"></select>
               </div>
             </div>
@@ -265,40 +423,40 @@
           </div>
 
           <div class="group">
-            <h3>Cost &amp; coverage</h3>
+            <h3>Cost and coverage</h3>
             <div class="field-grid">
               <div class="field wide">
-                <label for="f_monthly_copay">Monthly copay ($)</label>
+                <label for="f_monthly_copay">Monthly copay</label>
                 <div class="slider-row">
                   <input id="f_monthly_copay" type="range" data-field="monthly_copay" step="1">
                   <span class="slider-readout" data-readout="monthly_copay"></span>
                 </div>
-                <p class="field-note">This is usually the single biggest driver of risk in this model &mdash; try dragging it to the top.</p>
+                <p class="field-note">Usually the strongest driver in this model. Drag it up and watch the score react.</p>
               </div>
               <div class="field">
                 <label for="f_deductible_met">Deductible met</label>
                 <select id="f_deductible_met" data-field="deductible_met" data-type="boolean"></select>
               </div>
               <div class="field">
-                <label for="f_copay_assistance_available">Copay assistance available</label>
+                <label for="f_copay_assistance_available">Assistance available</label>
                 <select id="f_copay_assistance_available" data-field="copay_assistance_available" data-type="boolean"></select>
               </div>
               <div class="field">
-                <label for="f_copay_assistance_enrolled">Copay assistance enrolled</label>
+                <label for="f_copay_assistance_enrolled">Assistance enrolled</label>
                 <select id="f_copay_assistance_enrolled" data-field="copay_assistance_enrolled" data-type="boolean"></select>
               </div>
             </div>
           </div>
 
           <div class="group">
-            <h3>Access &amp; logistics</h3>
+            <h3>Access and logistics</h3>
             <div class="field-grid">
               <div class="field">
-                <label for="f_prior_auth_required">Prior authorization required</label>
+                <label for="f_prior_auth_required">Prior auth required</label>
                 <select id="f_prior_auth_required" data-field="prior_auth_required" data-type="boolean"></select>
               </div>
               <div class="field">
-                <label for="f_delivery_option_available">Delivery option available</label>
+                <label for="f_delivery_option_available">Delivery available</label>
                 <select id="f_delivery_option_available" data-field="delivery_option_available" data-type="boolean"></select>
               </div>
               <div class="field wide">
@@ -323,18 +481,18 @@
             <h3>Clinical history</h3>
             <div class="field-grid">
               <div class="field">
-                <label for="f_concurrent_medication_count">Concurrent medications</label>
+                <label for="f_concurrent_medication_count">Concurrent meds</label>
                 <div class="slider-row">
                   <input id="f_concurrent_medication_count" type="range" data-field="concurrent_medication_count" step="1">
                   <span class="slider-readout" data-readout="concurrent_medication_count"></span>
                 </div>
               </div>
               <div class="field">
-                <label for="f_appointment_length_minutes">Appointment length (min)</label>
+                <label for="f_appointment_length_minutes">Appointment length</label>
                 <select id="f_appointment_length_minutes" data-field="appointment_length_minutes"></select>
               </div>
               <div class="field">
-                <label for="f_prior_abandoned_rx_count">Prior abandoned prescriptions</label>
+                <label for="f_prior_abandoned_rx_count">Prior abandonments</label>
                 <div class="slider-row">
                   <input id="f_prior_abandoned_rx_count" type="range" data-field="prior_abandoned_rx_count" step="1">
                   <span class="slider-readout" data-readout="prior_abandoned_rx_count"></span>
@@ -353,24 +511,34 @@
                   <input id="f_missed_visits_count" type="range" data-field="missed_visits_count" step="1">
                   <span class="slider-readout" data-readout="missed_visits_count"></span>
                 </div>
-                <p class="field-note">Capped at however many visits are scheduled &mdash; you can't miss more than were scheduled.</p>
+                <p class="field-note">Capped at however many visits are scheduled.</p>
               </div>
             </div>
           </div>
 
           <div class="actions">
-            <button id="scoreButton" type="button">Score this patient</button>
-            <button id="resetButton" type="button" class="secondary">Reset to default patient</button>
+            <button id="scoreButton" type="button" class="primary">Score this patient</button>
+            <button id="resetButton" type="button" class="secondary">Reset to default</button>
           </div>
         </div>
 
         <div class="result-panel panel">
-          <div class="score-block">
-            <div><span id="scoreNumber" class="score-number low">&mdash;</span> <span class="score-unit">/ 100</span></div>
-            <div id="tierBadge" class="tier-badge low">Awaiting input</div>
+          <div class="gauge" id="gauge">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="track" cx="60" cy="60" r="52"></circle>
+              <circle class="arc" id="gaugeArc" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73"></circle>
+            </svg>
+            <div class="gauge-center">
+              <span id="scoreNumber" class="score-number insufficient_data">N/A</span>
+              <span class="score-unit">Risk score</span>
+            </div>
           </div>
+          <span id="tierBadge" class="tier-badge insufficient_data">Awaiting input</span>
           <p id="explanationText" class="explanation">Adjust any field to score this patient.</p>
-          <div id="recommendationBox" class="recommendation hidden"></div>
+          <div id="recommendationBox" class="recommendation hidden">
+            <span class="rec-label">Recommended action</span>
+            <span class="rec-body" id="recommendationText"></span>
+          </div>
           <div class="drivers">
             <h3>Risk drivers</h3>
             <div id="driversList"></div>
@@ -384,30 +552,52 @@
   <script>
     'use strict';
     const $ = (id) => document.getElementById(id);
+    const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // The backend always runs here. Change this one line if that ever moves;
+    // there is deliberately no in-page setting for it.
+    const API_BASE = 'http://localhost:8000';
 
     // ======================================================================
-    // Shared: backend URL settings + fetch helper (both views use these)
+    // Ambient hero video
     // ======================================================================
-    function loadSettings() {
-      let saved = {};
-      try { saved = JSON.parse(localStorage.getItem('patientRiskPredictorSettings') || '{}'); } catch (_) { saved = {}; }
-      $('apiBase').value = saved.apiBase || 'http://localhost:8000';
+    // Decorative only, so it is never worth a slow or metered connection.
+    // The poster carries the same frame at a fraction of the weight, and
+    // below that sits the CSS grid, so there are two fallbacks before
+    // anyone sees a blank area. Nothing here is required for the page to
+    // work: if the files are missing the catch path just leaves the
+    // backdrop alone.
+    function initHeroVideo() {
+      const video = $('heroVideo');
+      if (!video) return;
+
+      if (REDUCED) return;                       // respect reduced motion
+      const net = navigator.connection;
+      if (net && (net.saveData || /(^|-)2g$/.test(net.effectiveType || ''))) return;
+
+      // preload="none" until here, so the bytes are only requested once we
+      // have decided the connection can afford them.
+      const src = document.createElement('source');
+      src.src = 'assets/hero-bg.mp4';
+      src.type = 'video/mp4';
+      video.appendChild(src);
+
+      video.addEventListener('canplay', () => {
+        video.classList.add('ready');
+        video.play().catch(() => { /* autoplay refused; poster stands in */ });
+      }, { once: true });
+      video.addEventListener('error', () => video.classList.remove('ready'), { once: true });
+
+      video.preload = 'auto';
+      video.load();
     }
-    function saveSettings() {
-      const settings = { apiBase: $('apiBase').value.trim().replace(/\/+$/, '') };
-      localStorage.setItem('patientRiskPredictorSettings', JSON.stringify(settings));
-      $('settingsSaved').textContent = 'Settings saved in this browser.';
-      return settings;
-    }
-    function settings() { return saveSettings(); }
-    function apiBase() { return $('apiBase').value.trim().replace(/\/+$/, ''); }
 
     async function apiFetch(url, options, context) {
       let response;
       try {
         response = await fetch(url, options);
       } catch (error) {
-        throw new Error('Could not reach the backend while ' + context + '. Is it running, and is the backend URL correct?');
+        throw new Error('Could not reach the backend while ' + context + '. Is it running on ' + API_BASE + '?');
       }
       if (!response.ok) {
         let detail = '';
@@ -417,20 +607,23 @@
       return response;
     }
 
-    async function testConnection() {
-      const base = apiBase();
-      if (!base) { $('settingsSaved').textContent = 'Enter the FastAPI backend URL first.'; return; }
-      saveSettings();
-      $('testConnection').disabled = true;
-      $('settingsSaved').textContent = 'Testing the backend connection...';
+    // ======================================================================
+    // Backend status
+    // ======================================================================
+    async function checkHealth() {
+      const pill = $('conn');
+      pill.className = 'conn';
+      $('connText').textContent = 'Checking backend';
       try {
-        const response = await apiFetch(base + '/health', {}, 'testing the connection');
+        const response = await apiFetch(API_BASE + '/health', {}, 'checking the backend');
         const data = await response.json();
-        $('settingsSaved').textContent = 'Connection successful (status: ' + data.status + ').';
-      } catch (error) {
-        $('settingsSaved').textContent = error.message;
-      } finally {
-        $('testConnection').disabled = false;
+        pill.classList.add('online');
+        $('connText').textContent = 'Backend ' + data.status;
+      } catch (_) {
+        pill.classList.add('offline');
+        $('connText').innerHTML = 'Backend offline. <button type="button" class="retry" id="connRetry">Retry</button>';
+        const retry = $('connRetry');
+        if (retry) retry.addEventListener('click', checkHealth);
       }
     }
 
@@ -438,9 +631,46 @@
     // View switching
     // ======================================================================
     let simulatorInitialized = false;
+
+    // Each tab explains what that tab actually does, rather than one line
+    // trying to cover both.
+    const INTRO = {
+      batch: 'Upload a roster and score every patient in one pass. Highest risk is listed first, each with the reason behind it.',
+      simulator: 'Build one patient by hand and watch the score move as you change them. Every field is limited to values the model was trained on.',
+    };
+
+    function setIntro(mode) {
+      const el = $('intro');
+      const next = INTRO[mode];
+      if (!next || el.textContent === next) return;
+      if (REDUCED) { el.textContent = next; return; }
+      el.classList.add('swapping');
+      setTimeout(() => {
+        el.textContent = next;
+        el.classList.remove('swapping');
+      }, 160);
+    }
+
+    function movePill(btn) {
+      const pill = $('tabPill');
+      pill.style.width = btn.offsetWidth + 'px';
+      pill.style.transform = 'translateX(' + (btn.offsetLeft - 4) + 'px)';
+    }
+
     function setMode(mode) {
+      document.querySelectorAll('.tabs button').forEach((b) => {
+        const on = b.dataset.mode === mode;
+        b.setAttribute('aria-selected', String(on));
+        if (on) movePill(b);
+      });
+      setIntro(mode);
       $('batchView').classList.toggle('hidden', mode !== 'batch');
       $('simulatorView').classList.toggle('hidden', mode !== 'simulator');
+      // Replay the view transition on each switch.
+      const active = mode === 'batch' ? $('batchView') : $('simulatorView');
+      active.style.animation = 'none';
+      void active.offsetWidth;
+      active.style.animation = '';
       if (mode === 'simulator' && !simulatorInitialized) {
         simulatorInitialized = true;
         initSimulator();
@@ -455,8 +685,8 @@
       { key: 'age', label: 'Age', get: (r) => r.age ?? '' },
       { key: 'condition', label: 'Condition', get: (r) => r.condition ?? '' },
       { key: 'medication_name', label: 'Medication', get: (r) => r.medication_name ?? '' },
-      { key: 'risk_score', label: 'Risk score', get: (r) => r.risk_score ?? '' },
-      { key: 'risk_tier', label: 'Risk tier', get: (r) => r.risk_tier ?? '' },
+      { key: 'risk_score', label: 'Risk', get: (r) => r.risk_score ?? '' },
+      { key: 'risk_tier', label: 'Tier', get: (r) => r.risk_tier ?? '' },
       { key: 'explanation', label: 'Explanation', get: (r) => r.explanation ?? '' },
       { key: 'recommendations', label: 'Recommendation', get: (r) => (r.recommendations || []).join(' ') },
       { key: 'reason', label: 'Reason', get: (r) => r.reason ?? '' },
@@ -466,7 +696,7 @@
 
     // High risk first, then medium, ordered by risk_score descending within
     // each; low-risk patients are left off the list entirely. Rows with no
-    // score (insufficient_data) sort last, since they aren't "low risk" --
+    // score (insufficient_data) sort last, since they aren't "low risk",
     // they just couldn't be scored.
     function orderForDisplay(results) {
       return (results || [])
@@ -495,13 +725,16 @@
 
     function renderSummary() {
       const s = batchState.summary;
-      if (!s) { $('summaryLine').innerHTML = ''; return; }
-      $('summaryLine').innerHTML = [
-        ['Total patients', s.total_patients],
-        ['Scored', s.scored_count],
-        ['Insufficient data', s.insufficient_data_count],
-        ['High risk (≥70)', s.high_risk_count],
-      ].map(([label, value]) => label + ': <strong>' + escapeHtml(value) + '</strong>').join(' &nbsp;|&nbsp; ');
+      if (!s) { $('statRow').innerHTML = ''; return; }
+      const stats = [
+        { k: 'Total patients', v: s.total_patients, cls: '' },
+        { k: 'Scored', v: s.scored_count, cls: 'is-cyan' },
+        { k: 'Insufficient data', v: s.insufficient_data_count, cls: '' },
+        { k: 'High risk', v: s.high_risk_count, cls: 'is-high' },
+      ];
+      $('statRow').innerHTML = stats.map((st) =>
+        '<div class="stat ' + st.cls + '"><span class="k">' + escapeHtml(st.k) + '</span><span class="v">' + escapeHtml(st.v) + '</span></div>'
+      ).join('');
     }
 
     function renderTable() {
@@ -551,17 +784,15 @@
 
     async function sendFile() {
       if (!batchState.file) return;
-      const s = settings();
-      if (!s.apiBase) { setStatus('Enter the FastAPI backend URL first.', 'error'); $('settings-panel').open = true; return; }
 
       $('sendButton').disabled = true;
       $('resultPanel').classList.add('hidden');
-      setStatus('Sending ' + batchState.file.name + ' to the backend...', 'working');
+      setStatus('Sending ' + batchState.file.name + ' to the backend.', 'working');
 
       try {
         const formData = new FormData();
         formData.append('file', batchState.file);
-        const response = await apiFetch(s.apiBase + '/predict', { method: 'POST', body: formData }, 'scoring the CSV');
+        const response = await apiFetch(API_BASE + '/predict', { method: 'POST', body: formData }, 'scoring the CSV');
         const data = await response.json();
 
         batchState.rows = orderForDisplay(data.results);
@@ -606,6 +837,8 @@
     // ======================================================================
     let OPTIONS = null;   // response of GET /patient-options
     let debounceTimer = null;
+    const GAUGE_LEN = 326.73;   // 2 * pi * r, r = 52
+    let scoreAnim = null;
 
     function fillSelect(select, values, current) {
       select.innerHTML = values.map((v) =>
@@ -634,6 +867,11 @@
       if (!readout) return;
       const val = input.value;
       readout.textContent = field === 'monthly_copay' ? ('$' + Number(val).toFixed(0)) : val;
+      // Paint the filled portion of the track so the drag has a visible effect
+      // even before the score comes back.
+      const min = Number(input.min), max = Number(input.max);
+      const pct = max > min ? ((Number(val) - min) / (max - min)) * 100 : 0;
+      input.style.setProperty('--fill', pct + '%');
     }
 
     function medicationsForCondition(condition) {
@@ -723,27 +961,50 @@
       };
     }
 
+    // Count the score up to its new value rather than snapping, so a change
+    // in risk reads as movement instead of a silent swap.
+    function animateScore(to) {
+      const el = $('scoreNumber');
+      if (scoreAnim) cancelAnimationFrame(scoreAnim);
+      const from = Number(el.textContent) || 0;
+      if (REDUCED) { el.textContent = to; return; }
+      const start = performance.now();
+      const dur = 650;
+      const step = (now) => {
+        const t = Math.min((now - start) / dur, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = Math.round(from + (to - from) * eased);
+        if (t < 1) scoreAnim = requestAnimationFrame(step);
+      };
+      scoreAnim = requestAnimationFrame(step);
+    }
+
     function renderResult(patient) {
       const tier = patient.risk_tier;
       const scoreEl = $('scoreNumber');
       const badgeEl = $('tierBadge');
+      const gauge = $('gauge');
 
       scoreEl.className = 'score-number ' + tier;
       badgeEl.className = 'tier-badge ' + tier;
+      gauge.className = 'gauge tier-' + tier;
 
       if (tier === 'insufficient_data') {
-        scoreEl.textContent = '—';
+        if (scoreAnim) cancelAnimationFrame(scoreAnim);
+        scoreEl.textContent = 'N/A';
         badgeEl.textContent = 'Insufficient data';
+        $('gaugeArc').style.strokeDashoffset = GAUGE_LEN;
       } else {
-        scoreEl.textContent = patient.risk_score;
-        badgeEl.textContent = tier + ' risk';
+        animateScore(patient.risk_score);
+        badgeEl.textContent = tier.charAt(0).toUpperCase() + tier.slice(1) + ' risk';
+        $('gaugeArc').style.strokeDashoffset = GAUGE_LEN * (1 - patient.risk_score / 100);
       }
 
       $('explanationText').textContent = patient.explanation || patient.reason || '';
 
       const recBox = $('recommendationBox');
       if (patient.recommendations && patient.recommendations.length) {
-        recBox.textContent = patient.recommendations[0];
+        $('recommendationText').textContent = patient.recommendations[0];
         recBox.classList.remove('hidden');
       } else {
         recBox.classList.add('hidden');
@@ -753,8 +1014,10 @@
       const drivers = patient.risk_drivers || [];
       if (drivers.length) {
         driversList.innerHTML = drivers.map((d) =>
-          '<div class="driver-chip"><span>' + d.factor.replace(/_/g, ' ') + (d.value !== null && d.value !== undefined ? ' (' + d.value + ')' : '') + '</span>' +
-          '<span class="impact-' + d.impact + '">' + d.impact + '</span></div>'
+          '<div class="driver-chip"><span>' +
+          escapeHtml(d.factor.replace(/_/g, ' ')) +
+          (d.value !== null && d.value !== undefined ? ' <span class="dval">(' + escapeHtml(d.value) + ')</span>' : '') + '</span>' +
+          '<span class="impact-' + escapeHtml(d.impact) + '">' + escapeHtml(d.impact) + '</span></div>'
         ).join('');
       } else {
         driversList.innerHTML = '<div class="no-drivers">No notable risk-increasing factors for this patient.</div>';
@@ -762,21 +1025,18 @@
     }
 
     async function scorePatient() {
-      const base = apiBase();
-      if (!base) { $('resultStatus').textContent = 'Enter the backend URL first.'; $('resultStatus').classList.add('error'); return; }
-
       $('scoreButton').disabled = true;
-      $('resultStatus').textContent = 'Scoring...';
+      $('resultStatus').textContent = 'Scoring';
       $('resultStatus').classList.remove('error');
       try {
-        const response = await apiFetch(base + '/predict-single', {
+        const response = await apiFetch(API_BASE + '/predict-single', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(collectPatient()),
         }, 'scoring this patient');
         const data = await response.json();
         renderResult(data.patient);
-        $('resultStatus').textContent = 'Updated ' + new Date().toLocaleTimeString() + '.';
+        $('resultStatus').textContent = 'Updated ' + new Date().toLocaleTimeString();
       } catch (error) {
         $('resultStatus').textContent = error.message;
         $('resultStatus').classList.add('error');
@@ -809,12 +1069,11 @@
 
     async function initSimulator() {
       try {
-        const response = await apiFetch(apiBase() + '/patient-options', {}, 'loading form options');
+        const response = await apiFetch(API_BASE + '/patient-options', {}, 'loading form options');
         OPTIONS = await response.json();
       } catch (error) {
-        $('loadState').textContent = error.message + ' Open "Backend connection" above, fix the URL, then switch back to this view.';
-        $('settings-panel').open = true;
-        simulatorInitialized = false; // allow retry next time this view is selected
+        $('loadState').textContent = error.message;
+        simulatorInitialized = false; // allow a retry next time this view is opened
         return;
       }
 
@@ -828,10 +1087,9 @@
     // ======================================================================
     // Wiring
     // ======================================================================
-    $('modeSelect').addEventListener('change', (event) => setMode(event.target.value));
-    $('testConnection').addEventListener('click', testConnection);
-    $('apiBase').addEventListener('change', saveSettings);
-
+    document.querySelectorAll('.tabs button').forEach((b) =>
+      b.addEventListener('click', () => setMode(b.dataset.mode))
+    );
     $('chooseFile').addEventListener('click', () => $('fileInput').click());
     $('fileInput').addEventListener('change', (event) => chooseFile(event.target.files[0]));
     $('sendButton').addEventListener('click', sendFile);
@@ -841,9 +1099,14 @@
     ['dragenter', 'dragover'].forEach((eventName) => $('dropZone').addEventListener(eventName, (event) => { event.preventDefault(); $('dropZone').classList.add('dragging'); }));
     ['dragleave', 'drop'].forEach((eventName) => $('dropZone').addEventListener(eventName, (event) => { event.preventDefault(); $('dropZone').classList.remove('dragging'); }));
     $('dropZone').addEventListener('drop', (event) => chooseFile(event.dataTransfer.files[0]));
+    window.addEventListener('resize', () => {
+      const active = document.querySelector('.tabs button[aria-selected="true"]');
+      if (active) movePill(active);
+    });
 
-    loadSettings();
     setMode('batch');
+    checkHealth();
+    initHeroVideo();
   </script>
 </body>
 </html>
