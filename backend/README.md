@@ -113,8 +113,22 @@ frontend from a different port, add it to `ALLOWED_ORIGINS` in `main.py`.
 
 ## Environment variables
 
+Create a `backend/.env` file (already covered by `.gitignore`'s `.env`
+pattern -- never commit it) to set these locally:
+
+```
+GEMINI_API_KEY=your-key-here
+```
+
+Then start uvicorn with `--env-file .env` so it's actually loaded:
+
+```powershell
+uvicorn main:app --reload --port 8000 --env-file .env
+```
+
 - `GEMINI_API_KEY` (optional) -- enables LLM-synthesized explanations +
   doctor talking points in `explanation_layer.py`. Unset by default; falls
-  back to the rule-based template with no error.
+  back to the rule-based template with no error. Requires the `google-genai`
+  package (in `requirements.txt`) -- confirmed working end-to-end in testing.
 - `USE_LLM_EXPLANATIONS=false` -- force the rule-based template even if
   `GEMINI_API_KEY` is set.
